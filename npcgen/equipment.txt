@@ -1,0 +1,199 @@
+Traveler’s Cloak — weather-worn cloak lined with hidden pockets — a tattered clasp shaped like a leaf
+
+Ironbound Shield — wooden shield rimmed in iron — a scarred surface with faded heraldry
+
+Embersteel Sword — short blade that glows faintly when hot — a flame-etched hilt
+
+Lantern of Mists — lantern that burns pale blue light — a fog swirling inside glass
+
+Whispering Quill — quill said to record whispers — feather tipped in silver
+
+Bone Dagger — carved from a beast’s fang — a crude bone handle
+
+Merchant’s Scales — small set of balanced weights — brass pans on a chain
+
+Star Compass — points toward the brightest star — inlaid with sapphire
+
+Rope of Knots — hemp rope with charms tied into it — frayed ends with wooden beads
+
+Hunter’s Bow — recurved bow of yew — etched antler grip
+
+Scribe’s Satchel — leather satchel with parchment rolls — sealed with wax sigils
+
+Healer’s Kit — bandages, herbs, and tools — bundled with red twine
+
+War Drum — small hide-stretched drum — marked with warpaint handprints
+
+Bottle of Sand — desert sand from a holy dune — corked with wax seal
+
+Lockpicks — slender steel picks — wrapped in black leather
+
+Flask of Oil — small bronze flask of lamp oil — engraved with flame motif
+
+Tinker’s Tools — compact roll of metal tools — marked with gear-etchings
+
+Harp of Ash — harp carved from burnt wood — faint ash scent lingers
+
+Iron Cauldron — soot-stained black pot — iron rings for carrying
+
+Dice Set — carved bone dice — pips filled with ink
+
+Spyglass — brass telescope — polished glass lens
+
+Smith’s Hammer — heavy hammer — handle wrapped in leather cord
+
+Traveler’s Journal — bound book of notes — clasped with a brass lock
+
+Net of Knots — weighted fishing net — ropes stiff with salt
+
+Waterskin — simple leather flask — stopper carved from antler
+
+Candle of Hope — white candle never fully burns — wick glows faintly
+
+Brass Keyring — keys of unknown doors — tarnished with age
+
+Map Case — leather tube for scrolls — brass-capped ends
+
+Hunter’s Trap — steel jaw trap — rusty but sharp
+
+Black Powder Horn — carved horn filled with powder — stopper painted black
+
+Crystal Prism — refracts light into rainbows — hexagonal shard
+
+Shovel of Ash — spade blackened by fire — wooden handle charred
+
+Druid’s Staff — staff entwined with ivy — crystal bound at top
+
+Lucky Coin — old coin rubbed smooth — faint face of a king
+
+Torch Bundle — wrapped set of torches — tarred ends tied
+
+Cooking Pot — dented iron pot — soot stains at bottom
+
+Perfume Vial — glass vial of scent — stopper shaped like a rose
+
+Ring of Twine — simple loop of twine — knotted into a circle
+
+Silver Spoon — finely wrought utensil — engraved with initials
+
+Black Cloak — hooded cloak of wool — clasp shaped like a raven
+
+Cracked Mirror — handheld mirror cracked down middle — frame of tarnished silver
+
+Flint and Steel — spark-making kit — wrapped in wax cloth
+
+Pouch of Marbles — handful of glass marbles — rainbow colors
+
+Beekeeper’s Mask — veiled face mask — stained with honey
+
+Charm Bracelet — bracelet hung with charms — tiny bell jingles
+
+Grave Candle — black wax candle — flame burns green
+
+Thief’s Gloves — thin leather gloves — fingertips reinforced with brass
+
+Skull Cup — goblet carved from a skull — rim plated with silver
+
+Wooden Flute — carved flute — holes bound in twine
+
+Fishing Pole — collapsible pole — reel of braided string
+
+Arrow Bundle — fletched arrows — red-dyed feathers
+
+Pickaxe — sturdy tool — worn wooden shaft
+
+Stone Amulet — carved amulet — rune scratched deep
+
+Salt Pouch — leather pouch of salt — drawstring sealed tight
+
+Small Bell — brass bell — crack along rim
+
+Needle Kit — sewing needles in case — steel gleams faintly
+
+Wagon Wheel — broken wheel piece — iron rim intact
+
+Rope Ladder — knotted rope with rungs — frayed rope ends
+
+Chisel Set — stoneworking tools — wrapped in cloth
+
+Alchemist’s Flask — glass flask — faint smoke inside
+
+Golden Locket — locket on chain — miniature portrait within
+
+Ceremonial Dagger — jeweled hilt dagger — blade never sharpened
+
+Minstrel’s Lute — old lute — strings of gut
+
+Iron Nails — handful of nails — rust flaking off
+
+Black Feather — crow feather — tied with thread
+
+Clay Pipe — smoking pipe — decorated with painted swirls
+
+Broken Arrow — snapped arrow shaft — blackened tip
+
+Farmer’s Sickle — curved sickle — handle bound in cloth
+
+Saddlebag — leather bag — brass buckle
+
+Witch’s Broom — straw broom — shaft etched with runes
+
+Silver Ring — simple ring — tarnish at edges
+
+Lantern Pole — long pole — hook for lantern
+
+Water Basin — bronze bowl — dents along rim
+
+Wooden Idol — crudely carved idol — painted eyes
+
+Rope of Bells — rope tied with bells — jingles when moved
+
+Spear of Driftwood — spear shaft of driftwood — tip bound in bone
+
+Ink Bottle — glass bottle of ink — stopper wax-sealed
+
+Quiver — leather quiver — stitched seams
+
+Jade Bead — polished bead — etched with symbols
+
+Warhorn — hollowed horn — mouth rim lined in brass
+
+Iron Pot Helm — helmet of iron — dent at crown
+
+Traveler’s Boots — worn boots — soles patched thrice
+
+Shepherd’s Crook — wooden crook — bark still intact
+
+Wine Flask — silver flask — grape motif
+
+Banner — tattered banner — faded sigil
+
+Leather Armor — studded armor — straps worn thin
+
+Bracer Set — pair of bracers — engraved runes
+
+Hunter’s Knife — long knife — antler handle
+
+Compass Rose — brass compass — cracked glass face
+
+Sailor’s Rope — coiled rope — salt stiffened
+
+Carpenter’s Plane — wood-shaving tool — blade honed sharp
+
+Crystal Ball — cloudy sphere — faint light within
+
+Mask of Comedy — painted mask — grinning smile
+
+Mask of Tragedy — painted mask — frowning face
+
+Ring of Bone — carved ring — shaped like knucklebone
+
+Shard of Obsidian — jagged stone — edges razor sharp
+
+Censer — incense burner — smoke holes shaped as stars
+
+Herbal Pouch — pouch of herbs — dried leaves poke out
+
+Broken Chain — fragment of chain — rust spots along links
+
+Blackened Gauntlet — heavy gauntlet — fingers scorched

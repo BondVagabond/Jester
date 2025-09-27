@@ -1,0 +1,399 @@
+Grew up in a bustling port town but never learned to swim.
+
+Was orphaned young and raised by a traveling circus.
+
+Escaped from a collapsed mine that killed their entire crew.
+
+Served as a scribe in a royal court until accused of treason.
+
+Was once a soldier who abandoned their post.
+
+Survived a shipwreck and washed ashore alone.
+
+Raised by wolves in the wild before rejoining society.
+
+Apprenticed to a cruel wizard who vanished mysteriously.
+
+Stole a relic from a temple and has been cursed ever since.
+
+Inherited a fortune, squandered it, and now lives in shame.
+
+Was born during a solar eclipse, feared as an omen.
+
+Once won a fortune in gambling, but lost it all.
+
+Escaped slavery and now hides from bounty hunters.
+
+Lived for years in a monastery before running away.
+
+Was a child thief until a stranger taught them kindness.
+
+Survived a plague that wiped out their village.
+
+Spent years searching for a lost sibling.
+
+Trained as a knight, but failed their final trial.
+
+Served aboard a pirate ship before being marooned.
+
+Was blessed by a fey creature as a child.
+
+Was the sole witness to a terrible crime.
+
+Raised in a nomadic caravan, traveled the world.
+
+Survived an orc raid that destroyed their town.
+
+Worked as a healer during a bloody war.
+
+Abandoned at a temple doorstep as a baby.
+
+Grew up in the sewers of a great city.
+
+Apprenticed to a blacksmith but ran away.
+
+Exiled from their homeland for petty theft.
+
+Was a royal cook, until a poisoned dish ruined their name.
+
+Escaped from a dragon’s lair as a child.
+
+Raised by a single parent who was a drunk.
+
+Traveled with gypsies, learning dance and song.
+
+Was imprisoned for a crime they didn’t commit.
+
+Witnessed a murder but kept silent.
+
+Found a magical item as a child but lost it.
+
+Served as a page in a noble house.
+
+Was nearly sacrificed in a cult ritual.
+
+Survived alone in the wilderness for months.
+
+Raised in a strict religious order.
+
+Fled from an arranged marriage.
+
+Was cursed by a hag as a child.
+
+Lived on the streets begging for food.
+
+Was a farmer until monsters destroyed their land.
+
+Survived a fire that consumed their home.
+
+Was once rich but tricked by swindlers.
+
+Found and raised an orphaned baby monster.
+
+Grew up in a traveling merchant caravan.
+
+Served on a royal hunting expedition.
+
+Survived being buried alive.
+
+Was a promising student expelled from a magical academy.
+
+Escaped from a dungeon prison.
+
+Was saved by adventurers as a child.
+
+Grew up in an orphanage run by cruel priests.
+
+Was a noble’s illegitimate child.
+
+Traveled across the sea to start anew.
+
+Survived a terrible famine.
+
+Spent childhood in a haunted house.
+
+Once swore an oath to never kill.
+
+Was left for dead by bandits.
+
+Raised by a guild of thieves.
+
+Spent years in a coma-like sleep.
+
+Was once in love with someone of higher station.
+
+Survived an assassination attempt.
+
+Served as a guard for a corrupt noble.
+
+Was lost in the woods for days as a child.
+
+Raised by grandparents after parents died.
+
+Served as a scout in the army.
+
+Was exiled for dueling.
+
+Spent years searching for their true heritage.
+
+Saved a town from famine with ingenuity.
+
+Grew up near a cursed swamp.
+
+Was nearly drowned in a ritual.
+
+Apprenticed to an apothecary.
+
+Escaped a burning castle.
+
+Was a bandit but gave up the life.
+
+Raised in a fishing village.
+
+Was once wealthy but gambled everything away.
+
+Saved by a cleric who healed them.
+
+Worked as a messenger in a city.
+
+Grew up in the desert among nomads.
+
+Fled their homeland during a civil war.
+
+Was abandoned in the woods as a baby.
+
+Grew up surrounded by books in a library.
+
+Survived a cursed sickness.
+
+Apprenticed as a tailor before running away.
+
+Was once engaged but the fiancé vanished.
+
+Served as a mercenary.
+
+Was captured by orcs but escaped.
+
+Raised in a castle but never knew luxury.
+
+Survived falling from a great height.
+
+Was nearly executed but pardoned.
+
+Was once a famous athlete.
+
+Raised among druids.
+
+Was kidnapped as a child but rescued.
+
+Trained to be an assassin but refused.
+
+Survived a great flood.
+
+Was raised in a monastery on a mountain.
+
+Escaped from a collapsing cavern.
+
+Served as a sailor.
+
+Was banished from their family.
+
+Was abandoned as a baby on a battlefield.
+
+Worked as a gravedigger for years.
+
+Escaped from a collapsing tower.
+
+Was adopted by a family of a different culture.
+
+Spent childhood hiding from tax collectors.
+
+Worked as a caravan guard.
+
+Was falsely accused of witchcraft.
+
+Survived a sandstorm that killed their companions.
+
+Grew up in a mountain village.
+
+Once trained as a minstrel.
+
+Was kidnapped by bandits but learned from them.
+
+Raised in a temple to a forgotten god.
+
+Survived being struck by lightning.
+
+Spent years as a servant in a noble household.
+
+Lived in a city’s slums.
+
+Fled a burning ship.
+
+Was forced into marriage but escaped.
+
+Spent childhood in hiding due to a bounty.
+
+Once worked in a traveling menagerie.
+
+Was lost in a labyrinth for days.
+
+Raised by an aunt who practiced forbidden magic.
+
+Escaped from gladiatorial combat.
+
+Survived a landslide.
+
+Worked as an apprentice jeweler.
+
+Was shipwrecked on a deserted island.
+
+Raised by monks who taught silence.
+
+Fled after stealing from a powerful mage.
+
+Grew up among nomadic herders.
+
+Was a tinker’s apprentice.
+
+Escaped an avalanche.
+
+Was saved from drowning by a stranger.
+
+Lived in a cave during childhood.
+
+Was conscripted into a losing war.
+
+Spent years traveling as a minstrel’s companion.
+
+Survived poisoning.
+
+Grew up in a remote forest hut.
+
+Was raised by smugglers.
+
+Lived near an active volcano.
+
+Survived a siege as a child.
+
+Worked as a potter’s apprentice.
+
+Was almost sacrificed by cultists.
+
+Raised in a city of scholars.
+
+Survived a great earthquake.
+
+Served as a page to a knight.
+
+Was a shepherd as a child.
+
+Was once a beggar in a city.
+
+Escaped from slavers in the desert.
+
+Grew up surrounded by wolves.
+
+Worked in the docks loading ships.
+
+Was raised in a castle dungeon by the jailer.
+
+Survived a winter blizzard alone.
+
+Lived as a hermit for years.
+
+Once apprenticed to a carpenter.
+
+Escaped a burning village.
+
+Was cursed as a child and still bears the mark.
+
+Raised by foster parents after being abandoned.
+
+Worked as a miner until the mine collapsed.
+
+Lived with druids in the wild.
+
+Escaped from a collapsing bridge.
+
+Served as a messenger in a war.
+
+Raised in a family of thieves.
+
+Once lived as a street performer.
+
+Survived being trapped underground.
+
+Apprenticed as a glassblower.
+
+Was nearly drowned in a flood.
+
+Raised by their older sibling.
+
+Worked as a tailor’s assistant.
+
+Survived an attack by wolves.
+
+Grew up in a coastal fishing hut.
+
+Was raised among monks who taught martial arts.
+
+Escaped a collapsing castle wall.
+
+Once served as a torchbearer for adventurers.
+
+Was accused of heresy and exiled.
+
+Survived an assassination attempt in childhood.
+
+Raised in a mountain monastery.
+
+Worked as a stablehand.
+
+Survived being caught in quicksand.
+
+Apprenticed to a brewer.
+
+Lived through a deadly famine.
+
+Raised in a desert oasis village.
+
+Escaped from a cursed ruin.
+
+Once trained as a healer.
+
+Survived a bandit raid.
+
+Worked as a cook’s apprentice.
+
+Was born during a great storm.
+
+Raised in a family of bards.
+
+Survived being buried in snow.
+
+Apprenticed to a stonemason.
+
+Was once a squire to a cruel knight.
+
+Escaped from a burning temple.
+
+Grew up among hunters and trappers.
+
+Survived a giant’s attack.
+
+Worked as a candlemaker’s apprentice.
+
+Raised in a swamp village.
+
+Was nearly executed for theft.
+
+Once wandered as a pilgrim.
+
+Survived being attacked by bandits on the road.
+
+Apprenticed as a bookbinder.
+
+Grew up in a hidden valley.
+
+Escaped from a sinking ferry.

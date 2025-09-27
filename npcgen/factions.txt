@@ -1,0 +1,199 @@
+Thieves’ Guild — network of cutpurses and smugglers — dagger over a coin
+
+Fighters’ Guild — mercenaries-for-hire — crossed swords on a shield
+
+Mages’ Guild — arcane scholars — open book with a glowing eye
+
+Alchemists’ Circle — potion-makers and experimenters — bubbling flask sigil
+
+Order of the Silver Flame — holy warriors against darkness — silver flame emblem
+
+The Black Fang — ruthless assassins — serpent with dripping fangs
+
+Crimson Blades — bloodthirsty mercenaries — red sword slash
+
+The Iron Brotherhood — militant mercenary company — clenched fist in iron gauntlet
+
+Circle of the Grove — druidic protectors — oak tree symbol
+
+The Silent Hand — covert spies and infiltrators — black handprint
+
+Order of the Dawn — paladins of light — golden rising sun
+
+The Raven Court — shadowy aristocrats — raven silhouette
+
+Guild of Shadows — thieves and spies — hooded mask
+
+The Golden Anvil — smiths and artisans — shining anvil
+
+The Sea Serpents — pirate crew — serpent coiled around anchor
+
+Emerald Enclave — guardians of the wild — green leaf on stone
+
+The Black Banner — mercenary army — black flag with red stripe
+
+The Sapphire Tower — guild of wizards — sapphire crystal tower
+
+The Night Blades — assassins for hire — twin daggers crossed
+
+Crimson Cloaks — militant order — red hooded cloak
+
+The Brass Claws — mercantile syndicate — brass talon emblem
+
+Brotherhood of the Forge — dwarven craftsmen — hammer striking anvil
+
+Order of the Lantern — seekers of truth — lantern shedding light
+
+The Frost Wolves — barbarian clan — wolf head with icy breath
+
+The Azure Veil — illusionists’ guild — mask with flowing veil
+
+Iron Fangs — monster hunters — wolf fang pendant
+
+The Serpent’s Tongue — spy network — forked tongue emblem
+
+The Obsidian Circle — dark mages — black stone circle
+
+The Free Blades — sellswords — broken chain and sword
+
+The Silent Choir — monks sworn to silence — hooded monk with closed mouth
+
+The Blood Pact — cultists bound by blood — dripping blood rune
+
+Order of the Radiant Star — healers and saints — golden starburst
+
+The Crimson Chalice — vampire cabal — chalice filled with blood
+
+The Dragon’s Fang — dragon cultists — fang over fire
+
+Grey Cloaks — rangers and scouts — grey wolf pawprint
+
+The Gilded Quill — scribes and chroniclers — golden feather
+
+The Stoneborn — dwarven warrior clan — mountain peak sigil
+
+The Iron Legion — disciplined soldiers — iron helmet crest
+
+Circle of Ash — fire mages and pyromancers — black ash spiral
+
+The Shattered Chain — escaped slaves — broken manacle
+
+The Ghost Veil — assassins cloaked in illusion — pale mask sigil
+
+The Golden Dawn — reformist order — sunburst above horizon
+
+The Black Hounds — ruthless bounty hunters — snarling hound skull
+
+Order of the Crystal Eye — seers and prophets — crystal eye motif
+
+The Scarlet Serpents — snake-worshippers — coiled red snake
+
+Brotherhood of the Road — traveling merchants — wagon wheel emblem
+
+The Iron Spikes — brutal enforcers — bloodied spike icon
+
+The Silver Stags — elven hunters — silver stag head
+
+The Midnight Suns — night crusaders — crescent moon over sun
+
+The Hollow Mask — cult of secrecy — empty mask emblem
+
+The Golden Talons — avian knights — eagle talon crest
+
+The Pale Hand — necromancers — skeletal hand sigil
+
+The Verdant Grove — nature defenders — tree with vines
+
+The Cobalt Blades — adventurers’ guild — twin cobalt swords
+
+Order of the Eclipse — balance keepers — sun and moon intertwined
+
+The Scarlet Blades — zealots of war — bloodied sword symbol
+
+The Umbral Court — dark fey cabal — crown of thorns
+
+The Azure Flames — elemental fire guild — blue flame motif
+
+The Silent Arrows — elven assassins — arrow in flight
+
+The Brass Helms — warrior guild — brass helmet
+
+The Ashen Cloaks — spies and wanderers — cloak of ash grey
+
+The Crystal Spears — knightly order — crystalline spearhead
+
+The Hollow Flame — heretical priests — fading flame symbol
+
+Order of the Griffon — mounted knights — griffon head sigil
+
+The Steel Vultures — scavenger guild — vulture skull emblem
+
+The Sapphire Blades — duelist order — sapphire-inlaid sword
+
+The Verdant Fang — beast tamers — fang entwined with vines
+
+The Iron Sails — naval mercs — iron shipwheel
+
+The Red Fist — brutal thugs — bloody handprint
+
+The Storm Hammers — tempest-worshippers — hammer with lightning
+
+The Black Spears — savage warriors — black spear tip
+
+The Moonlit Veil — thieves guild — crescent mask
+
+The Crystal Tome — arcane librarians — glowing book emblem
+
+The Ash Wolves — werewolf pack — grey wolf silhouette
+
+The Golden Horns — merchant guild — golden ram’s horn
+
+The Crimson Fang — gladiator cult — fang dripping blood
+
+The Veiled Serpents — spies in high society — serpent under veil
+
+The Order of Dawnfire — fire paladins — blazing sun sword
+
+The Iron Hawks — mercenary scouts — hawk clutching spear
+
+The Blood Ravens — murderous raiders — raven dripping blood
+
+The White Lotus — monastic order — lotus blossom sigil
+
+The Black Lotus — assassins’ guild — black lotus flower
+
+The Steel Wolves — mercenary pack — steel wolf head
+
+The Golden Quills — scholars and writers — quill with scroll
+
+The Umbral Fangs — nocturnal predators — black fang
+
+The Crimson Oath — fanatical knights — red crossed swords
+
+The Frozen Claw — ice barbarians — claw encased in ice
+
+The Storm Riders — sky raiders — lightning bolt on cloud
+
+The Order of Whispers — informants — ear with swirl symbol
+
+The Obsidian Fangs — shadow cult — obsidian fang pendant
+
+The Gilded Chain — wealthy mercs — golden chain links
+
+The Hollow Circle — nihilist cult — empty circle
+
+The Firebrands — rebel faction — torch blazing
+
+The Shadow Pact — warlock cabal — blackened pact sigil
+
+The Azure Wings — aerial knights — winged crest
+
+The Stone Shields — defensive guild — stone shield emblem
+
+The Iron Talons — brutal mercenaries — talon clutching chain
+
+The Crimson Blades — duelist order — crossed crimson rapiers
+
+The Grey Wardens — monster hunters — grey eye on shield
+
+The Eternal Flame — immortal cult — everburning flame

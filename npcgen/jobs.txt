@@ -1,0 +1,1999 @@
+Blacksmith — forges weapons and armor — hammer striking anvil
+
+Town Guard — keeps the peace in settlements — shield with town crest
+
+Tavern Keeper — runs the local inn — foaming mug of ale
+
+Scribe — copies texts and records lore — quill and scroll
+
+Herbalist — gathers plants for potions — sprig of herbs tied with twine
+
+Sailor — works aboard ships — ship’s wheel
+
+Pirate — sea thief and raider — skull and crossbones
+
+Gladiator — arena fighter — crossed swords
+
+Mercenary — sellsword for hire — coin over blade
+
+Hunter — tracks game in the wild — bow and antlers
+
+Fisherman — catches fish for trade — fishhook and net
+
+Carpenter — builds wooden structures — saw and hammer
+
+Miner — digs for ores — pickaxe and lantern
+
+Farmer — tills the land — sheaf of wheat
+
+Shepherd — tends flocks — crook staff
+
+Noble — aristocrat of influence — signet ring
+
+Court Jester — entertains nobility — jester’s cap
+
+Bard — wandering musician — lute and notes
+
+Ranger — wilderness scout — bow and hood
+
+Alchemist — mixes magical brews — bubbling flask
+
+Wizard’s Apprentice — studies arcane arts — open tome
+
+Witch — hedge mage and spellcrafter — broomstick and cauldron
+
+Warlock — pact-bound caster — chained tome
+
+Paladin — holy knight — sunburst shield
+
+Cleric — healer and priest — holy symbol
+
+Druid — nature priest — oak leaf sigil
+
+Necromancer — master of the dead — skull with runes
+
+Beast Tamer — trains exotic animals — whip and pawprint
+
+Assassin — hired killer — dagger dripping blood
+
+Spy — covert agent — mask with one eye
+
+Merchant — sells goods — scales and coin
+
+Banker — keeper of gold — locked chest
+
+Jeweler — works precious stones — gem and chisel
+
+Brewer — makes ale and mead — barley stalk
+
+Cook — prepares meals — knife and ladle
+
+Tailor — sews clothing — needle and thread
+
+Tanner — prepares hides — stretched hide
+
+Mason — stoneworker — chisel and stone block
+
+Shipwright — builds ships — hammer on keel
+
+Stablehand — tends horses — horseshoe
+
+Adventurer — lives by sword and risk — map and lantern
+
+Cartographer — maps the world — compass rose
+
+Scholar — studies lore — candle and book
+
+Librarian — keeps knowledge — stack of tomes
+
+Innkeeper — offers lodging — key and bed
+
+Scout — military recon — single footprint
+
+Soldier — trained warrior — crossed spears
+
+General — commander of armies — banner and helm
+
+Archer — expert bowman — quiver and arrow
+
+Cavalier — mounted knight — horse and lance
+
+Monk — ascetic martial artist — prayer beads
+
+Cultist — worshipper of dark powers — black sigil
+
+Gravekeeper — tends cemeteries — shovel and lantern
+
+Beggar — lives off alms — empty bowl
+
+Thief — steals from others — hand with coin
+
+Pickpocket — street thief — hand reaching purse
+
+Smuggler — moves contraband — crate with X
+
+Gambler — wagers fortunes — dice pair
+
+Healer — tends wounds — mortar and pestle
+
+Apothecary — sells remedies — vial rack
+
+Seer — tells fortunes — crystal ball
+
+Oracle — receives divine visions — eye in starburst
+
+War Drummer — rallies soldiers — war drum
+
+Standard Bearer — carries banner — waving flag
+
+Executioner — carries out justice — axe and hood
+
+Guard Captain — leads town watch — helm with plume
+
+Knight — sworn warrior — longsword and shield
+
+Witch Hunter — hunts witches — burning stake
+
+Monster Hunter — hunts beasts — claw mark sigil
+
+Vampire Hunter — stalks undead — stake and mallet
+
+Demon Slayer — bane of fiends — flaming sword
+
+Dragonslayer — legendary hero — dragon skull
+
+Explorer — seeks unknown lands — spyglass
+
+Treasure Hunter — digs for riches — golden idol
+
+Relic Keeper — watches sacred artifacts — reliquary box
+
+Herald — bearer of news — trumpet horn
+
+Messenger — delivers letters — satchel with scroll
+
+Farmer’s Hand — seasonal worker — hoe and sheaf
+
+Potioneer — potion brewer — corked vial
+
+Runecarver — engraves runes — rune-etched stone
+
+Tattooist — inks skin — tattoo needle
+
+Sculptor — carves stone — mallet and chisel
+
+Painter — paints murals — palette and brush
+
+Actor — stage performer — comedy mask
+
+Acrobat — circus tumbler — trapeze
+
+Fire-Eater — carnival performer — flaming torch
+
+Animal Trainer — circus handler — whip and stool
+
+Beast Rider — mounts beasts — saddle with clawmarks
+
+Candle Maker — produces candles — dripping wax
+
+Glassblower — crafts glassware — molten glass rod
+
+Potter — works clay — clay pot
+
+Basket Weaver — weaves reeds — woven basket
+
+Loom Worker — weaves cloth — loom shuttle
+
+Courier — rides fast horses — galloping horse
+
+Sellsword Captain — leads mercenaries — blade and coin
+
+Fence — buys stolen goods — coin and dagger
+
+Grave Robber — digs for valuables — skull with shovel
+
+Tomb Raider — loots crypts — broken sarcophagus
+
+Relic Seeker — hunts divine relics — glowing relic shard
+
+Shadowdancer — assassin-acrobat — shadowy silhouette
+
+Torchbearer — carries light for adventurers — torch flame
+
+Gravedigger — digs burial sites — shovel and skull
+
+Bandit — robs travelers — mask and dagger
+
+Highwayman — ambushes on roads — pistol and cloak
+
+Scout Ranger — wilderness infiltrator — bootprint
+
+Nomad — roams the land — camel silhouette
+
+Oracle’s Acolyte — serves seer — eye talisman
+
+Temple Guard — defends holy grounds — spear with sunburst
+
+Idol Maker — carves deities’ statues — small idol
+
+Relic Hunter — finds sacred items — radiant shard
+
+Candle Keeper — lights temple halls — candle bundle
+
+Pilgrim — journeys to holy site — staff with charm
+
+Shrine Maiden — tends shrine — blossom wreath
+
+Monk Scribe — copies scriptures — inked scroll
+
+Philosopher — ponders life’s mysteries — question mark sigil
+
+Chronicler — records history — quill in book
+
+Spy Master — directs agents — dagger behind mask
+
+Guildmaster — leader of guild — crest seal
+
+Caravan Guard — protects merchants — spear and cart
+
+Caravan Driver — drives wagons — whip and wheel
+
+Beast of Burden Handler — tends pack animals — yoke symbol
+
+Shepherd of Goats — goat herder — goat horn
+
+Milkmaid — tends dairy cows — milk pail
+
+Beekeeper — keeps hives — honeycomb sigil
+
+Butcher — prepares meats — cleaver
+
+Poulterer — sells fowl — feathered hen
+
+Cheesemaker — crafts cheeses — cheese wheel
+
+Baker — bakes bread — loaf of bread
+
+Miller — grinds grain — millstone
+
+Brewer’s Apprentice — trains under brewer — frothy mug
+
+Distiller — brews spirits — still flask
+
+Spice Trader — sells spices — spice pouch
+
+Perfumer — crafts fragrances — vial with rose
+
+Cloth Merchant — sells cloth — bolt of fabric
+
+Furrier — sells furs — pelt roll
+
+Silversmith — works silver — hammer and ingot
+
+Goldsmith — works gold — golden bar
+
+Armorer — crafts armor — breastplate icon
+
+Bowyer — makes bows — unstrung bow
+
+Fletcher — crafts arrows — arrow shaft
+
+Swordsmith — forges swords — longsword silhouette
+
+Shieldbearer — carries shield for knight — shield crest
+
+Warhorse Trainer — trains chargers — horse head
+
+Siege Engineer — builds siege gear — catapult icon
+
+Banner-Maker — crafts heraldry — flag in wind
+
+Court Herald — announces nobles — trumpet
+
+Chamberlain — manages castle — ring of keys
+
+Squire — aids knight — sword belt
+
+Page — serves nobles — scroll and cap
+
+Jailer — watches prisoners — barred door
+
+Torturer — extracts confessions — iron rack
+
+Dungeon Keeper — manages dungeon — spiked gate
+
+Rat Catcher — controls vermin — rat silhouette
+
+Executioner’s Apprentice — trainee headsman — hooded axe
+
+Heraldic Painter — paints crests — shield brush
+
+Herald Bard — sings lineage — harp sigil
+
+Spy Novice — beginner spy — mask half-face
+
+Courier Rider — fast messenger — galloping horse
+
+Envoy — represents rulers — handshake sigil
+
+Ambassador — diplomat — crossed flags
+
+Consul — overseas envoy — laurel crown
+
+Noble Retainer — servant of nobles — crest brooch
+
+Chancellor — advises rulers — scroll with seal
+
+High Priest — head cleric — holy flame
+
+Battle Chaplain — cleric in army — shielded cross
+
+Bellringer — rings church bells — swinging bell
+
+Acolyte — temple initiate — small candle
+
+Novice Healer — temple medic — salve pot
+
+Relic Bearer — carries relics — reliquary icon
+
+Paladin-Initiate — squire of faith — sunblade
+
+War Prophet — predicts battles — burning eye
+
+Inquisitor — hunts heretics — burning brand
+
+Scribe of Secrets — records forbidden lore — black scroll
+
+Librarian Adept — watches grimoires — chained tome
+
+Archmage — master wizard — staff and star
+
+Evoker — blasts with magic — fireball rune
+
+Conjurer — summons beings — swirling circle
+
+Transmuter — alters matter — philosopher’s stone
+
+Illusionist — master of mirage — mask icon
+
+Diviner — sees fates — eye on palm
+
+Necromancer Adept — corpse wizard — skull candle
+
+War Mage — battle sorcerer — lightning staff
+
+Witch Doctor — tribal caster — bone mask
+
+Shaman — spirit medium — spirit flame
+
+Elementalist — controls elements — fourfold rune
+
+Storm Caller — weather mage — thundercloud
+
+Pyromancer — fire master — flame hand
+
+Cryomancer — ice master — snowflake
+
+Geomancer — earth master — stone fist
+
+Aeromancer — air master — gust swirl
+
+Beast Shaman — speaks to beasts — pawprint flame
+
+Totem Carver — carves totems — totem pole
+
+Spirit Dancer — dances to spirits — mask with feathers
+
+Warlock Acolyte — pact novice — chained hand
+
+Pactblade — warlock warrior — dark blade
+
+Hexslinger — curse mage — rune bullet
+
+Demon Caller — summons fiends — horned mask
+
+Abyssal Scholar — studies hells — flame book
+
+Cult Acolyte — serves cult — black sigil
+
+Cult Priest — leads cult rites — ritual dagger
+
+Cult Fanatic — zealot of faith — black flame sigil
+
+Cult Assassin — kills for cult — dagger in blood drop
+
+Cult Champion — warrior of cult — skull helm
+
+Bone Collector — gathers bones — skeletal hand
+
+Grave Caller — raises dead — bone staff
+
+Ghoul Handler — controls undead — chain with skulls
+
+Crypt Keeper — watches crypts — coffin lid
+
+Tomb Warden — guards tombs — scarab sigil
+
+Death Priest — serves death god — skull flame
+
+Shade Walker — moves unseen — shadow silhouette
+
+Shadowbinder — binds shadows — dark chains
+
+Umbral Mage — manipulates darkness — eclipse sigil
+
+Night Stalker — hunts in dark — glowing eyes
+
+Moon Priestess — worships moon — crescent symbol
+
+Sun Disciple — worships sun — blazing disc
+
+Star Reader — interprets stars — constellation sigil
+
+Astrologer — predicts futures — zodiac wheel
+
+Astronomer — maps heavens — telescope
+
+Sky Watcher — gazes stars — starburst icon
+
+Cloud Seer — predicts weather — storm cloud
+
+Weather Witch — controls weather — storm swirl
+
+Sea Priest — worships ocean — wave crest
+
+River Shaman — honors rivers — fish totem
+
+Lake Oracle — lives by lakes — ripple sigil
+
+Tidal Caller — summons tides — trident
+
+Storm Priest — channels storms — lightning bolt
+
+Thunder Herald — voice of thunder — drum and cloud
+
+Rain Caller — summons rain — droplet symbol
+
+Flame Bearer — spreads fire cult — torch sigil
+
+Ember Keeper — guards sacred fire — ember rune
+
+Ash Prophet — interprets ashes — ash spiral
+
+Smoke Dancer — ritual dancer — smoke swirl
+
+Fire Keeper — tends flame — fire bowl
+
+Lava Walker — fire priest — molten stone
+
+Stone Priest — worships earth — mountain symbol
+
+Cave Seer — lives in caves — stalactite sigil
+
+Mountain Hermit — recluse sage — peak icon
+
+Rockbreaker — miner-priest — cracked stone
+
+Iron Cultist — worships iron — iron helm
+
+Steel Disciple — follows steel god — sword and cog
+
+Forge Priest — tends forge — hammer flame
+
+Anvil Singer — sings at forge — anvil with notes
+
+Smith Cultist — worships craft — glowing hammer
+
+Glassblower Adept — glass craftsman — molten rod
+
+Crystal Sage — studies crystals — crystal shard
+
+Gem Seer — reads gems — gem eye
+
+Diamond Priest — diamond cultist — diamond sigil
+
+Ruby Caller — ruby mage — red gem icon
+
+Sapphire Adept — water mage — blue crystal
+
+Emerald Guardian — nature knight — green stone
+
+Topaz Healer — stone healer — golden gem
+
+Obsidian Knight — dark warrior — black blade
+
+Onyx Seer — night seer — black gem
+
+Pearl Oracle — sea priest — pearl shell
+
+Coral Caller — reef shaman — coral branch
+
+Shell Keeper — shell worshipper — spiral shell
+
+Tortoise Sage — wise hermit — tortoise shell
+
+Crab Shaman — coastal caster — crab claw
+
+Dolphin Rider — sea nomad — dolphin crest
+
+Whale Caller — ocean priest — whale tail
+
+Shark Hunter — predator hunter — shark tooth
+
+Leviathan Cultist — sea cultist — leviathan sigil
+
+Sailmaker — makes sails — sailcloth roll
+
+Ship Captain — commands vessel — helm wheel
+
+First Mate — ship’s officer — crossed anchors
+
+Deckhand — sailor worker — rope knot
+
+Navigator — charts seas — compass
+
+Harpooner — whaler — harpoon icon
+
+Lookout — crow’s nest watch — spyglass
+
+Cabin Boy — ship helper — bucket icon
+
+Ship’s Cook — feeds crew — pot and ladle
+
+Surgeon — ship medic — bone saw
+
+Quartermaster — supplies ship — keyring
+
+Boatswain — crew master — whistle
+
+Sail Weaver — repairs sails — loom and sailcloth
+
+Dockworker — loads cargo — crate icon
+
+Harbor Master — runs harbor — lighthouse
+
+Fisher Lord — fishing master — trawling net
+
+Pearl Diver — dives for pearls — pearl shell
+
+Salvager — raises wrecks — broken anchor
+
+Smuggler Captain — leads smugglers — crossed crates
+
+Pirate Lord — pirate leader — black flag
+
+Corsair — naval raider — skull helm
+
+Privateer — crown pirate — royal seal
+
+Raider Chief — raid leader — broken helm
+
+Plunderer — treasure thief — sack of coins
+
+Pillager — burns villages — flaming torch
+
+Reaver — savage raider — spiked helm
+
+War Bandit — war raider — red flag
+
+Marauder — savage fighter — skull axe
+
+Deserter — fled soldier — broken spear
+
+Merc Captain — leads mercs — crossed swords
+
+Merc Sergeant — merc leader — iron helm
+
+War Veteran — old soldier — medal icon
+
+Battle Medic — field healer — red cross
+
+Banner Knight — carries banner — crest flag
+
+Pike Guard — spear soldier — long pike
+
+Shield Wall Soldier — defensive fighter — shield wall
+
+Sword Dancer — duelist — sword in flame
+
+Arena Champion — gladiator winner — laurel crown
+
+Duelist — expert fencer — rapier and plume
+
+Swordmaster — veteran duelist — crossed sabers
+
+Pikeman — spear soldier — long spear
+
+Halberdier — polearm soldier — halberd crest
+
+Crossbowman — ranged soldier — crossbow icon
+
+Musketeer — gunner soldier — musket barrel
+
+Bombardier — throws explosives — bomb spark
+
+Cannoneer — operates cannon — cannon silhouette
+
+Siege Master — directs siege — catapult symbol
+
+Scout Archer — stealth archer — eye and arrow
+
+Skirmisher — light soldier — short spear
+
+Raider Archer — fast raider — flaming arrow
+
+Rider Archer — mounted archer — bow on horse
+
+Steppe Nomad — horse nomad — horse sigil
+
+Desert Raider — desert rider — dune symbol
+
+Jungle Scout — jungle fighter — vine and blade
+
+Swamp Hunter — swamp stalker — frog icon
+
+Tundra Raider — icy nomad — snowflake axe
+
+Ice Fisher — cold fisher — fish and snowflake
+
+Glacier Guide — leads expeditions — mountain with snow
+
+Firewalker — heat survivor — flame steps
+
+Sand Shaper — desert mage — sand spiral
+
+Dune Rider — desert horseman — camel crest
+
+Oasis Keeper — guards oasis — palm tree
+
+Mirage Caster — desert illusionist — mirage shimmer
+
+Nomadic Healer — travels deserts — water jug
+
+Sky Rider — winged mount rider — winged saddle
+
+Griffon Knight — rides griffon — griffon crest
+
+Hippogriff Rider — aerial knight — hippogriff sigil
+
+Pegasus Rider — divine rider — winged horse
+
+Wyvern Lancer — rides wyvern — wyvern claw
+
+Dragon Rider — legendary knight — dragon sigil
+
+Roc Tamer — giant bird handler — roc wings
+
+Stormrider — sky knight — storm cloud
+
+Cloud Strider — highlander — cloud swirl
+
+Airship Captain — commands airship — balloon helm
+
+Sky Sailor — airship crew — winged wheel
+
+Sky Pirate — air raider — black wing
+
+Cloud Mage — air magician — cloud rune
+
+Tempest Caller — storm mage — thunder rune
+
+Rain Shaper — water mage — droplet sigil
+
+Gale Whisperer — air shaman — feather swirl
+
+Cyclone Caller — storm caster — cyclone icon
+
+Lightning Blade — storm warrior — lightning sword
+
+Thunder Knight — storm paladin — hammer bolt
+
+Storm Herald — battle prophet — storm crest
+
+Flame Knight — fire warrior — flaming sword
+
+Frost Knight — ice warrior — snowflake blade
+
+Stone Knight — earth warrior — stone shield
+
+Wave Knight — water warrior — wave crest
+
+Dawnblade — holy knight — rising sun
+
+Duskblade — shadow knight — crescent sword
+
+Star Knight — celestial knight — starburst
+
+Void Knight — dark knight — black flame
+
+Rune Knight — rune warrior — etched shield
+
+Spellblade — warrior-mage — sword and tome
+
+Arcane Archer — mage archer — glowing arrow
+
+Eldritch Knight — spell warrior — sigil sword
+
+Mystic Theurge — priest-mage — star and cross
+
+Shadowblade — assassin knight — shadow dagger
+
+Death Knight — undead warrior — skull helm
+
+Bone Knight — skeletal knight — bone crest
+
+Blood Knight — vampiric warrior — blood drop sword
+
+Grave Knight — tomb guardian — coffin shield
+
+Ghost Knight — spectral knight — phantom helm
+
+Wraith Blade — ghostly assassin — shadowed sword
+
+Shade Priest — dark priest — crescent skull
+
+Phantom Seer — ghost prophet — glowing mask
+
+Poltergeist Caller — spirit mage — chained orb
+
+Spirit Medium — channels dead — spirit hands
+
+Spirit Walker — crosses realms — double footprints
+
+Astral Traveler — planes walker — star portal
+
+Planar Guide — leads planes — multiverse sigil
+
+Rift Mage — tears rifts — glowing crack
+
+Gatekeeper — guards portals — archway sigil
+
+Dimensional Seer — reads portals — infinity symbol
+
+Astral Knight — cosmic paladin — star sword
+
+Cosmic Prophet — worships stars — galaxy sigil
+
+Voidcaller — calls void — black spiral
+
+Nethermage — studies hells — demon sigil
+
+Abyss Knight — fiend paladin — horned helm
+
+Hell Priest — devil cleric — flame trident
+
+Infernal Lawyer — devil deal maker — scroll with chains
+
+Pactbound Scribe — warlock writer — chained quill
+
+Hexblade Warrior — pact warrior — cursed sword
+
+Fiendbinder — binds demons — red chains
+
+Abyss Hunter — hunts fiends — demon skull
+
+Infernal General — devil commander — spiked helm
+
+Abyss Raider — demon raider — flame horn
+
+Hellblade — infernal warrior — burning sword
+
+Doom Prophet — predicts ruin — broken hourglass
+
+Plague Doctor — healer of plague — beaked mask
+
+Rat Priest — vermin cultist — rat sigil
+
+Pestilent Mage — plague sorcerer — green mist
+
+Disease Spreader — plague cultist — skull pustules
+
+Poison Brewer — makes toxins — flask with skull
+
+Venom Cultist — serpent worshipper — snake fang
+
+Swarm Caller — insect mage — insect cloud
+
+Spider Priest — spider cultist — spider web
+
+Web Spinner — spider mage — web rune
+
+Widowmaker — spider assassin — black widow
+
+Fang Dancer — serpent fighter — fang sigil
+
+Serpent Priest — snake cultist — serpent staff
+
+Cobra Caller — snake shaman — cobra hood
+
+Viper Knight — serpent knight — viper crest
+
+Basilisk Keeper — stone beast handler — petrified eye
+
+Medusa Priestess — gorgon cultist — snake hair sigil
+
+Scorpion Rider — desert rider — scorpion claw
+
+Scarab Priest — beetle worshipper — scarab icon
+
+Locust Caller — plague shaman — locust swarm
+
+Hive Master — insect tamer — hive symbol
+
+Bee Priestess — bee cultist — honeycomb sigil
+
+Ant Tactician — insect general — ant hill
+
+Centipede Caller — vermin shaman — segmented leg
+
+Moth Oracle — moth prophet — moth wings
+
+Bat Whisperer — bat cultist — bat wings
+
+Blood Bat Tamer — vampire bat handler — red wings
+
+Vampire Spawn — thrall vampire — fang mark
+
+Dhampir Hunter — half-vampire — moon fang
+
+Nosferatu Priest — ancient vampire — clawed cross
+
+Vampire Lord — vampire master — blood crown
+
+Vampire Bride — vampiric servant — black rose
+
+Ghoul Priest — corpse cultist — ghoul claw
+
+Lich Apprentice — lich student — skull tome
+
+Bone Sorcerer — skeletal mage — bone rune
+
+Skull Mask Cultist — masked priest — skull mask
+
+Spirit Binder — binds souls — soul chain
+
+Soul Trader — sells souls — coin with skull
+
+Soul Seer — reads souls — glowing eye
+
+Soulforger — makes soul weapons — forge rune
+
+Ghost Hunter — tracks spirits — lantern sigil
+
+Banshee Priestess — banshee cultist — screaming mask
+
+Wraith Caller — calls wraiths — shadow flame
+
+Phantom Knight — ghost warrior — spectral shield
+
+Grave Dancer — dances at graves — skull swirl
+
+Bone Singer — sings with bones — jawbone harp
+
+Skull Carver — carves skulls — etched skull
+
+Ossuary Keeper — tends bone crypt — stacked skulls
+
+Deathmask Maker — crafts masks — skull mask
+
+Tomb Sculptor — makes sarcophagi — chisel and tomb
+
+Catacomb Delver — explores crypts — lantern and skull
+
+Crypt Raider — loots tombs — cracked coffin
+
+Mummy Keeper — tends mummies — linen wrap
+
+Scarab Caller — desert cultist — beetle sun
+
+Anubian Priest — jackal cultist — jackal head
+
+Sun Pharaoh — desert ruler — golden sun crown
+
+Sand Warden — desert guard — dune crest
+
+Oasis Prophet — desert seer — palm tree rune
+
+Dune Shaman — desert caster — dune spiral
+
+Sand Whisperer — desert mystic — sand swirl
+
+Mirage Prophet — illusion seer — wavering rune
+
+Dust Rider — desert scout — dust swirl
+
+Ash Walker — ash nomad — black ash spiral
+
+Ember Rider — fire raider — ember sigil
+
+Smoke Prophet — smoke seer — smoke plume
+
+Flame Oracle — fire prophet — flame eye
+
+Inferno Caller — fire caster — inferno symbol
+
+Volcano Priest — mountain fire cult — volcano crest
+
+Lava Rider — molten rider — magma wave
+
+Magma Knight — fire knight — molten sword
+
+Pyre Singer — funeral priest — pyre flame
+
+Ash Prophetess — fire seer — ash swirl
+
+Charcoal Maker — burns wood — charcoal stack
+
+Ember Child — fire cultist — ember rune
+
+Flame Keeper Acolyte — novice fire cultist — candle flame
+
+Spark Mage — novice fire mage — spark sigil
+
+Smoke Dancer Adept — fire cult dancer — flame swirl
+
+Cinder Knight — ash warrior — ember blade
+
+Firestorm Caller — storm-fire mage — storm flame
+
+Infernal Bard — fire bard — lute aflame
+
+Ember Prophet — fire zealot — ember symbol
+
+Blazebringer — spreads flame — torch rune
+
+Flame Tongue Priest — fire priest — tongue of fire
+
+Scorch Mage — burns enemies — burn mark
+
+Sunfire Knight — holy fire knight — sun flame
+
+Solar Prophet — sun seer — golden flame
+
+Dawnfire Priest — dawn seer — rising flame
+
+Lightbearer — holy torch carrier — radiant torch
+
+Candle Seer — candle prophet — candle flame
+
+Lantern Keeper — holy lantern guard — lantern rune
+
+Beacon Knight — shining paladin — beacon flame
+
+Radiant Healer — light healer — radiant hands
+
+Starfire Mage — star-fire caster — star flame
+
+Celestial Prophet — sky priest — starburst flame
+
+Dawn Herald — morning prophet — rising sunburst
+
+Day Seer — daylight prophet — open sun
+
+Noon Knight — midday paladin — sunblade
+
+Twilight Priest — dusk prophet — twilight glow
+
+Moonlit Prophet — moon prophet — crescent glow
+
+Lunar Knight — moon paladin — moon blade
+
+Eclipse Seer — eclipse prophet — eclipse sigil
+
+Star Oracle — star prophet — star eye
+
+Constellation Reader — sky diviner — constellation map
+
+Comet Caller — comet seer — comet trail
+
+Meteor Knight — star paladin — meteor sword
+
+Galaxy Seer — galaxy prophet — galaxy swirl
+
+Cosmic Shaman — cosmos caster — universe sigil
+
+Void Prophet — void priest — black flame
+
+Abyss Caller — abyss seer — abyss swirl
+
+Chaos Prophet — chaos seer — broken spiral
+
+Chaos Knight — chaos paladin — jagged sword
+
+Entropy Mage — chaos mage — entropy rune
+
+Anarchist Priest — chaos cultist — shattered chain
+
+Doom Cultist — apocalypse cult — broken skull
+
+Endbringer — heralds apocalypse — cracked hourglass
+
+Famine Priest — hunger cultist — empty bowl
+
+Pestilence Rider — plague knight — green horse
+
+War Rider — war knight — red horse
+
+Death Rider — death knight — pale horse
+
+Horseman Prophet — horse cultist — four sigils
+
+Blood Prophet — blood seer — red droplet
+
+Sacrifice Priest — blood cultist — sacrificial dagger
+
+Hemomancer — blood mage — blood rune
+
+Blood Knight — vampiric knight — blood sword
+
+Red Blade — blood duelist — crimson blade
+
+Scarlet Prophet — red seer — scarlet sun
+
+Crimson Dancer — blood dancer — red swirl
+
+Sanguine Mage — blood mage — crimson rune
+
+Blood Oracle — blood prophet — droplet eye
+
+Vein Binder — blood warlock — chained droplet
+
+Leech Healer — leech priest — leech sigil
+
+Vampiric Cultist — vampire thrall — fang rune
+
+Crimson Acolyte — novice blood cultist — blood tear
+
+Heart Eater — dark cultist — heart sigil
+
+Flesh Sculptor — body mage — flesh rune
+
+Bone Crafter — crafts bone — bone chisel
+
+Skin Carver — skin cultist — skin knife
+
+Blood Sculptor — sculpts blood — droplet hand
+
+Organ Harvester — thief of organs — organ sigil
+
+Corpse Binder — corpse mage — corpse rune
+
+Ghast Priest — ghast cultist — ghast face
+
+Wight Caller — undead summoner — wight claw
+
+Revenant Knight — vengeful knight — revenant helm
+
+Phantom Dancer — ghost assassin — phantom swirl
+
+Graveblade — grave knight — grave sword
+
+Soulflayer — soul destroyer — soul flame
+
+Soulstealer — thief of souls — chained soul
+
+Wraithblade — ghost blade — shadow sword
+
+Poltergeist Mage — ghost caster — poltergeist rune
+
+Banshee Caller — banshee prophet — screaming face
+
+Ghoul Rider — undead knight — ghoul claw
+
+Skeleton Captain — undead captain — bone helm
+
+Bone Warden — undead guard — bone crest
+
+Skull Knight — undead knight — skull crest
+
+Lich Priest — lich servant — lich rune
+
+Necrolord — undead lord — skull crown
+
+Corpse King — undead ruler — corpse crown
+
+Deathlord — death ruler — skull scepter
+
+Grave Monarch — undead king — coffin crown
+
+Tomb King — tomb ruler — tomb crown
+
+Crypt Lord — crypt master — crypt rune
+
+Ossuary Priest — bone crypt priest — ossuary rune
+
+Flesh Golem Maker — golem crafter — stitched rune
+
+Bone Golem Maker — golem smith — bone rune
+
+Clay Golem Maker — clay smith — clay rune
+
+Iron Golem Maker — metal smith — iron rune
+
+Flesh Binder — binds flesh — stitch mark
+
+Bone Binder — binds bone — bone rune
+
+Spirit Binder Adept — novice soul binder — glowing rune
+
+Soul Mage — soul caster — glowing spiral
+
+Astral Binder — astral mage — astral rune
+
+Planar Shaman — planar caster — multiverse rune
+
+Rift Priest — rift seer — crack rune
+
+Gate Mage — gate caster — arch rune
+
+Portal Knight — gate knight — portal blade
+
+Planar Knight — planes knight — multiverse sigil
+
+Astral General — cosmic commander — star crown
+
+Cosmic Prophet Adept — novice cosmic seer — galaxy spark
+
+Void Caller Adept — novice void mage — black spark
+
+Chaos Mage — chaos caster — chaos rune
+
+Entropy Priest — entropy seer — entropy spark
+
+Anarchy Cultist — anarchist novice — broken chain
+
+End Seer — apocalypse seer — shattered clock
+
+Famine Prophet — famine cultist — empty plate
+
+Pestilence Mage — plague mage — green flame
+
+War Prophet — war cultist — blood sword
+
+Death Prophet — death cultist — skull rune
+
+Doom Knight — doom paladin — cracked helm
+
+Apocalypse Rider — apocalypse knight — flaming horse
+
+Cataclysm Seer — cataclysm prophet — earth crack
+
+Armageddon Priest — end-time cultist — burning world
+
+Ruin Prophet — ruin seer — ruin symbol
+
+Collapse Mage — collapse wizard — broken tower
+
+Endtime Caller — endtime seer — falling star
+
+Twilight Herald — twilight prophet — twilight crest
+
+Shadow Prophet — shadow seer — crescent flame
+
+Dark Oracle — dark prophet — black eye
+
+Black Sun Priest — black sun cultist — eclipse sun
+
+Eclipse Mage — eclipse caster — eclipse rune
+
+Moon Knight — moon paladin — moon sword
+
+Sun Knight — sun paladin — sun sword
+
+Star Knight Adept — novice star paladin — star spark
+
+Cosmic Knight — cosmic paladin — galaxy sword
+
+Void Knight Adept — novice void knight — void spark
+
+Astral Mage — astral caster — astral star
+
+Planar Prophet — planar seer — multiverse crest
+
+Rift Caller — rift seer — crack crest
+
+Portal Seer — gate prophet — arch crest
+
+Dimensional Prophet — dimensional seer — infinity swirl
+
+Infinity Knight — infinity paladin — infinity sword
+
+Eternal Mage — eternity wizard — hourglass rune
+
+Timeseer — time prophet — clock sigil
+
+Chronomancer — time mage — hourglass symbol
+
+Time Knight — time paladin — clock blade
+
+Timekeeper — time priest — clock crest
+
+Timeweaver — weaves time — spiral clock
+
+Past Seer — sees past — history scroll
+
+Future Seer — sees future — future eye
+
+Present Prophet — sees present — present hand
+
+Fate Reader — reads fates — string rune
+
+Destiny Caller — destiny prophet — destiny crest
+
+Fortune Teller — fortune seer — tarot rune
+
+Card Reader — tarot reader — card stack
+
+Palm Reader — palm diviner — palm
+
+Crystal Gazer — gazes crystal — crystal ball
+
+Orb Seer — orb diviner — glowing orb
+
+Visionary Prophet — visionary seer — vision eye
+
+Dreamwalker — dream traveler — dream cloud
+
+Nightmare Rider — nightmare knight — flaming horse
+
+Sleep Prophet — sleep seer — sleeping moon
+
+Dream Mage — dream caster — dream swirl
+
+Oneiroi Priest — dream cultist — dream eye
+
+Sandman — dream caster — sand swirl
+
+Slumber Caller — sleep prophet — closed eye
+
+Dream Shaman — dream seer — dream feather
+
+Illusionist — trick mage — mask symbol
+
+Phantasm Mage — illusion mage — phantasm mask
+
+Mirage Seer — illusion prophet — mirage swirl
+
+Hallucinator — causes visions — swirling eye
+
+Shadow Illusionist — dark illusionist — shadow mask
+
+Trickster Priest — trickster cultist — laughing mask
+
+Jester Prophet — fool prophet — jester cap
+
+Fool Mage — fool wizard — fool mask
+
+Harlequin Seer — clown prophet — diamond mask
+
+Masquerade Caller — mask prophet — mask swirl
+
+Carnival Prophet — carnival seer — carnival mask
+
+Festival Caller — festival prophet — firework crest
+
+Reveler Priest — revel cultist — wine goblet
+
+Drunkard Seer — drunk prophet — mug sigil
+
+Madness Prophet — insane seer — spiral eye
+
+Insanity Mage — madness caster — swirling brain
+
+Lunatic Prophet — lunatic cultist — crescent spiral
+
+Deranged Oracle — mad seer — broken mask
+
+Crazed Prophet — crazed seer — cracked eye
+
+Berserk Knight — frenzied warrior — bloody axe
+
+Frenzy Shaman — frenzy seer — fire spiral
+
+Rage Mage — rage caster — flame rune
+
+Wrath Prophet — wrath seer — angry eye
+
+Anger Priest — wrath cultist — flaming hand
+
+Fury Caller — fury prophet — storm fire
+
+War Shaman — war seer — war crest
+
+Battle Prophet — battle seer — sword crest
+
+Glory Knight — glory paladin — laurel sword
+
+Champion Prophet — champion seer — laurel crown
+
+Victor Priest — victory cultist — laurel wreath
+
+Triumph Caller — triumph prophet — laurel helm
+
+Hero Knight — hero paladin — hero crest
+
+Savior Prophet — savior seer — radiant cross
+
+Redeemer Priest — redeemer cultist — shining hand
+
+Deliverer Prophet — deliverer seer — radiant sword
+
+Guardian Knight — guardian paladin — shield crest
+
+Protector Prophet — protector seer — shield rune
+
+Defender Priest — defender cultist — shield sword
+
+Warden Knight — warden paladin — prison crest
+
+Jailor Prophet — jailor seer — chain crest
+
+Chain Priest — chain cultist — chain rune
+
+Shacklebinder — binds chains — chain sigil
+
+Prison Keeper — prison guard — barred door
+
+Dungeon Warden — dungeon keeper — barred helm
+
+Gaoler Priest — gaol cultist — key crest
+
+Lock Seer — lock prophet — lock crest
+
+Key Priest — key cultist — golden key
+
+Unlock Prophet — unlock seer — open lock
+
+Gate Warden — gate keeper — iron gate
+
+Door Seer — door prophet — door sigil
+
+Portal Knight Adept — novice gate knight — gate rune
+
+Dimension Guard — guards dimensions — infinity crest
+
+Multiverse Knight — multiverse paladin — multiverse crown
+
+Plane Rider — plane knight — plane crest
+
+Universe Prophet — universe seer — galaxy crest
+
+Cosmos Knight — cosmic paladin — universe sword
+
+Stellar Prophet — star seer — star crest
+
+Planet Seer — planet prophet — planet rune
+
+Galaxy Knight — galaxy paladin — galaxy crown
+
+Solar Seer — solar prophet — solar crown
+
+Lunar Prophet Adept — novice lunar seer — moon spark
+
+Celestial Knight Adept — novice celestial paladin — star spark
+
+Astral Prophet Adept — novice astral seer — astral spark
+
+Cosmic Seer Adept — novice cosmic prophet — galaxy spark
+
+Void Seer Adept — novice void prophet — void spark
+
+Chaos Seer Adept — novice chaos prophet — chaos spark
+
+Endtime Seer Adept — novice apocalypse prophet — end spark
+
+Eternal Prophet Adept — novice eternal prophet — hourglass spark
+
+Chrono Knight Adept — novice time paladin — clock spark
+
+Dream Seer Adept — novice dream prophet — dream spark
+
+Illusionist Adept — novice illusionist — mask spark
+
+Madness Seer Adept — novice madness prophet — madness spark
+
+Rage Seer Adept — novice rage prophet — flame spark
+
+Glory Seer Adept — novice glory prophet — laurel spark
+
+Guardian Seer Adept — novice guardian prophet — shield spark
+
+Jailor Seer Adept — novice jailor prophet — chain spark
+
+Lock Seer Adept — novice lock prophet — lock spark
+
+Key Seer Adept — novice key prophet — key spark
+
+Gate Seer Adept — novice gate prophet — gate spark
+
+Plane Seer Adept — novice plane prophet — plane spark
+
+Cosmos Seer Adept — novice cosmic prophet — universe spark
+
+Stellar Seer Adept — novice star prophet — star spark
+
+Planet Seer Adept — novice planet prophet — planet spark
+
+Solar Seer Adept — novice solar prophet — sun spark
+
+Lunar Seer Adept — novice lunar prophet — moon spark
+
+Celestial Seer Adept — novice celestial prophet — sky spark
+
+Astral Seer Adept — novice astral prophet — astral spark
+
+Cosmic Seer Initiate — beginner cosmic seer — galaxy spark
+
+Void Seer Initiate — beginner void prophet — void spark
+
+Chaos Seer Initiate — beginner chaos prophet — chaos spark
+
+Endtime Seer Initiate — beginner end seer — apocalypse spark
+
+Eternal Seer Initiate — beginner eternal seer — hourglass spark
+
+Chrono Seer Initiate — beginner time seer — time spark
+
+Dream Seer Initiate — beginner dream seer — dream spark
+
+Illusion Seer Initiate — beginner illusion seer — mask spark
+
+Madness Seer Initiate — beginner madness seer — spiral spark
+
+Rage Seer Initiate — beginner rage seer — flame spark
+
+Glory Seer Initiate — beginner glory seer — laurel spark
+
+Guardian Seer Initiate — beginner guardian seer — shield spark
+
+Jailor Seer Initiate — beginner jailor seer — chain spark
+
+Lock Seer Initiate — beginner lock seer — lock spark
+
+Key Seer Initiate — beginner key seer — key spark
+
+Gate Seer Initiate — beginner gate seer — gate spark
+
+Plane Seer Initiate — beginner plane seer — plane spark
+
+Cosmos Seer Initiate — beginner cosmos seer — universe spark
+
+Stellar Seer Initiate — beginner star seer — star spark
+
+Planet Seer Initiate — beginner planet seer — planet spark
+
+Solar Seer Initiate — beginner solar seer — sun spark
+
+Lunar Seer Initiate — beginner lunar seer — moon spark
+
+Celestial Seer Initiate — beginner celestial seer — celestial spark
+
+Astral Seer Initiate — beginner astral seer — astral spark
+
+Cosmic Seer Novice — novice cosmic seer — galaxy spark
+
+Void Seer Novice — novice void seer — void spark
+
+Chaos Seer Novice — novice chaos seer — chaos spark
+
+Endtime Seer Novice — novice end seer — apocalypse spark
+
+Eternal Seer Novice — novice eternal seer — hourglass spark
+
+Chrono Seer Novice — novice chrono seer — time spark
+
+Dream Seer Novice — novice dream seer — dream spark
+
+Illusion Seer Novice — novice illusion seer — mask spark
+
+Madness Seer Novice — novice madness seer — madness spark
+
+Rage Seer Novice — novice rage seer — flame spark
+
+Glory Seer Novice — novice glory seer — laurel spark
+
+Guardian Seer Novice — novice guardian seer — shield spark
+
+Jailor Seer Novice — novice jailor seer — chain spark
+
+Lock Seer Novice — novice lock seer — lock spark
+
+Key Seer Novice — novice key seer — key spark
+
+Gate Seer Novice — novice gate seer — gate spark
+
+Plane Seer Novice — novice plane seer — plane spark
+
+Cosmos Seer Novice — novice cosmos seer — universe spark
+
+Stellar Seer Novice — novice star seer — star spark
+
+Planet Seer Novice — novice planet seer — planet spark
+
+Solar Seer Novice — novice solar seer — sun spark
+
+Lunar Seer Novice — novice lunar seer — moon spark
+
+Celestial Seer Novice — novice celestial seer — celestial spark
+
+Astral Seer Novice — novice astral seer — astral spark
+
+Elemental Summoner — summons elementals — elemental rune
+
+Fire Conjurer — summons fire — flame circle
+
+Water Conjurer — summons water — droplet circle
+
+Air Conjurer — summons air — feather circle
+
+Earth Conjurer — summons earth — stone circle
+
+Ice Conjurer — summons ice — snowflake circle
+
+Lightning Conjurer — summons lightning — bolt circle
+
+Metal Conjurer — summons metal — anvil circle
+
+Wood Conjurer — summons wood — leaf circle
+
+Sand Conjurer — summons sand — dune circle
+
+Storm Conjurer — summons storm — cloud circle
+
+Sun Conjurer — summons sun — sun circle
+
+Moon Conjurer — summons moon — crescent circle
+
+Star Conjurer — summons stars — star circle
+
+Cosmic Conjurer — summons cosmos — galaxy circle
+
+Void Conjurer — summons void — void circle
+
+Chaos Conjurer — summons chaos — chaos circle
+
+Time Conjurer — summons time — hourglass circle
+
+Dream Conjurer — summons dreams — dream circle
+
+Illusion Conjurer — summons illusions — mask circle
+
+Shadow Conjurer — summons shadows — shadow circle
+
+Spirit Conjurer — summons spirits — spirit circle
+
+Soul Conjurer — summons souls — soul circle
+
+Blood Conjurer — summons blood — droplet circle
+
+Bone Conjurer — summons bones — bone circle
+
+Flesh Conjurer — summons flesh — flesh circle
+
+Plague Conjurer — summons plague — green mist circle
+
+Pestilence Conjurer — summons disease — diseased circle
+
+Death Conjurer — summons death — skull circle
+
+Undead Conjurer — summons undead — zombie circle
+
+Ghoul Conjurer — summons ghouls — ghoul circle
+
+Skeleton Conjurer — summons skeletons — skeleton circle
+
+Wraith Conjurer — summons wraiths — shadow flame circle
+
+Lich Conjurer — summons liches — lich circle
+
+Demon Conjurer — summons demons — horn circle
+
+Devil Conjurer — summons devils — trident circle
+
+Fiend Conjurer — summons fiends — flame horn circle
+
+Angel Conjurer — summons angels — halo circle
+
+Celestial Conjurer — summons celestials — radiant circle
+
+Archon Conjurer — summons archons — glowing circle
+
+Genie Conjurer — summons genies — lamp circle
+
+Djinn Caller — calls djinn — lamp swirl
+
+Efreet Caller — calls efreet — flame lamp
+
+Marid Caller — calls marid — water lamp
+
+Dao Caller — calls dao — earth lamp
+
+Elemental Caller — calls elements — elemental swirl
+
+Spirit Caller — calls spirits — spirit swirl
+
+Soul Caller — calls souls — soul swirl
+
+Ghost Caller — calls ghosts — phantom swirl
+
+Shade Caller — calls shades — crescent swirl
+
+Wraith Caller — calls wraiths — shadow swirl
+
+Banshee Caller — calls banshees — scream swirl
+
+Phantom Caller — calls phantoms — phantom swirl
+
+Demon Caller — calls demons — horn swirl
+
+Devil Caller — calls devils — trident swirl
+
+Fiend Caller — calls fiends — flame swirl
+
+Angel Caller — calls angels — halo swirl
+
+Celestial Caller — calls celestials — radiant swirl
+
+Archon Caller — calls archons — glowing swirl
+
+Genie Caller Adept — novice genie summoner — lamp spark
+
+Djinn Caller Adept — novice djinn caller — lamp spark
+
+Efreet Caller Adept — novice efreet caller — flame spark
+
+Marid Caller Adept — novice marid caller — water spark
+
+Dao Caller Adept — novice dao caller — earth spark
+
+Elemental Caller Adept — novice elemental caller — elemental spark
+
+Spirit Caller Adept — novice spirit caller — spirit spark
+
+Soul Caller Adept — novice soul caller — soul spark
+
+Ghost Caller Adept — novice ghost caller — phantom spark
+
+Shade Caller Adept — novice shade caller — crescent spark
+
+Wraith Caller Adept — novice wraith caller — shadow spark
+
+Banshee Caller Adept — novice banshee caller — scream spark
+
+Phantom Caller Adept — novice phantom caller — phantom spark
+
+Demon Caller Adept — novice demon caller — horn spark
+
+Devil Caller Adept — novice devil caller — trident spark
+
+Fiend Caller Adept — novice fiend caller — flame spark
+
+Angel Caller Adept — novice angel caller — halo spark
+
+Celestial Caller Adept — novice celestial caller — radiant spark
+
+Archon Caller Adept — novice archon caller — glowing spark
+
+Genie Caller Novice — novice genie caller — lamp spark
+
+Djinn Caller Novice — novice djinn caller — lamp spark
+
+Efreet Caller Novice — novice efreet caller — flame spark
+
+Marid Caller Novice — novice marid caller — water spark
+
+Dao Caller Novice — novice dao caller — earth spark
+
+Elemental Caller Novice — novice elemental caller — elemental spark
+
+Spirit Caller Novice — novice spirit caller — spirit spark
+
+Soul Caller Novice — novice soul caller — soul spark
+
+Ghost Caller Novice — novice ghost caller — phantom spark
+
+Shade Caller Novice — novice shade caller — crescent spark
+
+Wraith Caller Novice — novice wraith caller — shadow spark
+
+Banshee Caller Novice — novice banshee caller — scream spark
+
+Phantom Caller Novice — novice phantom caller — phantom spark
+
+Demon Caller Novice — novice demon caller — horn spark
+
+Devil Caller Novice — novice devil caller — trident spark
+
+Fiend Caller Novice — novice fiend caller — flame spark
+
+Angel Caller Novice — novice angel caller — halo spark
+
+Celestial Caller Novice — novice celestial caller — radiant spark
+
+Archon Caller Novice — novice archon caller — glowing spark
+
+Warlock Scholar — studies pacts — book with chains
+
+Pact Wizard — pact mage — rune with flame
+
+Pact Knight — pact warrior — cursed shield
+
+Pact Prophet — pact seer — cursed eye
+
+Pact Binder — binds pact — chained circle
+
+Pact Healer — pact medic — glowing chain
+
+Pact Breaker — breaks pacts — broken circle
+
+Pact Hunter — hunts pact users — cracked rune
+
+Pact Seer — pact prophet — chained eye
+
+Pact Champion — pact warrior — cursed crest
+
+Pact Sage — pact scholar — cursed scroll
+
+Pact Oracle — pact seer — cursed flame
+
+Pact Caller — pact prophet — cursed swirl
+
+Pact Rider — pact knight — cursed mount
+
+Pact Prophet Adept — novice pact seer — cursed spark
+
+Pact Knight Adept — novice pact knight — cursed spark
+
+Pact Mage Adept — novice pact mage — cursed spark
+
+Pact Prophet Novice — novice pact seer — cursed spark
+
+Pact Knight Novice — novice pact knight — cursed spark
+
+Pact Mage Novice — novice pact mage — cursed spark
+
+Pact Scholar Novice — novice pact scholar — cursed spark
+
+Pact Sage Novice — novice pact sage — cursed spark
+
+Pact Oracle Novice — novice pact oracle — cursed spark
+
+Pact Caller Novice — novice pact caller — cursed spark
+
+Pact Rider Novice — novice pact rider — cursed spark
+
+Pact Champion Novice — novice pact champion — cursed spark
+
+Pact Binder Novice — novice pact binder — cursed spark
+
+Pact Breaker Novice — novice pact breaker — cursed spark
+
+Pact Hunter Novice — novice pact hunter — cursed spark
+
+Pact Seer Novice — novice pact seer — cursed spark
+
+Pact Healer Novice — novice pact healer — cursed spark
+
+Pact Rider Adept — pact knight — cursed spark
+
+Pact Caller Adept — pact prophet — cursed spark
+
+Pact Oracle Adept — pact seer — cursed spark
+
+Pact Mage Adept — pact caster — cursed spark
+
+Pact Sage Adept — pact sage — cursed spark
+
+Pact Champion Adept — pact champion — cursed spark
+
+Pact Binder Adept — pact binder — cursed spark
+
+Pact Breaker Adept — pact breaker — cursed spark
+
+Pact Hunter Adept — pact hunter — cursed spark
+
+Pact Seer Adept — pact seer — cursed spark
+
+Pact Healer Adept — pact healer — cursed spark
+
+Pact Rider Adept — pact knight — cursed spark
+
+Warlock Novice — novice warlock — chained spark
+
+Warlock Adept — pact adept — cursed chain
+
+Warlock Apprentice — pact student — cursed scroll
+
+Warlock Scholar Adept — pact scholar — cursed rune
+
+Warlock Mentor — veteran tutor of pact-bound arts — chained grimoire
+
+Pact Archivist — keeper of warlock contracts — wax-sealed tome
+
+Pact Notary — witnesses eldritch oaths — quill over chain
+
+Infernal Negotiator — broker of devilish deals — parchment with red ribbon
+
+Fey Bargainer — mediator of tricky fey pacts — sprig of holly over quill
+
+Spirit Advocate — argues cases for the dead — scales over ghostlight
+
+Soul Shepherd — guides lost spirits to rest — lantern with pale flame
+
+Grave Mediator — negotiates with restless dead — olive branch over skull
+
+Hexbreaker — dispels curses for hire — snapped rune circle
+
+Cursewright — crafts bespoke hexes — needle through sigil
+
+Omen Reader — interprets signs and portents — flight of birds icon
+
+Augur of Bones — casts knucklebones for fate — bone dice in cup
+
+Tea-Leaf Seer — divines futures in cups — teacup with swirling leaves
+
+Smoke Scryer — reads messages in incense — curling smoke in brazier
+
+Dream Interpreter — deciphers sleeping visions — moon over closed eye
+
+Star Cartographer — charts constellations and omens — star map scroll
+
+Eclipse Herald — announces celestial omens — black disc ringed in gold
+
+Temple Architect — designs sacred spaces — compass and pillar
+
+Reliquary Mason — builds vaults for relics — keyhole in stone
+
+Shrine Tender — maintains roadside altars — votive candle cluster
+
+Pilgrim Guide — leads faithful to holy sites — staff with scallop shell
+
+Procession Marshal — organizes holy marches — ribboned baton
+
+Choir Master — trains liturgical singers — tuning fork over flame
+
+Bell Founder — casts sacred bells — bell mold with tongs
+
+Icon Painter — creates sacred images — gilded brush over halo
+
+Votive Maker — crafts prayer candles and charms — wax stamp with sigil
+
+Exorcist — banishes possessing spirits — iron ward token
+
+Sanctifier — blesses places and people — sprinkle aspergillum
+
+Profaner — desecrates rival altars for pay — shattered censer
+
+Relic Appraiser — authenticates holy artifacts — magnifier over reliquary
+
+Tithe Collector — gathers church dues — coin box with seal
+
+Church Advocate — argues ecclesiastical law — scroll tied with blue cord
+
+Canon Lawyer — drafts holy edicts — feather quill and scales
+
+Cloister Gardener — tends monastery plots — spade with vine
+
+Scriptorium Illuminator — gilds manuscripts — gold leaf square
+
+Candle Prior — oversees wax and oil — amphora and wick
+
+Cellarer — manages monastery stores — keyring over barrel
+
+Almoner — distributes alms to poor — open hand with coin
+
+Hospitaler — cares for travelers and sick — bed with lantern
+
+Gate Porter — keeps monastic gate — iron key and hatch
+
+Lay Brother — assists monks with labor — rope belt and sandals
+
+Lay Sister — supports convent work — spindle and thread
+
+Anchorite — holy recluse in cell — small window cross
+
+Hermit Healer — remote mendicant medic — leaf-wrapped salve
+
+Desert Ascetic — survives on little in wastes — water gourd and staff
+
+Mountain Pilgrim — climbs sacred peaks — crampon and prayer flag
+
+Mire Wayfinder — guides through swamps — pole and reed mask
+
+Glacier Piloteer — escorts over icefields — ice axe and rope
+
+Cavern Cartographer — maps the underdark — phosphor chalk stick
+
+Sinkhole Rigger — braces dangerous shafts — piton and rope ladder
+
+Bridgewright — builds and repairs bridges — arch truss sigil
+
+Lockmaster — designs secure mechanisms — intricate key over cog
+
+Aqueduct Mason — maintains waterworks — wave over brick
+
+Millwright — erects and tunes mills — gear with grain head
+
+Lighthouse Keeper — tends warning beacons — lamp within tower
+
+River Pilot — steers craft along currents — pole and eddy mark
+
+Ferrymaster — runs river crossings — ferry plank icon
+
+Canal Dredger — clears silted channels — dredge bucket
+
+Dock Quarterman — assigns berths and fees — ledger over anchor
+
+Sailcloth Patch­er — repairs torn sails — needle through canvas
+
+Ropemaker — twists cordage — triple strand coil
+
+Tar Boiler — seals hulls and roofs — tar pot with brush
+
+Caulker — plugs leaks in planks — mallet and oakum
+
+Cooper — crafts barrels and casks — hoop and stave
+
+Chandler — sells household goods and wax — bundled tapers
+
+Peddler — itinerant small-goods seller — pack frame with bells
+
+Hawker — cries wares in streets — trumpet bell mouth
+
+Auction Crier — conducts public sales — gavel and scroll
+
+Factors’ Agent — negotiates trade on commission — handshake over ledger
+
+Caravan Factor — manages long-haul commerce — camel train seal
+
+Toll-Keeper — collects road fees — barred gate with coin slot
+
+Road Warden — patrols highways — badge on cloak
+
+Waystone Carver — engraves mile markers — chisel over obelisk
+
+Bridge-Toll Scribe — records crossings — tally stick bundle
+
+Customs Inspector — checks cargo at gates — stamp and crate
+
+City Planner — lays streets and wards — grid map and compass
+
+Nightsoil Collector — removes waste by night — lidded bucket
+
+Rat Hounder — dogs trained to clear vermin — terrier head sigil
+
+Chimney Sweep — cleans flues — brush and soot cap
+
+Rooftop Runner — carries messages across roofs — soft-soled shoes
+
+Street Lanterner — lights city lamps at dusk — ladder and pole
+
+Watch Hornblower — signals alarms — curved horn
+
+Court Scribe — takes minutes in trials — inkpot with ribbon
+
+Magistrate — judges minor cases — scales over bench
+
+Barrister — pleads in court — rolled brief
+
+Bailiff — enforces court orders — baton and badge
+
+Debt Reeve — collects overdue sums — ledger with red thread
+
+Bondsman — guarantees appearances for fee — shackle key over coin
+
+Mediator — settles disputes out of court — olive branch and scales
+
+Notary — certifies documents — seal press and wax
+
+Archivist of Deeds — keeps land titles — key and parchment drawer
+
+Heraldic Registrar — records arms and crests — shield on ledger
+
+Tournament Marshal — oversees lists and rules — checkered pennon
+
+List Maker — erects tourney barriers — stakes and rope
+
+Prize Purser — holds tournament winnings — purse with lock
+
+Victory Laureate — composes odes for champions — laurel wreath and quill

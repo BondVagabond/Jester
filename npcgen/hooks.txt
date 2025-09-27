@@ -1,0 +1,256 @@
+Find out the origin and meaning of a mysterious tattoo or birthmark that the character has always had.
+
+Help a small village rebuild after being ravaged by nearby invaders.
+
+Find the wreckage of a shipping fleet that disappeared off a nearby coast several years ago.
+
+Help rebuild the great temple of his deity that was destroyed years ago.
+
+Gain enough wealth to build a tavern in the character's favorite city and retire there.
+
+Craft a legendary item that will help vanquish the forces of evil.
+
+Travel into a desolate and forsaken area and establish a thriving trade community and bastion in the area.
+
+Find a cure for a slowly debilitating disease that the character has contracted.
+
+Recover a long lost family heirloom that was stolen.
+
+Make amends to his deity for a wrongful act by making a pilgrimage to the deity's hold land.
+
+Decypher the language written in a book that was discovered by the character - it is said to hold the secrets of a worldly deity.
+
+Locate a legendary oracle that could have an answer to a questions that has plagued the character his whole life.
+
+Purge a band of local thieves from the character's home town.
+
+Surpass his former mentor in skill/knowledge/prestige
+
+Gain the affection of a childhood crush whose family acquired sudden wealth and abandoned their lowly caste
+
+Take vengeance upon the slavers from whom he escaped
+
+Befriend a legendary creature (unicorn, dragon, etc.) and go for a ride!
+
+Provide food and shelter for the destitute in his city of origin
+
+Seek revenge on the person/group/monster who killed his/her family/loved one/village.
+
+Compose a besitiary of the world's monsters (stole this one from a forum somewhere).
+
+Set out to find a magical item/spell to remove a curse on town/loved one.
+
+Run away from boring home town and find adventure like in the stories!!! (Works really well for Sailor Background)
+
+Locate a long-lost sibling that was seperated from the character in their youth (possibly a twin).
+
+Discover why the character was abandoned at an orphanage in his youth and who his true family is.
+
+Rescue a family member or friend that was sold into slavery.
+
+Establish himself as the primary voice for his god and spread the faith across the world.
+
+Breed a strain of hunting companion that rivals that of anything in the land.
+
+The person who you thought killed your loved one? Turns out they're being framed. Who tried to trick you into killing them?
+
+The NPC has a sealed letter they’re afraid to open.
+
+A strange mark has appeared on their skin overnight.
+
+They dream of the same place every night but have never been there.
+
+They’re convinced someone is following them, though no one else sees it.
+
+A family heirloom was stolen, and they beg for help recovering it.
+
+Their shadow moves independently of their body.
+
+They recently heard a prophecy about themselves but don’t understand it.
+
+They claim a loved one has been replaced by an impostor.
+
+They stumbled upon a crime but are too scared to report it.
+
+They are obsessed with a mysterious locked box they can’t open.
+
+The NPC carries a map they don’t remember drawing.
+
+They insist they once died but somehow returned.
+
+Their reflection in mirrors is slightly different.
+
+A stranger gave them an object they don’t dare use.
+
+They swear they hear whispers whenever they’re alone.
+
+They are being blackmailed over something trivial—but it terrifies them.
+
+They saw a creature no one else believes exists.
+
+They claim to have glimpsed the future in a dream.
+
+They can’t remember the last week of their life.
+
+They are convinced someone is poisoning them.
+
+The NPC owes money to dangerous people.
+
+They’ve received anonymous gifts for weeks.
+
+A voice in their head offers guidance—and threats.
+
+They fear they’ve been cursed but don’t know by whom.
+
+They have recurring nightmares of drowning, even on dry land.
+
+Their pet is behaving strangely, as if possessed.
+
+They found a key that opens no known lock.
+
+They believe an object they own is watching them.
+
+They claim they’ve seen themselves walking the streets.
+
+Their shadow sometimes points the wrong way.
+
+The NPC feels compelled to walk to a specific place.
+
+They are the only one who remembers an event that “never happened.”
+
+They are convinced a neighbor is not who they say they are.
+
+They saw something fall from the sky and want to investigate.
+
+They speak a few words of a language they’ve never learned.
+
+They find the same symbol carved near their home each morning.
+
+They woke up with an unfamiliar scar.
+
+They claim someone is stealing their thoughts.
+
+They swear they’re being watched by unseen eyes.
+
+They own a book that writes new entries on its own.
+
+The NPC is terrified of an approaching date.
+
+They believe the stars are spelling a message for them.
+
+They hear a child crying, but there’s no child.
+
+They see omens in everyday objects.
+
+They’ve started speaking with a different voice at times.
+
+They insist they’re living the same day again and again.
+
+They fear they’ll be arrested for a crime they didn’t commit.
+
+They discovered a hidden passage they can’t find again.
+
+They are plagued by sudden nosebleeds at odd times.
+
+They’ve developed a taste for something unusual—chalk, soil, ash.
+
+The NPC wears gloves constantly but won’t say why.
+
+They think their house is alive.
+
+They’ve been receiving letters from their own future.
+
+They have a ring that grows warmer near danger.
+
+They believe a stranger is sending them coded messages.
+
+Their name was found carved into a stone far away.
+
+They have no reflection in water.
+
+They claim someone else is dreaming through their eyes.
+
+They are terrified of a song only they can hear.
+
+They found footprints leading into their home—but none leading out.
+
+The NPC is convinced they are under a geas.
+
+They discovered blood outside their door each morning.
+
+They are searching for someone only they seem to remember.
+
+They feel drawn to a dangerous location.
+
+They found a relic in their belongings they don’t recall acquiring.
+
+They experience déjà vu constantly.
+
+They wake up with mud on their feet despite never leaving home.
+
+They are convinced an item they lost is being returned by someone unseen.
+
+They are certain the town is hiding a terrible secret.
+
+They insist they’ve spoken with someone who is long dead.
+
+The NPC avoids a certain word as if it terrifies them.
+
+They’ve been writing in their sleep.
+
+They hear knocking from beneath the floorboards.
+
+They find small offerings left at their doorstep each morning.
+
+They claim to know the players from their dreams.
+
+They insist they’ve seen the party before.
+
+They can’t stop humming a tune they don’t know.
+
+They believe an object has chosen them as its keeper.
+
+They are waiting for a sign before revealing a secret.
+
+They are convinced the moon is watching them.
+
+The NPC insists they once had a twin who’s gone.
+
+They are terrified of mirrors.
+
+They say they saw their own grave.
+
+They are being followed by a black animal.
+
+They refuse to go indoors after sunset.
+
+They are convinced someone is trying to erase them from history.
+
+They have visions when they touch certain people.
+
+They wake with words carved into their skin.
+
+They fear they will vanish when they fall asleep.
+
+They are convinced something lives under their bed.
+
+The NPC insists someone is whispering to them from the walls.
+
+They believe time is running out but won’t say for what.
+
+They swear they’ve glimpsed another world through cracks in the air.
+
+They are terrified of being left alone.
+
+They believe they must protect a certain object at all costs.
+
+They claim to know how the world will end.
+
+They say they can smell lies.
+
+They found coins stamped with tomorrow’s date.
+
+They fear someone is slowly stealing their face.
+
+They are convinced that the gods have abandoned them personally.
+
