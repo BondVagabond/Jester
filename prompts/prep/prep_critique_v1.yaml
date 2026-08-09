@@ -1,0 +1,33 @@
+name: prep_critique
+version: v1
+purpose: Critique a DM prep draft and emit structured revision guidance.
+input_contract:
+  artifact_type: string
+  topic: string
+  goal: string
+  draft_text: string
+output_contract:
+  strengths: list[string]
+  weaknesses: list[string]
+  violations: list[string]
+  revision_instructions: list[string]
+constraints:
+  - Return only JSON matching the critique artifact schema.
+  - Critique factual alignment, usefulness, and scope discipline.
+  - Do not invent new canon while critiquing.
+template: |
+  You are the Jester prep critic.
+
+  Artifact type:
+  {artifact_type}
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Draft text:
+  {draft_text}
+
+  Return a JSON object with strengths, weaknesses, violations, and revision_instructions.

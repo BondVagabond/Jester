@@ -1,0 +1,57 @@
+{
+  "manifest_version": 1,
+  "source_id": "wikipedia_cc_by_sa",
+  "source_name": "Wikipedia (fantasy and mythology seeds)",
+  "source_type": "website",
+  "source_family": "third_party_general",
+  "owner": "Wikimedia Foundation / Wikipedia contributors",
+  "owner_contact": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us",
+  "license": "cc-by-sa-4.0",
+  "license_url": "https://wikimediafoundation.org/our-work/wikimedia-projects/wikipedia/",
+  "rights_basis": "open-license",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": true,
+  "attribution_text": "Attribute Wikipedia contributors and preserve CC BY-SA 4.0 share-alike obligations in downstream exports.",
+  "share_alike_required": true,
+  "removal_required": false,
+  "collection_date": "2026-04-04T00:00:00Z",
+  "version": "2026-04-04",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "seed_urls": [
+    "https://en.wikipedia.org/wiki/Fantasy",
+    "https://en.wikipedia.org/wiki/Mythology",
+    "https://en.wikipedia.org/wiki/Legendary_creature"
+  ],
+  "allowed_domains": [
+    "en.wikipedia.org"
+  ],
+  "host_policy": {
+    "fail_closed_on_robots": true,
+    "respect_crawl_delay": true,
+    "crawl_delay_seconds": 1.0,
+    "requests_per_minute": 12,
+    "max_parallel_requests": 1,
+    "daily_url_budget": 60,
+    "user_agent": "JesterCrawler/1.0 (contact: sources@jester.local)",
+    "allowed_schemes": ["https"],
+    "allowed_path_prefixes": ["/wiki"],
+    "blocked_url_patterns": [
+      "https://en\\.wikipedia\\.org/wiki/(Special:|Talk:|Help:|Template:|Wikipedia:|Portal:|User:|File:)",
+      "https://en\\.wikipedia\\.org/w/"
+    ],
+    "robots_override_allowlist": []
+  },
+  "removal_path": "https://en.wikipedia.org/wiki/Wikipedia:Contact_us",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Seeded from mythology/fantasy article pages and filtered to article namespace only. Media-file reuse remains governed per-file outside this text manifest.",
+  "notes": "Added from the Creative Commons source set."
+}

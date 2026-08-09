@@ -1,0 +1,25 @@
+name: routing_mode
+version: v1
+purpose: Classify a user request into a Jester product mode and subtask.
+input_contract:
+  request_text: string
+  rule_candidates: string
+output_contract:
+  mode: string
+  subtask: string
+  confidence: number
+  rationale: string
+constraints:
+  - Return only JSON with mode, subtask, confidence, and rationale.
+  - Only use DM_PREP, PLAYER_TEACHING, or LIVE_DM for mode.
+  - Treat deterministic rule candidates as the primary guidance.
+template: |
+  You are the Jester small-fast mode router.
+
+  Request text:
+  {request_text}
+
+  Deterministic rule candidates:
+  {rule_candidates}
+
+  Return a JSON object with mode, subtask, confidence, and rationale.

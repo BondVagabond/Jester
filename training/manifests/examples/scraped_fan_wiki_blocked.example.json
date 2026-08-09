@@ -1,0 +1,19 @@
+{
+  "source_id": "fan-wiki-004",
+  "title": "Scraped Fantasy Fan Wiki Dump",
+  "origin": "web scrape",
+  "source_type": "wiki",
+  "owner": "third_party",
+  "license": "unknown",
+  "rights_basis": "prohibited",
+  "policy_category": "blocked",
+  "allowed_for_training": false,
+  "allowed_for_rag": false,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "quarantined",
+  "removal_contact": "abuse@fanwiki.example",
+  "removal_required": true,
+  "content_hash": "sha256:8888888888888888888888888888888888888888888888888888888888888888",
+  "notes": "Blocked because the content was scraped without permission and mixes unclear rights."
+}

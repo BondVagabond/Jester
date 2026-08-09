@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jester.local/schemas/source_manifest.schema.json",
+  "title": "Jester Source Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "source_id",
+    "source_name",
+    "source_type",
+    "source_family",
+    "owner",
+    "license",
+    "rights_basis",
+    "allowed_for_training",
+    "allowed_for_rag",
+    "eligibility_class",
+    "attribution_required",
+    "share_alike_required",
+    "removal_required",
+    "collection_date",
+    "version",
+    "status",
+    "review_status",
+    "provenance_status"
+  ],
+  "properties": {
+    "manifest_version": {"type": "integer", "const": 1},
+    "source_id": {"type": "string", "pattern": "^[a-z0-9_\\-:.]+$"},
+    "source_name": {"type": "string", "minLength": 1},
+    "source_type": {
+      "type": "string",
+      "enum": ["website", "api", "pdf", "html", "text", "jsonl", "user_upload", "campaign_log", "internal_doc", "licensed_dataset", "generated"]
+    },
+    "source_family": {
+      "type": "string",
+      "enum": ["dnd_official", "dnd_srd", "dnd_fan", "original_jester", "user_supplied", "third_party_general", "public_domain", "unknown"]
+    },
+    "owner": {"type": "string", "minLength": 1},
+    "owner_contact": {"type": "string"},
+    "license": {
+      "type": "string",
+      "enum": ["owned", "license-grants-training", "license-grants-retrieval", "cc0-1.0", "cc-by-4.0", "cc-by-sa-4.0", "ogl-1.0a", "public-domain", "user-consent", "all-rights-reserved", "contract-restricted", "unknown"]
+    },
+    "rights_basis": {
+      "type": "string",
+      "enum": ["owned-by-jester", "explicit-training-license", "explicit-retrieval-license", "open-license", "public-domain", "user-opt-in", "internal-use-only", "contract-restricted", "unknown"]
+    },
+    "allowed_for_training": {"type": "boolean"},
+    "allowed_for_rag": {"type": "boolean"},
+    "eligibility_class": {"type": "string", "enum": ["training_and_retrieval", "retrieval_only", "neither"]},
+    "license_url": {"type": "string", "format": "uri"},
+    "attribution_required": {"type": "boolean"},
+    "attribution_text": {"type": "string"},
+    "share_alike_required": {"type": "boolean"},
+    "removal_required": {"type": "boolean"},
+    "collection_date": {"type": "string", "format": "date-time"},
+    "version": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["active", "paused", "quarantined", "removed"]},
+    "review_status": {"type": "string", "enum": ["approved", "pending_review", "rejected", "quarantined"]},
+    "provenance_status": {"type": "string", "enum": ["complete", "incomplete", "disputed"]},
+    "seed_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "artifact_urls": {"type": "array", "items": {"type": "string", "format": "uri"}},
+    "artifact_path": {"type": "string", "minLength": 1},
+    "allowed_domains": {"type": "array", "items": {"type": "string"}},
+    "host_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fail_closed_on_robots": {"type": "boolean"},
+        "respect_crawl_delay": {"type": "boolean"},
+        "crawl_delay_seconds": {"type": "number", "minimum": 0},
+        "requests_per_minute": {"type": "integer", "minimum": 1},
+        "max_parallel_requests": {"type": "integer", "minimum": 1},
+        "daily_url_budget": {"type": "integer", "minimum": 1},
+        "user_agent": {"type": "string", "minLength": 1},
+        "allowed_schemes": {"type": "array", "items": {"type": "string"}},
+        "allowed_path_prefixes": {"type": "array", "items": {"type": "string"}},
+        "blocked_url_patterns": {"type": "array", "items": {"type": "string"}},
+        "robots_override_allowlist": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "removal_path": {"type": "string", "minLength": 1},
+    "quarantine_rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "on_unknown_rights": {"type": "string"},
+        "on_missing_provenance": {"type": "string"},
+        "on_robots_failure": {"type": "string"},
+        "on_suspect_extraction": {"type": "string"}
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "explicit_opt_in": {"type": "boolean"},
+        "granted_by": {"type": "string"},
+        "granted_at": {"type": "string", "format": "date-time"}
+      }
+    },
+    "quarantine_reason": {"type": "string"},
+    "scope_notes": {"type": "string"},
+    "notes": {"type": "string"}
+  }
+}

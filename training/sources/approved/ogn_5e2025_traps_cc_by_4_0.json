@@ -1,0 +1,56 @@
+{
+  "manifest_version": 1,
+  "source_id": "ogn_5e2025_traps_cc_by_4_0",
+  "source_name": "2025 5e SRD Traps (OGN)",
+  "source_type": "website",
+  "source_family": "dnd_srd",
+  "owner": "Open Gaming Network",
+  "owner_contact": "https://5e2025.opengamingnetwork.com/legal-information/",
+  "license": "cc-by-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rights_basis": "open-license",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": true,
+  "attribution_text": "Attribute Wizards of the Coast LLC and identify the source as System Reference Document 5.2 available at https://www.dndbeyond.com/srd under CC BY 4.0.",
+  "share_alike_required": false,
+  "removal_required": false,
+  "collection_date": "2026-04-16T00:00:00Z",
+  "version": "2026-04-16",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "seed_urls": [
+    "https://5e2025.opengamingnetwork.com/home/gameplay-toolbox/traps/"
+  ],
+  "allowed_domains": [
+    "5e2025.opengamingnetwork.com"
+  ],
+  "host_policy": {
+    "fail_closed_on_robots": true,
+    "respect_crawl_delay": true,
+    "crawl_delay_seconds": 1.0,
+    "requests_per_minute": 10,
+    "max_parallel_requests": 1,
+    "daily_url_budget": 1,
+    "user_agent": "JesterCrawler/1.0 (contact: sources@jester.local)",
+    "allowed_schemes": [
+      "https"
+    ],
+    "allowed_path_prefixes": [
+      "/home/gameplay-toolbox/traps"
+    ],
+    "blocked_url_patterns": [],
+    "robots_override_allowlist": []
+  },
+  "removal_path": "https://5e2025.opengamingnetwork.com/legal-information/",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Exact-page SRD 5.2 mirror manifest. Training exports rely on extracted SRD body text from a CC BY 4.0 page while keeping the crawler scoped to one reviewed path.",
+  "notes": "Verified on 2026-04-16 against the public OGN SRD 5.2 legal page and current page URL."
+}

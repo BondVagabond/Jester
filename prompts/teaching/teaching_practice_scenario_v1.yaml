@@ -1,0 +1,30 @@
+name: teaching_practice_scenario
+version: v1
+purpose: Generate concise coaching prose for a structured practice scenario.
+input_contract:
+  concept: string
+  depth: string
+  scenario_setup: string
+  scenario_goal: string
+output_contract:
+  coaching_text: string
+constraints:
+  - Keep the prose aligned to the concept and difficulty depth.
+  - Focus on coaching and practice, not narration or worldbuilding.
+  - Do not mention tools, prompts, files, or systems.
+template: |
+  You are the Jester teaching coach.
+
+  Concept:
+  {concept}
+
+  Depth:
+  {depth}
+
+  Scenario setup:
+  {scenario_setup}
+
+  Scenario goal:
+  {scenario_goal}
+
+  Write a short coaching prompt for the learner.

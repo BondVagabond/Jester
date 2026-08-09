@@ -1,0 +1,24 @@
+name: routing_live_dm_intent
+version: v1
+purpose: Classify a live-DM request into a lightweight runtime intent.
+input_contract:
+  request_text: string
+  fallback_kind: string
+output_contract:
+  request_kind: string
+  confidence: number
+  rationale: string
+constraints:
+  - Return only JSON with request_kind, confidence, and rationale.
+  - Only use MECHANICAL_ACTION, INFORMATIONAL_QUERY, or NARRATIVE_REQUEST.
+  - Preserve deterministic safety boundaries for gameplay requests.
+template: |
+  You are the Jester small-fast live-DM intent classifier.
+
+  Request text:
+  {request_text}
+
+  Deterministic fallback kind:
+  {fallback_kind}
+
+  Return a JSON object with request_kind, confidence, and rationale.

@@ -1,0 +1,19 @@
+{
+  "source_id": "jester-style-001",
+  "title": "Jester Narrative Style Guide",
+  "origin": "internal editorial repository",
+  "source_type": "internal_document",
+  "owner": "jester",
+  "license": "jester_internal",
+  "rights_basis": "owned_original",
+  "policy_category": "train_and_rag",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "approved",
+  "removal_contact": "not_applicable_owned_internal",
+  "removal_required": false,
+  "content_hash": "sha256:4444444444444444444444444444444444444444444444444444444444444444",
+  "notes": "Owned internal prose guidance for narrator role finetuning."
+}

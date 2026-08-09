@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jester.local/schemas/training_record.schema.json",
+  "title": "Jester Training Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "source_id",
+    "task_family",
+    "text",
+    "metadata",
+    "allowed_for_training",
+    "allowed_for_rag",
+    "content_hash"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "task_family": {
+      "type": "string",
+      "enum": [
+        "narration",
+        "teaching",
+        "reasoning",
+        "routing"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "domain",
+        "language"
+      ],
+      "properties": {
+        "tone": {
+          "type": "string"
+        },
+        "domain": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(?:-[A-Z]{2})?$"
+        },
+        "citation_required": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "allowed_for_training": {
+      "type": "boolean"
+    },
+    "allowed_for_rag": {
+      "type": "boolean"
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    }
+  }
+}

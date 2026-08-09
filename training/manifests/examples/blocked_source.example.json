@@ -1,0 +1,19 @@
+{
+  "source_id": "unknown-pdf-021",
+  "title": "Unlicensed Fantasy PDF",
+  "origin": "manual_drop",
+  "source_type": "pdf",
+  "owner": "unknown",
+  "license": "unknown",
+  "rights_basis": "unknown",
+  "policy_category": "blocked",
+  "allowed_for_training": false,
+  "allowed_for_rag": false,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "quarantined",
+  "removal_contact": "unknown",
+  "removal_required": true,
+  "content_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+  "notes": "Blocked because provenance and license are unknown."
+}

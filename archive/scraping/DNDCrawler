@@ -1,0 +1,211 @@
+import tkinter as tk
+from tkinter import ttk, filedialog, messagebox, scrolledtext
+import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin, urlparse, unquote
+import os
+import threading
+import re
+import time
+import argparse
+
+
+class DNDCrawler:
+    def __init__(self, root, initial_url=None):
+        self.root = root
+        self.root.title("D&D 5e Campaign File Crawler")
+        self.root.geometry("800x700")
+
+        self.crawling = False
+        self.visited_urls = set()
+        self.found_files = []
+        self.download_folder = ""
+        self.initial_url = initial_url
+
+        # allow / deny terms
+        self.include_terms = {
+            "pdf", "document", "download", "handbook", "guide", "supplement", "module", "adventure",
+            "dnd", "d&d", "5e", "dnd5e", "campaign", "character", "character-sheet",
+            "monster", "bestiary", "statblock", "trap", "spell", "cantrip", "magic", "item",
+            "dm", "gm", "dungeon", "game master", "srd"
+        }
+        self.exclude_terms = {
+            "forum", "thread", "topic", "post", "comment", "community", "blog", "news", "press",
+            "login", "sign-in", "signin", "signup", "register", "account", "profile", "checkout",
+            "cart", "basket", "subscribe", "css", "js", "javascript", "svg", "png", "jpg", "jpeg",
+            "gif", "webp", "rss", "atom", "feed", "sitemap", "robots.txt", "ads.txt", "api",
+            "graphql", "search", "tag", "category", "archive"
+        }
+
+        self.allowed_exts = {".pdf", ".docx", ".doc", ".rtf", ".txt", ".odt"}
+        self.allowed_mime_prefixes = (
+            "application/pdf",
+            "application/msword",
+            "application/vnd.openxmlformats-officedocument",
+            "application/rtf",
+            "text/plain"
+        )
+
+        self.block_url_substrings = tuple(sorted(set((
+            "/login", "/sign-in", "/signin", "/sign_in", "/signup", "/sign-up", "/register",
+            "/account", "/wp-login", "/auth", "/oauth", "/checkout", "/cart", "/basket",
+            "/forum", "/forums", "/community", "/topic", "/thread",
+            "?login", "?register"
+        ))))
+
+        self.setup_ui()
+
+    def setup_ui(self):
+        main_frame = ttk.Frame(self.root, padding="10")
+        main_frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        self.root.columnconfigure(0, weight=1)
+        self.root.rowconfigure(0, weight=1)
+        main_frame.columnconfigure(1, weight=1)
+
+        ttk.Label(main_frame, text="Website URLs (comma-separated):").grid(row=0, column=0, sticky=tk.W, pady=5)
+        self.url_entry = ttk.Entry(main_frame, width=80)
+        self.url_entry.grid(row=0, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
+
+        if self.initial_url:
+            self.url_entry.insert(0, self.initial_url)
+            self.log(f"Pre-loaded URLs: {self.initial_url}")
+        else:
+            self.url_entry.insert(0, "https://example.com, https://another.com")
+
+        ttk.Label(main_frame, text="Download folder:").grid(row=1, column=0, sticky=tk.W, pady=5)
+
+        folder_frame = ttk.Frame(main_frame)
+        folder_frame.grid(row=1, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
+        folder_frame.columnconfigure(0, weight=1)
+
+        self.folder_entry = ttk.Entry(folder_frame, width=40)
+        self.folder_entry.grid(row=0, column=0, sticky=(tk.W, tk.E))
+        ttk.Button(folder_frame, text="Browse", command=self.select_folder).grid(row=0, column=1, padx=(5, 0))
+
+        ttk.Label(main_frame, text="File types to search:").grid(row=2, column=0, sticky=tk.W, pady=5)
+        filetype_frame = ttk.Frame(main_frame)
+        filetype_frame.grid(row=2, column=1, sticky=(tk.W, tk.E), pady=5, padx=(10, 0))
+        self.filetype_vars = {}
+        extensions = ['.pdf', '.docx', '.doc', '.txt', '.rtf', '.odt']
+        for i, ext in enumerate(extensions):
+            var = tk.BooleanVar(value=True)
+            self.filetype_vars[ext] = var
+            ttk.Checkbutton(filetype_frame, text=ext.upper(), variable=var).grid(row=i//3, column=i%3, sticky=tk.W, padx=5)
+
+        settings_frame = ttk.Frame(main_frame)
+        settings_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+
+        ttk.Label(settings_frame, text="Max crawl depth:").grid(row=0, column=0, sticky=tk.W, padx=(0, 10))
+        self.depth_var = tk.IntVar(value=3)
+        depth_spinbox = ttk.Spinbox(settings_frame, from_=1, to=10, width=10, textvariable=self.depth_var)
+        depth_spinbox.grid(row=0, column=1, sticky=tk.W, padx=(0, 20))
+
+        self.get_sizes_var = tk.BooleanVar(value=False)
+        ttk.Checkbutton(settings_frame, text="Get file sizes", variable=self.get_sizes_var).grid(row=0, column=2, sticky=tk.W, padx=(0, 10))
+
+        ttk.Label(settings_frame, text="Scan mode:").grid(row=0, column=3, sticky=tk.W, padx=(20, 10))
+        self.scan_mode_var = tk.StringVar(value="Both")
+        scan_combo = ttk.Combobox(settings_frame, textvariable=self.scan_mode_var,
+                                  values=["Direct Files Only", "Download Links Only", "Both"],
+                                  width=15, state="readonly")
+        scan_combo.grid(row=0, column=4, sticky=tk.W)
+
+        button_frame = ttk.Frame(main_frame)
+        button_frame.grid(row=4, column=0, columnspan=2, pady=10)
+
+        self.start_button = ttk.Button(button_frame, text="Start Crawling", command=self.start_crawling)
+        self.start_button.grid(row=0, column=0, padx=5)
+        self.stop_button = ttk.Button(button_frame, text="Stop", command=self.stop_crawling, state=tk.DISABLED)
+        self.stop_button.grid(row=0, column=1, padx=5)
+        self.select_all_button = ttk.Button(button_frame, text="Select All", command=self.select_all_files, state=tk.DISABLED)
+        self.select_all_button.grid(row=0, column=2, padx=5)
+        self.select_none_button = ttk.Button(button_frame, text="Select None", command=self.select_none_files, state=tk.DISABLED)
+        self.select_none_button.grid(row=0, column=3, padx=5)
+        self.download_button = ttk.Button(button_frame, text="Download Selected", command=self.download_selected, state=tk.DISABLED)
+        self.download_button.grid(row=0, column=4, padx=5)
+
+        progress_stats_frame = ttk.Frame(main_frame)
+        progress_stats_frame.grid(row=5, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+        progress_stats_frame.columnconfigure(1, weight=1)
+        self.progress_var = tk.StringVar(value="Ready to crawl")
+        ttk.Label(progress_stats_frame, textvariable=self.progress_var).grid(row=0, column=0, sticky=tk.W)
+        self.stats_var = tk.StringVar(value="")
+        ttk.Label(progress_stats_frame, textvariable=self.stats_var, foreground="blue").grid(row=0, column=1, sticky=tk.E)
+
+        self.progress_bar = ttk.Progressbar(main_frame, mode='indeterminate')
+        self.progress_bar.grid(row=6, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=5)
+
+        results_frame = ttk.LabelFrame(main_frame, text="Found D&D Files & Resources", padding="5")
+        results_frame.grid(row=7, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), pady=10)
+        results_frame.columnconfigure(0, weight=1)
+        results_frame.rowconfigure(1, weight=1)
+        main_frame.rowconfigure(7, weight=1)
+        self.results_count_var = tk.StringVar(value="No files found")
+        ttk.Label(results_frame, textvariable=self.results_count_var, font=('TkDefaultFont', 9, 'bold')).grid(row=0, column=0, sticky=tk.W)
+
+        columns = ('filename', 'url', 'size')
+        self.results_tree = ttk.Treeview(results_frame, columns=columns, show='tree headings', height=12)
+        self.results_tree.grid(row=1, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+        self.results_tree.heading('#0', text='Select')
+        self.results_tree.heading('filename', text='Filename/Link Text')
+        self.results_tree.heading('url', text='URL')
+        self.results_tree.heading('size', text='Type/Size')
+
+        log_frame = ttk.LabelFrame(main_frame, text="Crawl Log", padding="5")
+        log_frame.grid(row=8, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), pady=5)
+        self.log_text = scrolledtext.ScrolledText(log_frame, height=6, wrap=tk.WORD, font=('Consolas', 9))
+        self.log_text.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+
+        self.log("Crawler Ready with filters applied")
+
+    # filters and relevance
+    def _tokset(self, *texts):
+        s = set()
+        for t in texts:
+            if not t: continue
+            t = t.lower()
+            s.update(re.split(r"[\\W_]+", t))
+        return {x for x in s if x}
+
+    def relevance_score(self, *, url: str, filename: str, link_text: str) -> int:
+        toks = self._tokset(url, filename, link_text)
+        score = 0
+        for term in self.include_terms:
+            if term in toks: score += 2
+        for term in self.exclude_terms:
+            if term in toks: score -= 3
+        ext = os.path.splitext(urlparse(url).path.lower())[1]
+        if ext in self.allowed_exts: score += 4
+        return score
+
+    def is_blocked_url(self, url: str) -> bool:
+        u = url.strip().lower()
+        if u.startswith(("mailto:", "javascript:")): return True
+        return any(s in u for s in self.block_url_substrings)
+
+    def is_allowed_ext(self, url: str) -> bool:
+        ext = os.path.splitext(urlparse(url).path.lower())[1]
+        return ext in self.allowed_exts
+
+    def mime_allows_download(self, url: str) -> bool:
+        try:
+            r = requests.head(url, timeout=5, allow_redirects=True)
+        except Exception:
+            return False
+        ct = r.headers.get("content-type", "").split(";")[0].strip().lower()
+        cd = r.headers.get("content-disposition", "").lower()
+        if any(ct.startswith(p) for p in self.allowed_mime_prefixes): return True
+        if "filename=" in cd: return True
+        if ct.startswith("text/html"): return False
+        return False
+
+    def should_download(self, url: str, score: int) -> bool:
+        if score < 3: return False
+        if self.is_allowed_ext(url): return True
+        return self.mime_allows_download(url)
+
+    def log(self, msg):
+        timestamp = time.strftime("%H:%M:%S")
+        self.log_text.insert(tk.END, f"[{timestamp}] {msg}\\n")
+        self.log_text.see(tk.END)

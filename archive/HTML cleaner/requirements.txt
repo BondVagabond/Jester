@@ -1,0 +1,11 @@
+
+trafilatura==2.0.0
+beautifulsoup4
+lxml
+tqdm
+tldextract
+
+# Optional (improves scoring)
+nltk
+scikit-learn
+numpy

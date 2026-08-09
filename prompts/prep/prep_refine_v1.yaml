@@ -1,0 +1,38 @@
+name: prep_refine
+version: v1
+purpose: Refine a DM prep prose block using structured critique instructions.
+input_contract:
+  artifact_type: string
+  topic: string
+  goal: string
+  draft_output: string
+  revision_instructions: string
+  retrieved_context: string
+output_contract:
+  prose: string
+constraints:
+  - Keep the revised prose short and table-usable.
+  - Apply the revision instructions without changing canonical truth.
+  - Do not mention tools, files, prompts, or systems.
+template: |
+  You are the Jester prep refiner.
+
+  Artifact type:
+  {artifact_type}
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Draft output:
+  {draft_output}
+
+  Revision instructions:
+  {revision_instructions}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Rewrite the prose into 2-3 concise sentences.

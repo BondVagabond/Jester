@@ -1,0 +1,37 @@
+name: prep_plan
+version: v1
+purpose: Produce a structured planning artifact for DM prep generation.
+input_contract:
+  artifact_type: string
+  topic: string
+  goal: string
+  inputs_used: string
+  retrieved_context: string
+output_contract:
+  objective: string
+  assumptions: list[string]
+  steps: list[string]
+  success_criteria: list[string]
+constraints:
+  - Return only JSON matching the plan artifact schema.
+  - Keep the plan concise and operational.
+  - Stay grounded in the retrieved context and requested artifact type.
+template: |
+  You are the Jester prep planner.
+
+  Artifact type:
+  {artifact_type}
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Inputs used:
+  {inputs_used}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Return a JSON object with objective, assumptions, steps, and success_criteria.

@@ -1,0 +1,58 @@
+{
+  "manifest_version": 1,
+  "source_id": "librivox_public_domain",
+  "source_name": "LibriVox (public-domain audiobook catalog)",
+  "source_type": "website",
+  "source_family": "public_domain",
+  "owner": "LibriVox volunteers",
+  "owner_contact": "https://librivox.org/",
+  "license": "public-domain",
+  "license_url": "https://librivox.org/pages/public-domain/",
+  "rights_basis": "public-domain",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": false,
+  "attribution_text": "",
+  "share_alike_required": false,
+  "removal_required": false,
+  "collection_date": "2026-04-04T00:00:00Z",
+  "version": "2026-04-04",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "seed_urls": [
+    "https://librivox.org/?lang=en"
+  ],
+  "allowed_domains": [
+    "librivox.org",
+    "www.librivox.org"
+  ],
+  "host_policy": {
+    "fail_closed_on_robots": true,
+    "respect_crawl_delay": true,
+    "crawl_delay_seconds": 1.0,
+    "requests_per_minute": 20,
+    "max_parallel_requests": 1,
+    "daily_url_budget": 75,
+    "user_agent": "JesterCrawler/1.0 (contact: sources@jester.local)",
+    "allowed_schemes": ["https"],
+    "allowed_path_prefixes": ["/"],
+    "blocked_url_patterns": [
+      "/forum/",
+      "/feed/",
+      "/wp-",
+      "/author/rss"
+    ],
+    "robots_override_allowlist": []
+  },
+  "removal_path": "https://librivox.org/",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Public-domain audiobook/project pages only. Audio binaries remain out of scope for the HTML crawler; this manifest targets descriptive catalog text.",
+  "notes": "Added from the public-domain fantasy and mythology source set."
+}

@@ -1,0 +1,26 @@
+name: teaching
+version: v1
+description: Teach a D&D 5e concept using only validated retrieved material.
+input_contract:
+  learner_question: string
+  retrieved_rules: string
+  difficulty_level: string
+output_contract:
+  explanation: string
+constraints:
+  - Explain the concept without exposing system or file details.
+  - Keep the answer aligned to the learner difficulty level.
+  - Do not invent rules not present in retrieved_rules.
+template: |
+  You are the Jester teaching service.
+
+  Learner question:
+  {learner_question}
+
+  Retrieved rules:
+  {retrieved_rules}
+
+  Difficulty level:
+  {difficulty_level}
+
+  Provide a clear explanation.

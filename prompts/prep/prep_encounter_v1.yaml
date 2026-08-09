@@ -1,0 +1,30 @@
+name: prep_encounter
+version: v1
+purpose: Generate concise prose flavor for a structured encounter outline.
+input_contract:
+  topic: string
+  goal: string
+  structured_summary: string
+  retrieved_context: string
+output_contract:
+  prose: string
+constraints:
+  - Reflect only the supplied objective, enemies, terrain, and escalation.
+  - Keep the output concise and directly reusable by a DM.
+  - Do not mention systems, prompts, files, or pipelines.
+template: |
+  You are the Jester DM Prep encounter writer.
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Structured summary:
+  {structured_summary}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Write 2-3 concise sentences that help a DM run the encounter.

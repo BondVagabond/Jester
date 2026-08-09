@@ -1,0 +1,57 @@
+{
+  "manifest_version": 1,
+  "source_id": "local_demo_site",
+  "source_name": "Local Demo Site",
+  "source_type": "website",
+  "source_family": "original_jester",
+  "owner": "Jester",
+  "owner_contact": "local-demo@jester.local",
+  "license": "owned",
+  "rights_basis": "owned-by-jester",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": false,
+  "attribution_text": "",
+  "share_alike_required": false,
+  "removal_required": false,
+  "collection_date": "2026-04-04T00:00:00Z",
+  "version": "demo-1",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "seed_urls": [
+    "http://127.0.0.1:8765/index.html"
+  ],
+  "allowed_domains": [
+    "127.0.0.1",
+    "127.0.0.1:8765"
+  ],
+  "host_policy": {
+    "fail_closed_on_robots": true,
+    "respect_crawl_delay": true,
+    "crawl_delay_seconds": 0.2,
+    "requests_per_minute": 120,
+    "max_parallel_requests": 2,
+    "daily_url_budget": 10,
+    "user_agent": "JesterRuntimeDemo/1.0 (contact: local-demo@jester.local)",
+    "allowed_schemes": [
+      "http",
+      "https"
+    ],
+    "allowed_path_prefixes": [
+      "/"
+    ],
+    "blocked_url_patterns": [],
+    "robots_override_allowlist": []
+  },
+  "removal_path": "mailto:local-demo@jester.local",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Local owned demo source used to exercise the runtime end to end.",
+  "notes": "Local owned demo source used to exercise the runtime end to end."
+}

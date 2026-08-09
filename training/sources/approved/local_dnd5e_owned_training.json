@@ -1,0 +1,33 @@
+{
+  "manifest_version": 1,
+  "source_id": "local_dnd5e_owned_training",
+  "source_name": "Local DND 5E Owned Training Corpus",
+  "source_type": "text",
+  "source_family": "original_jester",
+  "owner": "Jester",
+  "owner_contact": "local-training@jester.local",
+  "license": "owned",
+  "rights_basis": "owned-by-jester",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": false,
+  "attribution_text": "",
+  "share_alike_required": false,
+  "removal_required": false,
+  "collection_date": "2026-04-16T00:00:00Z",
+  "version": "2026-04-16-local-owned-v1",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "artifact_path": "../../local_artifacts/dnd5e_owned",
+  "removal_path": "mailto:local-training@jester.local",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Twenty repo-local, Jester-authored fifth-edition-compatible training notes used to exercise native local text ingestion through the canonical runtime.",
+  "notes": "This corpus is intentionally local and owned so the runtime can be validated without depending on external websites."
+}

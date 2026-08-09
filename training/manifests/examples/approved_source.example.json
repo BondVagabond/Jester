@@ -1,0 +1,19 @@
+{
+  "source_id": "myth-grimm-001",
+  "title": "Grimm's Fairy Tales",
+  "origin": "Project Gutenberg",
+  "source_type": "public_domain_text",
+  "owner": "public",
+  "license": "public_domain",
+  "rights_basis": "owned_or_public_domain",
+  "policy_category": "train_and_rag",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "approved",
+  "removal_contact": "not_applicable_public_domain",
+  "removal_required": false,
+  "content_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "notes": "Approved as myth and folklore training source for narration and teaching."
+}

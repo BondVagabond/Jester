@@ -1,0 +1,337 @@
+Waterdeep, Faerûn
+Baldur's Gate, Faerûn
+Neverwinter, Faerûn
+Luskan, Faerûn
+Silverymoon, Faerûn
+Calimport, Calimshan
+Suzail, Cormyr
+Elturel, Elturgard
+Port Nyanzaru, Chult
+Raven's Bluff, Faerûn
+Icewind Dale, The North
+Phandalin, The Sword Coast
+Daggerford, The Sword Coast
+Athkatla, Amn
+Zhentil Keep, The Moonsea
+Hillsfar, The Moonsea
+Skullport, Undermountain
+Myth Drannor, Cormanthor
+Sharn, Breland 
+Wroat, Breland 
+Stormreach, Xen'drik 
+Sigil, The Outlands 
+Mechanus, The Outer Planes
+Baator, The Nine Hells
+The Abyss, Outer Planes
+Mount Celestia, Outer Planes
+Greyhawk, Flanaess 
+Rel Mord, Nyrond
+Dragonstone, Avaloria
+Highspire, Eldoria
+Stonehaven, Khargrim Peaks
+Silverport, Thalorien Coast
+Duskvale, Morvath Wilds
+Ironhold, Gromdur Mountains
+Brightwater, Sylvanreach
+Shadowfen, Veymar Marsh
+Goldhaven, Arlathia
+Frostford, Icemark Tundra
+Stormwatch, Kaelthar Highlands
+Moonrest, Valoria
+Oakshield, Bramblewood
+Sunspire, Aurelion
+Ravenshollow, Dreadmoor
+Grimhaven, Blackfen Reach
+Crystalbay, Lumeris Shores
+Wolfdenn, Fenris Vale
+Ebonrock, Drakemount
+Starfall, Celestara
+Mistmoor, Eldenglen
+Thornwall, Varros
+Ashford, Emberwaste
+Windmere, Aeloria Plains
+Ironpeak, Thuldor Range
+Hollowbrook, Myrkwell
+Stonebridge, Carrowlands
+Duskhaven, Ravenmarsh
+Silverkeep, Althoria
+Frosthold, Winterspire
+Emberfall, Ashenvale
+Riverwatch, Greymantle
+Shadowrest, Fellreach
+Brightspire, Solanthium
+Redwater, Korveth Marshes
+Goldspire, Aurum Vale
+Wyrmrest, Drakensfjord
+Sunhaven, Lytheris
+Gravesend, Mournvale
+Stonehelm, Khazrak Peaks
+Evermere, Silverglade
+Blackbarrow, Morghast Hollow
+Stormcrag, Highfell Mountains
+Seabreak, Tideborn Isles
+Mooncliff, Arvandor Reach
+Ironvale, Durak Mountains
+Whisperwind, Elmsmere
+Frostglen, Nordhollow
+Ashenport, Veythar Coast 
+Pickleham, Brinewater Coast
+Goosewick, Featherdown Vale
+Toadstool Hollow, Muckfen
+Turnipshire, Oldmarch
+Quibbleton, Jollyshire
+Hobnock, Fuzzlewood
+Cheddarford, Milky Downs
+Crumpet’s Rest, Buttervale
+Giggleglen, Merrymead
+Snicklefritz, Poppyfen
+Duckport, Pondmere
+Wobbleton, Jellymarch
+Newtbrook, Froggath Fen
+Clankertown, Rustbelt Hills
+Spudbury, Taterfield Downs
+Chortleton, Jester’s March
+Muffinshire, Sugarvale
+Thimblewick, Buttonwood
+Goober’s Hollow, Hootenanny Hills
+Beetlebay, Creakwood Marsh
+Flumphaven, Oozebog
+Chucklefen, Laughing Moors
+Eggshire, Yolkmarsh
+Snoozington, Napvale
+Amberfall, Eldenreach
+Ravensport, Blackmarsh
+Stormhaven, Westvale
+Moonspire, Arcanis
+Ashmoor, Dreadfen
+Hollowspire, Mistvale
+Brightmeadow, Greenhill Downs
+Frostport, Iceveil Coast
+Ironford, Bronzewater
+Shadowgate, Mournvale
+Thornmere, Bramblefen
+Crystalspire, Shardlands
+Bloodstone, Veythar Wastes
+Wolfpine, Greyhowl Vale
+Sunveil, Aurelia
+Oakheart, Verdantwilds
+Graveford, Darkfen
+Silverbrook, Moonvale
+Wyrmgate, Drakenreach
+Starwatch, Celestara
+Mistford, Eldenmarsh
+Embercrag, Firemount
+Stormspire, Thundermarch
+Ironmarsh, Gloomfen
+Brighthearth, Hearthvale
+Duskwatch, Ravenvale
+Seacliff, Tidewater Coast
+Wintermere, Nordmark
+Blackspire, Darkreach
+Hollowbrook, Fellwild
+Sunspire, Aurelith
+Dragonford, Drakesmere
+Shadewood, Murkfen
+Frostwatch, Winterkeep
+Ebonvale, Shadowfen
+Moonbrook, Dreamvale
+Stonegate, Karath Peaks
+Brightport, Silvercoast
+Ashvale, Emberwilds
+Wraithmoor, Blackhollow
+Starspire, Starlith
+Rumblebrook, Thunder Vale
+Everfrost, Glacialis
+Whisperglen, Eldengrove
+Shadowfen, Morghast Reach
+Highwall, Stonevale
+Grimspire, Doomreach
+Stormfell, Kaelthar
+Frosthaven, Nordhaven
+Darkmere, Umbral Vale
+Seabreak, Coralith
+Ironkeep, Gromdar
+Oakspire, Sylvanreach
+Redmoor, Bloodfen
+Silverwatch, Argent Vale
+Wolfsbane, Fenris Vale
+Glowfen, Evermarsh
+Moonwatch, Lunaris
+Dustfall, Aridreach
+Cindermere, Ashen Coast
+Thundertide, Stormcoast
+Ravenwatch, Blackvale
+Hearthglen, Firesong Downs
+Driftwood, Saltmarsh Bay
+Gravespire, Deathfell
+Sorrowfen, Dreadhollow
+Suncrest, Dawnvale
+Mistvale, Shrouded Fen
+Stormglen, Thunder Vale
+Ironspire, Khazrak Range
+Wraithspire, Necros Vale
+Goldleaf, Autumnwood
+Stonehollow, Durak Downs
+Moonveil, Selvaris
+Ashport, Ember Coast
+Stormmark, Highvale
+Nightspire, Veythar Reach
+Brightfen, Willowmarch
+Drakenport, Wyvern Coast
+Silverveil, Argentreach
+Shadowbrook, Fellvale
+Thunderhold, Storm Peaks
+Frostglen, Winter Vale
+Ebonwatch, Shadow Coast
+Sunbrook, Dawnmarsh
+Grimmere, Blackfen
+Starhaven, Lumeris Vale
+Oakfen, Verdant Hollow
+Rumblepeak, Kael Peaks
+Mistmarsh, Elden Fen
+Seastone, Tideborn Isles
+Ironvale, Bronzewood
+Shatterfall, Crystal Vale
+Bloodvale, Crimson Hollow
+Moonspire, Twilight Reach
+Frostspire, Nordmarch
+Ashbrook, Ember Vale
+Stormrest, Thunder Vale
+Evermere, Brightwood
+Wraithfall, Necrofen
+Silvergate, Argent Vale
+Darkspire, Umbrafell
+Whispering Pines, Eldenwood
+Ashen Coast, Emberreach
+Frostglen, Nordhollow
+Shattered Steppes, Drymarch
+Verdant Expanse, Sylvalis
+Bloodfen, Crimson Marsh
+Shadowfen, Morghast Reach
+Thunder Peaks, Kaelthar Range
+Moonlit Vale, Lunaris
+Bramblethorn Thicket, Wildreach
+Glass Desert, Shardwaste
+Howling Hills, Fenris Plains
+Glowfen, Evermarsh
+Starfall Valley, Celestara
+Twilight Woods, Gloomgrove
+Mistmoor, Eldenglen
+Daggerpoint Cliffs, Blackshore
+The Blasted Heath, Ashmarsh
+Frozen Expanse, Jotunreach
+The Singing Sands, Aurimar Dunes
+Shrine of the Silver Stag, Sylvanreach
+Sanctum of Eternal Flame, Embermount
+Moonwell of Selvaris, Lunaris Vale
+The Crystal Obelisk, Shardlands
+The Oracle’s Pool, Eldoria
+Temple of Dawn’s Light, Solanthium
+Runestone Circle, Aeloria Plains
+The Living Grove, Bramblewood
+Shrine of Forgotten Echoes, Fellreach
+Starspire Observatory, Celestara
+The Singing Stones, Brightfen
+Altar of the Hollow Sun, Blackfen
+Tower of the Seven Winds, Kael Peaks
+The Emberheart Forge, Ashen Coast
+Sanctuary of Twilight, Dreamvale
+Pickleham, Brinewater Coast
+Goosewick, Featherdown Vale
+Turnipshire, Oldmarch
+Quibbleton, Jollyshire
+Toadstool Hollow, Muckfen
+Snicklefritz, Poppyfen
+Chortleton, Jester’s March
+Muffinshire, Sugarvale
+Beetlebay, Creakwood Marsh
+Clankertown, Rustbelt Hills
+Snoozington, Napvale
+Duckport, Pondmere
+Thimblewick, Buttonwood
+Eggshire, Yolkmarsh
+Chucklefen, Laughing Moors
+Flumphaven, Oozebog
+Wobbleton, Jellymarch
+Goober’s Hollow, Hootenanny Hills
+Spudbury, Taterfield Downs
+Briarfield, Greenbarrow Downs
+Mosswick, Bramblefen
+Elmstead, Willow Vale
+Riverton, Silverstream
+Hilltop, Golden Downs
+Oakhaven, Verdant Reach
+Thistlebrook, Meadowfen
+Cobbleford, Stonebrook Vale
+Fernhollow, Deepwild
+Honeywick, Amberfields
+Brackenford, Mossmere
+Appleford, Autumn Downs
+Foxden, Redfen Vale
+Barrowhill, Oldmarch
+Greensward, Rolling Vale
+Millford, Cinderstream
+Wheatford, Harvest Downs
+Pinemere, Sylvan Reach
+Hearthford, Warmvale
+Stonecross, Greyfen
+Whispering Hollow, Eldenwood
+Twin Oaks, Verdant Vale
+Howling Fen, Mistmarch
+Crystal Springs, Lumeris Vale
+Shimmering Falls, Starreach
+Frostfen, Nordmarsh
+Echoing Glen, Moonvale
+Brine Marsh, Saltfen
+Giant’s Cairn, Boulder Vale
+The Ironwood, Gromdar Forest
+Sunflower Plains, Dawnmead
+Moonstone River, Selvaris
+Ravencliff, Blackshore
+The Singing Brook, Merris Vale
+Dragon’s Hollow, Draken Vale
+Glowmire, Everfen
+Frostpeak Ridge, Icemark
+The Ember Pools, Ashfen
+Silverleaf Grove, Sylvanwood
+Hollow Reed Marsh, Murkvale
+Shrine of the Wandering Star, Brightfen
+The Old Mill, Thistle Vale
+The Lone Watchtower, Greymarch
+Fisher’s Wharf, Tidewater Reach
+Saint Wren’s Chapel, Greenhill Vale
+The Lantern Post, Duskmere Road
+The Hollow Stone, Bramblefen
+The Circle of Oaks, Sylvalis
+The Crossroads Inn, Golden Vale
+Hermit’s Hut, Mournhollow
+Pilgrim’s Well, Silver Vale
+The Cleft Shrine, Ashmar Hills
+The Standing Cairn, Frostglen
+The Old Druid’s Oak, Eldenreach
+The Broken Bridge, Mistfen
+The Shattered Shrine, Darkfen
+The Lonely Bell, Meadow Vale
+The Hollow Forge, Ironmarch
+The Singing Cavern, Starfell Vale
+The Widow’s Orchard, Thornmarch
+Sheepford, Rolling Downs
+Pig Hollow, Mudfen
+Goat’s Hill, Bleak Vale
+Oxenford, Greenmead
+Henwick, Feather Vale
+Plowhaven, Harvest Vale
+Turnip Row, Rootfen
+Beekeeper’s Hollow, Amber Vale
+Grainford, Wheatlands
+Stonehill Farm, Grey Vale
+Fisher’s Rest, Lake Vale
+Vinebrook, Grape Vale
+Hogfen, Muckmarsh
+Tanner’s Cross, Leather Vale
+Baker’s Hollow, Crustmarsh
+Loomfield, Weaver’s Vale
+Barrelford, Brewer’s Downs
+Lantern Hollow, Glow Vale
+Scytheford, Grim Vale
+Buttercup Hollow, Bloom Vale

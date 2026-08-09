@@ -1,0 +1,19 @@
+{
+  "source_id": "partner-campaign-001",
+  "title": "Partner Campaign Reference Packet",
+  "origin": "partner upload",
+  "source_type": "partner_material",
+  "owner": "partner",
+  "license": "partner_rag_addendum_v1",
+  "rights_basis": "licensed_for_rag_only",
+  "policy_category": "rag_only",
+  "allowed_for_training": false,
+  "allowed_for_rag": true,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "approved_rag_only",
+  "removal_contact": "partner-ops@example.com",
+  "removal_required": true,
+  "content_hash": "sha256:6666666666666666666666666666666666666666666666666666666666666666",
+  "notes": "Partner material approved for retrieval-backed play support only."
+}
