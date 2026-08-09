@@ -1,0 +1,30 @@
+name: prep_session_packet
+version: v1
+purpose: Generate concise prose framing for a structured session prep packet.
+input_contract:
+  topic: string
+  goal: string
+  structured_summary: string
+  retrieved_context: string
+output_contract:
+  prose: string
+constraints:
+  - Summarize the packet structure without inventing new facts.
+  - Keep the output brief and operational for a DM.
+  - Do not mention tools, prompts, files, or pipelines.
+template: |
+  You are the Jester DM Prep packet writer.
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Structured summary:
+  {structured_summary}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Write a short prep framing paragraph for the DM.

@@ -1,0 +1,1 @@
+"""Application-layer services and contracts for Jester product modes."""

@@ -1,0 +1,1641 @@
+Find out the origin and meaning of a mysterious tattoo or birthmark that the character has always had.
+
+Help a small village rebuild after being ravaged by nearby invaders.
+
+Find the wreckage of a shipping fleet that disappeared off a nearby coast several years ago.
+
+Help rebuild the great temple of his deity that was destroyed years ago.
+
+Gain enough wealth to build a tavern in the character's favorite city and retire there.
+
+Craft a legendary item that will help vanquish the forces of evil.
+
+Travel into a desolate and forsaken area and establish a thriving trade community and bastion in the area.
+
+Find a cure for a slowly debilitating disease that the character has contracted.
+
+Recover a long lost family heirloom that was stolen.
+
+Make amends to his deity for a wrongful act by making a pilgrimage to the deity's hold land.
+
+Decypher the language written in a book that was discovered by the character - it is said to hold the secrets of a worldly deity.
+
+Locate a legendary oracle that could have an answer to a questions that has plagued the character his whole life.
+
+Purge a band of local thieves from the character's home town.
+
+Surpass his former mentor in skill/knowledge/prestige
+
+Gain the affection of a childhood crush whose family acquired sudden wealth and abandoned their lowly caste
+
+Take vengeance upon the slavers from whom he escaped
+
+Befriend a legendary creature (unicorn, dragon, etc.) and go for a ride!
+
+Provide food and shelter for the destitute in his city of origin
+
+Seek revenge on the person/group/monster who killed his/her family/loved one/village.
+
+Compose a besitiary of the world's monsters (stole this one from a forum somewhere).
+
+Set out to find a magical item/spell to remove a curse on town/loved one.
+
+Run away from boring home town and find adventure like in the stories!!! (Works really well for Sailor Background)
+
+Locate a long-lost sibling that was seperated from the character in their youth (possibly a twin).
+
+Discover why the character was abandoned at an orphanage in his youth and who his true family is.
+
+Rescue a family member or friend that was sold into slavery.
+
+Establish himself as the primary voice for his god and spread the faith across the world.
+
+Breed a strain of hunting companion that rivals that of anything in the land.
+
+The person who you thought killed your loved one? Turns out they're being framed. Who tried to trick you into killing them?
+
+The NPC has a sealed letter they’re afraid to open.
+
+A strange mark has appeared on their skin overnight.
+
+They dream of the same place every night but have never been there.
+
+They’re convinced someone is following them, though no one else sees it.
+
+A family heirloom was stolen, and they beg for help recovering it.
+
+Their shadow moves independently of their body.
+
+They recently heard a prophecy about themselves but don’t understand it.
+
+They claim a loved one has been replaced by an impostor.
+
+They stumbled upon a crime but are too scared to report it.
+
+They are obsessed with a mysterious locked box they can’t open.
+
+The NPC carries a map they don’t remember drawing.
+
+They insist they once died but somehow returned.
+
+Their reflection in mirrors is slightly different.
+
+A stranger gave them an object they don’t dare use.
+
+They swear they hear whispers whenever they’re alone.
+
+They are being blackmailed over something trivial—but it terrifies them.
+
+They saw a creature no one else believes exists.
+
+They claim to have glimpsed the future in a dream.
+
+They can’t remember the last week of their life.
+
+They are convinced someone is poisoning them.
+
+The NPC owes money to dangerous people.
+
+They’ve received anonymous gifts for weeks.
+
+A voice in their head offers guidance—and threats.
+
+They fear they’ve been cursed but don’t know by whom.
+
+They have recurring nightmares of drowning, even on dry land.
+
+Their pet is behaving strangely, as if possessed.
+
+They found a key that opens no known lock.
+
+They believe an object they own is watching them.
+
+They claim they’ve seen themselves walking the streets.
+
+Their shadow sometimes points the wrong way.
+
+The NPC feels compelled to walk to a specific place.
+
+They are the only one who remembers an event that “never happened.”
+
+They are convinced a neighbor is not who they say they are.
+
+They saw something fall from the sky and want to investigate.
+
+They speak a few words of a language they’ve never learned.
+
+They find the same symbol carved near their home each morning.
+
+They woke up with an unfamiliar scar.
+
+They claim someone is stealing their thoughts.
+
+They swear they’re being watched by unseen eyes.
+
+They own a book that writes new entries on its own.
+
+The NPC is terrified of an approaching date.
+
+They believe the stars are spelling a message for them.
+
+They hear a child crying, but there’s no child.
+
+They see omens in everyday objects.
+
+They’ve started speaking with a different voice at times.
+
+They insist they’re living the same day again and again.
+
+They fear they’ll be arrested for a crime they didn’t commit.
+
+They discovered a hidden passage they can’t find again.
+
+They are plagued by sudden nosebleeds at odd times.
+
+They’ve developed a taste for something unusual—chalk, soil, ash.
+
+The NPC wears gloves constantly but won’t say why.
+
+They think their house is alive.
+
+They’ve been receiving letters from their own future.
+
+They have a ring that grows warmer near danger.
+
+They believe a stranger is sending them coded messages.
+
+Their name was found carved into a stone far away.
+
+They have no reflection in water.
+
+They claim someone else is dreaming through their eyes.
+
+They are terrified of a song only they can hear.
+
+They found footprints leading into their home—but none leading out.
+
+The NPC is convinced they are under a geas.
+
+They discovered blood outside their door each morning.
+
+They are searching for someone only they seem to remember.
+
+They feel drawn to a dangerous location.
+
+They found a relic in their belongings they don’t recall acquiring.
+
+They experience déjà vu constantly.
+
+They wake up with mud on their feet despite never leaving home.
+
+They are convinced an item they lost is being returned by someone unseen.
+
+They are certain the town is hiding a terrible secret.
+
+They insist they’ve spoken with someone who is long dead.
+
+The NPC avoids a certain word as if it terrifies them.
+
+They’ve been writing in their sleep.
+
+They hear knocking from beneath the floorboards.
+
+They find small offerings left at their doorstep each morning.
+
+They claim to know the players from their dreams.
+
+They insist they’ve seen the party before.
+
+They can’t stop humming a tune they don’t know.
+
+They believe an object has chosen them as its keeper.
+
+They are waiting for a sign before revealing a secret.
+
+They are convinced the moon is watching them.
+
+The NPC insists they once had a twin who’s gone.
+
+They are terrified of mirrors.
+
+They say they saw their own grave.
+
+They are being followed by a black animal.
+
+They refuse to go indoors after sunset.
+
+They are convinced someone is trying to erase them from history.
+
+They have visions when they touch certain people.
+
+They wake with words carved into their skin.
+
+They fear they will vanish when they fall asleep.
+
+They are convinced something lives under their bed.
+
+The NPC insists someone is whispering to them from the walls.
+
+They believe time is running out but won’t say for what.
+
+They swear they’ve glimpsed another world through cracks in the air.
+
+They are terrified of being left alone.
+
+They believe they must protect a certain object at all costs.
+
+They claim to know how the world will end.
+
+They say they can smell lies.
+
+They found coins stamped with tomorrow’s date.
+
+They fear someone is slowly stealing their face.
+
+They are convinced that the gods have abandoned them personally.
+
+They were born under a blood moon that never should have risen.
+
+They hear whispers from the sword they carry.
+
+They can’t remember their own name, but everyone else seems to know it.
+
+They were raised by wolves who still watch them from the shadows.
+
+They bear a scar that glows faintly when danger approaches.
+
+They once served a tyrant and now seek redemption.
+
+They are haunted by the ghost of someone they never met.
+
+They escaped a cult, but its mark still burns on their skin.
+
+They dream of a city made entirely of glass.
+
+They were promised to a god at birth.
+
+They can’t die until a specific prophecy is fulfilled.
+
+They accidentally killed their mentor during training.
+
+They’re the last surviving member of a forgotten kingdom.
+
+They owe their life to a demon they now fear to face.
+
+They can’t cross running water without hearing screams.
+
+They were abandoned at a temple doorstep with a strange pendant.
+
+They once saw their own death in a vision.
+
+They speak to an invisible companion no one else can see.
+
+They are the chosen heir to a throne that doesn’t exist anymore.
+
+They see flashes of the future whenever they touch blood.
+
+They were cursed to never tell the full truth.
+
+They are searching for a twin who was stolen by fae.
+
+They were a spy who fell in love with their target.
+
+They are followed by crows wherever they go.
+
+They hear music when magic is cast nearby.
+
+They made a deal with a spirit to save someone they loved — and failed.
+
+They cannot enter holy ground without feeling pain.
+
+They found a baby dragon egg that won’t hatch.
+
+They were supposed to die at birth but didn’t.
+
+They can read the stars like a map no one else understands.
+
+They once destroyed a village by accident.
+
+They were bitten by something no one has ever seen again.
+
+They are trying to find the person who erased their memories.
+
+They used to be a statue for a hundred years.
+
+They see ghosts in reflections.
+
+They can’t lie, even when they want to.
+
+They carry a lock of hair from someone they killed.
+
+They once spoke directly to a god and regret it deeply.
+
+They can only sleep when it rains.
+
+They are hunted by bounty hunters from three nations.
+
+They were trained as an assassin by mistake.
+
+They have dreams that others can physically enter.
+
+They were part of an experiment gone wrong.
+
+They believe they are living someone else’s life.
+
+They keep hearing their name whispered by trees.
+
+They can speak every language but can’t read any.
+
+They were sacrificed once — and survived.
+
+They are the reincarnation of a legendary hero who failed.
+
+They owe a favor to a dragon.
+
+They fear the sea but are always drawn to it.
+
+They were once crowned but lost the kingdom overnight.
+
+They can sense portals between worlds.
+
+They were born without a shadow.
+
+They were adopted by goblins who loved them dearly.
+
+They keep a diary they don’t remember writing.
+
+They are allergic to magic but can’t live without it.
+
+They found a mirror that reflects a different version of themselves.
+
+They once saw a god die.
+
+They have a tattoo that moves on their skin.
+
+They were raised to slay monsters but discovered they are one.
+
+They can’t feel pain but miss it.
+
+They have visions of someone else’s memories.
+
+They are followed by a black cat that never eats or sleeps.
+
+They cannot resist speaking the truth of what they see.
+
+They lost their reflection after making a wish.
+
+They can taste emotions.
+
+They used to be a pirate but can’t remember the sea.
+
+They were found frozen in ice centuries after their time.
+
+They are convinced the stars are spelling their name.
+
+They once held an artifact that whispered their destiny.
+
+They can hear the thoughts of dying creatures.
+
+They are being hunted by their own shadow.
+
+They stole fire from a god.
+
+They believe they were never meant to exist.
+
+They once loved a ghost who hasn’t moved on.
+
+They hear bells whenever someone near them dies.
+
+They carry a book that writes new pages by itself.
+
+They are immune to poison but addicted to it.
+
+They were the apprentice of a necromancer who vanished.
+
+They can speak with the dead, but only once per person.
+
+They are blamed for a war they didn’t start.
+
+They once lived another life in another world.
+
+They fear their own dreams.
+
+They wear a cursed ring they can’t remove.
+
+They can’t recall their own face.
+
+They were created from clay and given a soul.
+
+They once met their future self — and killed them.
+
+They see time differently from everyone else.
+
+They are hunted for knowledge they don’t remember learning.
+
+They owe their soul to a trickster spirit.
+
+They were found drifting in a coffin.
+
+They never age — and wish they could.
+
+They once freed a monster from captivity.
+
+They believe the moon watches over them personally.
+
+They were trained by a secret order that was wiped out.
+
+They have wings no one else can see.
+
+They speak to insects and are understood.
+
+They once stole a god’s heart.
+
+They were married in a dream — and their spouse is real.
+
+They can see the threads of fate.
+
+They once died in a fire they started.
+
+They are haunted by a song they can’t stop humming.
+
+They hear whispers from beneath the ground.
+
+They are allergic to silver but don’t know why.
+
+They were saved by a dragon at birth.
+
+They’ve forgotten how to smile — literally.
+
+They are searching for the library that appears in their dreams.
+
+They can’t be seen by mirrors.
+
+They were cursed to forget everyone they love.
+
+They once traded names with a faerie.
+
+They are hunted for a crime their ancestor committed.
+
+They are the only survivor of a sinking island.
+
+They can’t be touched without feeling agony.
+
+They once turned into a beast and killed someone.
+
+They remember every death they’ve ever witnessed.
+
+They believe they’re slowly turning into stone.
+
+They hear laughter when they cast magic.
+
+They wear the armor of someone they killed.
+
+They can’t cross thresholds uninvited.
+
+They have dreams that predict storms.
+
+They are possessed by a friendly ghost.
+
+They are the child of two rival gods.
+
+They’ve forgotten how they lost their arm — or if they ever had one.
+
+They once belonged to a traveling circus of assassins.
+
+They are immune to disease but spread it unknowingly.
+
+They can’t cry — their tears turned to crystals.
+
+They were promised a kingdom that never came to be.
+
+They fear open skies but crave freedom.
+
+They were turned into an animal once — and miss it.
+
+They have a familiar that doesn’t obey them.
+
+They were raised by the undead.
+
+They once found paradise and left it willingly.
+
+They have a heartbeat that echoes like thunder.
+
+They see invisible doors everywhere.
+
+They were given a prophecy they refuse to believe.
+
+They can read any language when drunk.
+
+They survived execution by sheer willpower.
+
+They hear the heartbeat of the earth.
+
+They can’t be remembered by strangers.
+
+They bear a mark that opens certain locks.
+
+They carry a piece of an ancient god inside them.
+
+They were born underwater and still feel at home there.
+
+They speak to fire like an old friend.
+
+They were supposed to be the villain of a legend.
+
+They are searching for their own grave.
+
+They are followed by butterflies that die when touched.
+
+They can’t stand silence — it hurts.
+
+They were part of a royal family that no one remembers existed.
+
+They age backward once a year.
+
+They once served as a vessel for a divine being.
+
+They have nightmares that come true within a week.
+
+They believe every shadow hides an eye.
+
+They were raised in a monastery that vanished overnight.
+
+They are convinced they were never human.
+
+They carry a melody that opens ancient doors.
+
+They see floating runes only they can decipher.
+
+They have wings that only appear at night.
+
+They once lived in the Feywild and can’t remember why they left.
+
+They are terrified of mirrors but keep one close.
+
+They were cursed to bring misfortune to those they love.
+
+They once defeated death — and regret it.
+
+They can’t tell dreams from memories anymore.
+
+They are bound by an oath they never took.
+
+They hear their future self whisper advice.
+
+They were found with no heartbeat but still alive.
+
+They command respect from animals but fear them.
+
+They have a twin made of shadow.
+
+They are forbidden from speaking their true name.
+
+They were blessed by a forgotten deity.
+
+They once burned down their own home to save it.
+
+They have seen the edge of the world — and what’s beyond.
+
+They can’t sleep without hearing a lullaby from nowhere.
+
+They were the test subject of an alchemist’s grand experiment.
+
+They were born during a storm that lasted a week.
+
+They collect bones but don’t know why.
+
+They can smell fear.
+
+They are followed by faint, childlike laughter.
+
+They wake up with sand in their boots every morning.
+
+They were once someone else entirely.
+
+They remember being a god.
+
+They can’t enter forests without trees bowing slightly.
+
+They always know when someone is lying.
+
+They can sense when something is watching them — and it always is.
+
+They were a statue for a century before being freed.
+
+They are searching for the meaning of a single word.
+
+They once fell in love with a storm.
+
+They fear the color blue.
+
+They are followed by a glowing butterfly that never dies.
+
+They were blessed and cursed in the same moment.
+
+They see writing appear on walls around them — messages meant for them.
+
+They once spoke the true name of fire.
+
+They were trained by assassins but spared their first target.
+
+They can’t eat food cooked by others.
+
+They hear the ocean even miles inland.
+
+They are the only one who remembers a forgotten war.
+
+They can’t be burned by flames.
+
+They are always cold, no matter the season.
+
+They see stars where others see darkness.
+
+They were chosen by fate but rejected it.
+
+They have never seen their own reflection move.
+
+They once stole from a god and were never caught.
+
+They are searching for the original version of their soul.
+
+They remember being born twice.
+
+They can command shadows to move.
+
+They are the only one who can hear a specific child’s laughter.
+
+They once traded their heart for knowledge.
+
+They have a clockwork limb powered by an unknown crystal.
+
+They were raised by a monster and still call it “mother.”
+
+They see the moment of death in everyone’s eyes.
+
+They once turned invisible for a year and couldn’t change back.
+
+They are the last of an order that guarded a forgotten gate.
+
+They hear a heartbeat coming from their weapon.
+
+They were shipwrecked but no one remembers the ship.
+
+They were worshiped as a god by mistake.
+
+They lost their name in a card game.
+
+They know a secret that could destroy the world.
+
+They never learned to read, yet can decipher ancient tomes.
+
+They have a missing shadow that acts on its own.
+
+They can’t stand still or something terrible happens.
+
+They once imprisoned a ghost inside themselves.
+
+They dream of being buried alive every night.
+
+They are followed by a cloud that rains only for them.
+
+They can’t die unless someone says their name aloud.
+
+They hear their heartbeat whispering words.
+
+They once saved a demon’s life.
+
+They were painted into a portrait and stepped out.
+
+They can control one element, but it hates them.
+
+They remember the day the stars fell.
+
+They were a king in another lifetime.
+
+They are being erased from history as they live.
+
+They collect the dying words of strangers.
+
+They have a magical tattoo that grows with them.
+
+They once broke into heaven.
+
+They can taste magic in the air.
+
+They have no reflection but everyone else can see it.
+
+They are cursed to never sleep in the same place twice.
+
+They carry a compass that points to the most dangerous thing nearby.
+
+They were raised in a library that could move between realms.
+
+They cannot bleed.
+
+They once taught a dragon to read.
+
+They remember the scent of their killer.
+
+They are afraid of mirrors because they whisper back.
+
+They were blessed by a dying phoenix.
+
+They once walked across the bottom of the ocean.
+
+They can hear the future in the wind.
+
+They remember every life they’ve ever lived.
+
+They once danced with death — literally.
+
+They can speak to reflections.
+
+They were born during a blizzard that never ended.
+
+They always know the time, no matter where they are.
+
+They see memories as colors.
+
+They were once worshiped as an oracle.
+
+They can hear the dead crying beneath their feet.
+
+They were supposed to be a sacrifice.
+
+They can’t be seen by dogs.
+
+They were once part of a great beast’s dream.
+
+They have wings made of ash.
+
+They were trained to kill their own kind.
+
+They can speak to their blood.
+
+They know a spell that shouldn’t exist.
+
+They can’t step into sunlight without casting two shadows.
+
+They once killed a man who never existed.
+
+They smell of ozone when angry.
+
+They were once offered immortality and refused.
+
+They can’t taste food unless it’s poisoned.
+
+They have eyes that change color with their mood.
+
+They are searching for the person in their dreams.
+
+They can never remove their gloves.
+
+They can’t remember what they look like.
+
+They carry the ashes of someone important — but don’t know who.
+
+They can see people’s memories in water.
+
+They have been stabbed in the heart and survived.
+
+They once commanded an army that no one recalls.
+
+They can only see in darkness.
+
+They have a heartbeat that others can hear.
+
+They can’t cross bridges safely.
+
+They smell of rain when lying.
+
+They once turned down a god’s offer.
+
+They were cursed to live until they understand forgiveness.
+
+They can’t touch metal without pain.
+
+They were once the familiar of a powerful mage.
+
+They hear their own footsteps echo seconds late.
+
+They are terrified of their own handwriting.
+
+They once bargained away their memories for a kiss.
+
+They were carved from stone and given life.
+
+They see the faces of the dead in candlelight.
+
+They were born in a prison.
+
+They can’t dream but see others’ dreams instead.
+
+They once made a wish that still hasn’t come true.
+
+They are secretly a construct with a soul.
+
+They were raised by ravens.
+
+They once turned invisible and were forgotten.
+
+They cannot feel warmth.
+
+They are followed by a soft humming no one else hears.
+
+They were destined to be a villain but rebelled.
+
+They can speak to bones.
+
+They are the last living piece of a shattered soul.
+
+They were betrayed by their reflection.
+
+They can’t die in daylight.
+
+They remember a future that never happened.
+
+They once commanded lightning with a word.
+
+They can’t speak the name of their homeland.
+
+They are addicted to magical energy.
+
+They have no heartbeat but are alive.
+
+They once slept for a century.
+
+They were written into existence.
+
+They are followed by a shadow that moves independently.
+
+They were born knowing a forbidden spell.
+
+They smell faintly of smoke no matter what.
+
+They hear music no one else can.
+
+They can sense the direction of the nearest corpse.
+
+They have a map etched into their skin.
+
+They were abandoned on the steps of a wizard’s tower.
+
+They can hear plants scream when cut.
+
+They were killed once — by their best friend.
+
+They see the world in shades of emotion.
+
+They once found a door that led to nowhere.
+
+They can’t swim, but the sea loves them.
+
+They are convinced someone is rewriting their memories.
+
+They can’t resist helping lost souls.
+
+They are immune to cold but freeze others by touch.
+
+They speak an extinct language fluently.
+
+They were bound to guard a tomb for eternity — and fled.
+
+They once loved a being made of light.
+
+They dream of drowning every night.
+
+They are searching for the other half of a key.
+
+They are terrified of their own magic.
+
+They remember being a sword.
+
+They were born during an earthquake.
+
+They can’t look at the stars without crying.
+
+They are pursued by a monster only they can see.
+
+They carry a lantern that burns with no fuel.
+
+They once commanded the loyalty of wolves.
+
+They have a name that opens doors.
+
+They can hear every heartbeat within a mile.
+
+They were turned to stone and restored.
+
+They have a voice that can shatter glass.
+
+They are being hunted by angels.
+
+They once saved the life of their mortal enemy.
+
+They have never seen their own shadow move.
+
+They were raised in a city that doesn’t exist.
+
+They can feel ghosts brushing against them.
+
+They are immune to time — but not to memory.
+
+They once made a vow that reshaped their fate.
+
+They have a twin made of light.
+
+They were born from lightning.
+
+They have dreams that others experience as nightmares.
+
+They once stole a god’s laughter.
+
+They can hear lies as music.
+
+They were burned alive and rose again.
+
+They are followed by strange footprints.
+
+They can sense curses as a metallic taste.
+
+They were trained by a blind swordsman.
+
+They are afraid of sleeping indoors.
+
+They once saw the sun blink.
+
+They have eyes like mirrors.
+
+They are hunted by a prophecy they don’t believe in.
+
+They once fought their future self.
+
+They are loved by ghosts and hated by gods.
+
+They have a birthmark that changes shape.
+
+They were the last to leave a burning temple.
+
+They can speak to the stars.
+
+They were found asleep inside a tree.
+
+They can’t stop seeing death omens.
+
+They are always accompanied by a cold wind.
+
+They once betrayed their own people to save them.
+
+They see colors no one else can.
+
+They were chosen by an ancient relic.
+
+They can breathe underwater but can’t hold their breath on land.
+
+They were the first to survive a forbidden ritual.
+
+They can’t hear their own voice.
+
+They were exiled for a crime they didn’t commit — or did they?
+
+They can sense portals to other realms.
+
+They once commanded a ghost army.
+
+They can’t remember ever being a child.
+
+They were born without fear.
+
+They once turned their heart to crystal.
+
+They have a shadow that whispers names.
+
+They can’t be killed in battle.
+
+They once saw a god cry.
+
+They carry a skull that tells jokes.
+
+They can only speak in rhyme at dawn.
+
+They were raised underground and fear the sky.
+
+They can see through time for brief moments.
+
+They are convinced they’re in someone else’s story.
+
+They were taught magic by dreams.
+
+They can’t taste water.
+
+They were born with the memory of fire.
+
+They are being followed by the scent of flowers.
+
+They once tried to destroy the moon.
+
+They can see the truth of people’s faces.
+
+They were chosen by an ancient sword that refuses to draw.
+
+They can’t forget any face they’ve seen.
+
+They once killed a man who thanked them.
+
+They have been struck by lightning more than once.
+
+They are immune to disease but carry one unknowingly.
+
+They once danced with the fey and never stopped hearing the music.
+
+They can hear the stars sing.
+
+They have an aura that unnerves animals.
+
+They once swallowed a gemstone that still glows inside them.
+
+They can speak to statues.
+
+They are afraid of rainbows for a reason they can’t explain.
+
+They were raised by priests who believed they were divine.
+
+They can control dreams but never sleep well.
+
+They once burned down a city to save it.
+
+They can sense the presence of royalty.
+
+They are being hunted by their own descendants.
+
+They can never speak the same lie twice.
+
+They were bitten by something divine.
+
+They once traded voices with a siren.
+
+They can sense when someone speaks their name.
+
+They were found inside a meteor.
+
+They carry an hourglass that runs backward.
+
+They can’t touch water without freezing it.
+
+They once saved a god who forgot them.
+
+They are forbidden to tell their own story.
+
+They remember every star that’s fallen.
+
+They were built to protect something long gone.
+
+They can see people’s dreams as light around them.
+
+They once met a version of themselves who was a monster.
+
+They have a heartbeat that syncs with thunder.
+
+They are followed by a scent of burning incense.
+
+They were raised by ghosts in an abandoned mansion.
+
+They can’t step into shadows without feeling watched.
+
+They once made a wish that ended a war.
+
+They can see the moment someone will die.
+
+They have been blessed with perfect memory — and it’s torture.
+
+They are pursued by their own creation.
+
+They once turned invisible and saw the world for what it was.
+
+They can speak to mirrors but not reflections.
+
+They were meant to die but a stranger took their place.
+
+They once carried a god’s tear.
+
+They can’t die until they forgive someone.
+
+They have an invisible crown they cannot remove.
+
+They were promised immortality and now want to end it.
+
+They can hear every heartbeat in the room.
+
+They were once human but forgot how to be.
+
+They can’t stop dreaming of fire.
+
+They have a voice that can charm monsters.
+
+They were marked by a comet.
+
+They can’t remember sunlight.
+
+They were made from the dreams of a dying mage.
+
+They can’t touch paper without words appearing.
+
+They once buried a god’s body.
+
+They have a ghost living inside their shadow.
+
+They were born knowing a secret name of the world.
+
+They can smell danger.
+
+They were cursed to walk until the stars go dark.
+
+They can’t cross their own footprints.
+
+They are being followed by their own laughter.
+
+They were raised in a dream that ended.
+
+They can speak to the moon.
+
+They once drowned and woke up breathing water.
+
+They were created by accident.
+
+They can’t see colors but sense emotions as hues.
+
+They once sang a song that caused a storm.
+
+They can’t tell lies but everyone thinks they do.
+
+They were chosen by an ancient tree.
+
+They can’t enter homes without being invited.
+
+They were trained by a sword spirit.
+
+They can feel when someone thinks of them.
+
+They once watched the sun die in a dream.
+
+They can’t resist collecting shiny objects.
+
+They were raised by dragons.
+
+They can speak with lightning.
+
+They once killed someone by accident — or so they think.
+
+They have wings that appear when they dream.
+
+They were promised a kingdom by a dying god.
+
+They can’t remember their first language.
+
+They are allergic to moonlight.
+
+They were born in a crater.
+
+They can hear the thoughts of plants.
+
+They are followed by music only children can hear.
+
+They once traded their laughter for safety.
+
+They can see the world’s magic as glowing lines.
+
+They were exiled from the afterlife.
+
+They can’t stop glowing faintly at night.
+
+They were raised by thieves who disappeared one night.
+
+They can sense lies as warmth.
+
+They once saw their god die.
+
+They can’t sleep beneath the stars.
+
+They were chosen by an ancient beast.
+
+They can speak to blood.
+
+They once killed a god by mistake.
+
+They are followed by fireflies that spell messages.
+
+They can’t be harmed by weapons made of iron.
+
+They were once immortal but forgot why.
+
+They can see invisible creatures when they blink.
+
+They were raised inside a temple that never opened its doors.
+
+They can’t cast a shadow unless someone says their name.
+
+They were born during an eclipse that lasted three days.
+
+They can hear tears falling miles away.
+
+They were once erased from history and brought back.
+
+They can’t cross thresholds without knocking three times.
+
+They once stole death’s scythe.
+
+They can hear the stars laugh.
+
+They are followed by petals that never wilt.
+
+They were born knowing they will cause the end of something.
+
+They can’t remember who gave them their heart.
+
+They are destined to be forgotten by everyone they meet.
+
+They accidentally started a cult and are still trying to file the paperwork to shut it down.
+
+They joined the thieves’ guild specifically to return everything that was stolen.
+
+They’re pretty sure their magic sword is the brains of the relationship and it won’t stop bragging.
+
+They accidentally summoned a demon and now it’s refusing to pay rent.
+
+They were cursed to always tell the truth and developed an Olympic-level talent for sarcasm.
+
+They retired from adventuring to open a tavern that’s haunted by their old party’s questionable decisions.
+
+They keep getting letters from their future self, and the advice is always slightly worse than useless.
+
+They don’t believe in magic despite casting it every time they sneeze.
+
+They’re still paying off student debt from necromancy school and the interest is compounding ominously.
+
+They’ve been impersonating a legendary hero for so long that the real one asked for tips.
+
+They fell in love with someone whose face they’ve never seen and it’s going unreasonably well.
+
+They’re allergic to healing potions but catastrophically clumsy about it.
+
+They can’t stop adopting monsters they were hired to slay and now run a very odd petting zoo.
+
+They owe a dragon money and the late fees are mostly public humiliation.
+
+They swore an oath of silence and haven’t stopped oversharing since.
+
+They’re convinced their horse is reincarnated royalty and frankly the horse agrees.
+
+They’re the world’s most enthusiastic cleric and the gods are worried.
+
+They became the chosen one by standing in exactly the wrong spot at a ceremony.
+
+They keep a journal of terrible ideas and it’s a multi-volume best seller.
+
+They have amnesia and apologize to everyone preemptively just to be safe.
+
+They were adopted by orcs who still send three letters a week and snacks for the road.
+
+They’re technically undead but haven’t found the right moment to bring it up.
+
+They joined the party to find themselves and accidentally found everyone else first.
+
+They bluffed their way into knighthood and now give motivational speeches to their armor.
+
+They’re cursed to always be late, including to their own destiny.
+
+They spent a month as a frog and quietly miss the pond life.
+
+They accidentally invented a religion during a drinking contest and people keep converting.
+
+They can’t remember where they buried their first fortune, only that it was under a very suspicious tree.
+
+They’re being blackmailed by their familiar and honestly the cat has points.
+
+They’re convinced the moon is following them specifically and will not be taking questions.
+
+They can’t read but compose devastatingly beautiful love letters from vibes alone.
+
+They’re immune to alcohol and hate being the designated strategist.
+
+They’re heir to a kingdom that no longer exists and still get invited to awkward reunions.
+
+They swore off romance after their last partner turned out to be a doppelgänger with impeccable manners.
+
+They were raised by librarians and still whisper in life-or-death situations.
+
+They collect cursed items out of spite and label them with cheerful warnings.
+
+They travel the world returning overdue library books like a very polite menace.
+
+They were once eaten by a mimic and now everything tastes faintly of guilt.
+
+They became a bard to find their missing audience and found a chorus of heckling ghosts.
+
+They once dueled a goose and lost something more precious than dignity.
+
+They owe a wish to a genie and are terrified of choosing the wrong snack to go with it.
+
+They faked their own death and forgot to notify half their friends and all their enemies.
+
+They can’t remember which god they accidentally married but keep finding celebratory confetti.
+
+They traded their soul for a sandwich and it was only a seven out of ten.
+
+They’re trying to break a curse that only triggers when they’re genuinely happy.
+
+They’re a pacifist barbarian who channels rage through interpretive dance and deep breathing.
+
+They started a tavern brawl to cover a yawn and got three job offers.
+
+They sincerely believe every problem can be solved with soup and surprising accuracy.
+
+They’re on a quest to pet every animal and are one hydra away from completion.
+
+They’re haunted by a ghost that delivers life coach pep talks at 3 a.m.
+
+They keep getting mistaken for a wanted criminal and the discounts are awkward.
+
+They’re saving up for a carnivorous houseplant and reading it bedtime stories in advance.
+
+They can only tell the future when it’s too late to matter and even then they whisper.
+
+They’re writing an autobiography and keep forgetting to survive the next chapter.
+
+They’re terrified of magic and accidentally cast it whenever startled by pigeons.
+
+They once corrected a dragon’s grammar and now receive strongly worded letters.
+
+They suspect their reflection is better at flirting and unfortunately everyone agrees.
+
+They’re banned from three temples and one bakery for unrelated but spectacular reasons.
+
+They became a local legend because of a paperwork typo and refuse to correct it.
+
+They can’t remember learning to fight but their bruises are very nostalgic.
+
+They’re the literal black sheep of the family and refuse to be sheared.
+
+They’re chasing the thief who keeps stealing their dreams and leaving helpful notes.
+
+They’re followed by a prophecy that just says “oops” in elegant calligraphy.
+
+They’ve been faking wizardry with sleight of hand and the confidence of a minor god.
+
+They collect final words from the dying and plan to publish a very specific anthology.
+
+They’re allergic to divine intervention and break out in miracles.
+
+They learned to whistle for spirits and only summon ducks with opinions.
+
+They inherited a sword that only insults them and somehow it’s good for morale.
+
+They were exiled for a creative interpretation of the law that involved juggling evidence.
+
+They’re secretly the villain of someone else’s prophecy and trying very hard not to be.
+
+They kissed a cursed statue and now it follows them for emotional support.
+
+They sneeze whenever someone nearby lies and it is wrecking their poker nights.
+
+They joined a monastery to find peace and discovered spreadsheets instead.
+
+They keep trying to return a cursed item but it keeps leaving little notes that say “no.”
+
+They accidentally taught goblins about capitalism and sincerely regret the quarterly results.
+
+They’re convinced all birds have been replaced by spies and the ravens keep winking.
+
+They own a diary that reads their embarrassing secrets aloud in stage voice.
+
+They joined an adventuring party for exposure and now wear a helmet with a brand deal.
+
+They can’t stop finding lost royal heirlooms and have started a tasteful display case.
+
+They owe their life to a talking cat who keeps sending them on errands for yarn.
+
+They once performed a heroic deed in their sleep and woke up to applause.
+
+They’re trying to prove their invisible friend exists and the friend is not helping.
+
+They’re followed by a tiny storm cloud that sulks when ignored and ruins laundry day.
+
+They were expelled from bard college for creative pyrotechnics and flawless harmonies.
+
+They’re out-praying a paladin out of spite and surprisingly it’s working.
+
+They aren’t sure if they’re running from destiny or late for it.
+
+They swore revenge on a goose and the goose scheduled a rematch.
+
+They seek their missing left sock and the lich who claims it completes his aesthetic.
+
+They’re certain they used to be taller and suspect a shrink spell with petty motives.
+
+They think they’re the protagonist of a story no one else can read and keep pausing for narration.
+
+They accidentally became a vampire and hate the interior design expectations.
+
+They joined a holy order to impress a crush and accidentally became high priest by vote.
+
+They were adopted by a dragon who calls them “tiny hoard” and asks about school.
+
+They cannot die until they pay a library fine and the librarian is immortal.
+
+They’re haunted by a ghost who only wants fashion advice and brutally honest feedback.
+
+They signed up for two rival guilds and keep attending both meetings with different hats.
+
+They hear applause whenever they do something stupid and it’s made them very brave.
+
+They’re sure they were cursed by a toddler and fear the day it turns six.
+
+They can’t tell divine visions from hangovers and keep rating them out of ten.
+
+They’re convinced destiny made a clerical error and refuse to file the correction.
+
+They wake every morning with a new freckle shaped like bad ideas, and they’ve decided surviving is a kind of art.
+
+They wake every morning with a new freckle shaped like bad ideas, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They wake every morning with a new freckle shaped like bad ideas, and they keep choosing kindness just to see what happens next.
+
+They wake every morning with a new freckle shaped like bad ideas, and they’re slowly becoming someone they would have trusted.
+
+They wake every morning with a new freckle shaped like bad ideas, and they save their best jokes for when the fear gets loud.
+
+They keep receiving postcards from cities they’ve never visited, and they’ve decided surviving is a kind of art.
+
+They keep receiving postcards from cities they’ve never visited, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They keep receiving postcards from cities they’ve never visited, and they keep choosing kindness just to see what happens next.
+
+They keep receiving postcards from cities they’ve never visited, and they’re slowly becoming someone they would have trusted.
+
+They keep receiving postcards from cities they’ve never visited, and they save their best jokes for when the fear gets loud.
+
+They hear their name pronounced correctly only by ghosts, and they’ve decided surviving is a kind of art.
+
+They hear their name pronounced correctly only by ghosts, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They hear their name pronounced correctly only by ghosts, and they keep choosing kindness just to see what happens next.
+
+They hear their name pronounced correctly only by ghosts, and they’re slowly becoming someone they would have trusted.
+
+They hear their name pronounced correctly only by ghosts, and they save their best jokes for when the fear gets loud.
+
+They discovered their laughter scares curses away, and they’ve decided surviving is a kind of art.
+
+They discovered their laughter scares curses away, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They discovered their laughter scares curses away, and they keep choosing kindness just to see what happens next.
+
+They discovered their laughter scares curses away, and they’re slowly becoming someone they would have trusted.
+
+They discovered their laughter scares curses away, and they save their best jokes for when the fear gets loud.
+
+They collect promises like seashells and return the broken ones, and they’ve decided surviving is a kind of art.
+
+They collect promises like seashells and return the broken ones, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They collect promises like seashells and return the broken ones, and they keep choosing kindness just to see what happens next.
+
+They collect promises like seashells and return the broken ones, and they’re slowly becoming someone they would have trusted.
+
+They collect promises like seashells and return the broken ones, and they save their best jokes for when the fear gets loud.
+
+They carry a ring that spins whenever they lie, and they’ve decided surviving is a kind of art.
+
+They carry a ring that spins whenever they lie, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They carry a ring that spins whenever they lie, and they keep choosing kindness just to see what happens next.
+
+They carry a ring that spins whenever they lie, and they’re slowly becoming someone they would have trusted.
+
+They carry a ring that spins whenever they lie, and they save their best jokes for when the fear gets loud.
+
+They write letters to people they haven’t met yet, and they’ve decided surviving is a kind of art.
+
+They write letters to people they haven’t met yet, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They write letters to people they haven’t met yet, and they keep choosing kindness just to see what happens next.
+
+They write letters to people they haven’t met yet, and they’re slowly becoming someone they would have trusted.
+
+They write letters to people they haven’t met yet, and they save their best jokes for when the fear gets loud.
+
+They apologize to statues and mean it every time, and they’ve decided surviving is a kind of art.
+
+They apologize to statues and mean it every time, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They apologize to statues and mean it every time, and they keep choosing kindness just to see what happens next.
+
+They apologize to statues and mean it every time, and they’re slowly becoming someone they would have trusted.
+
+They apologize to statues and mean it every time, and they save their best jokes for when the fear gets loud.
+
+They keep a jar of sunrise for difficult days, and they’ve decided surviving is a kind of art.
+
+They keep a jar of sunrise for difficult days, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They keep a jar of sunrise for difficult days, and they keep choosing kindness just to see what happens next.
+
+They keep a jar of sunrise for difficult days, and they’re slowly becoming someone they would have trusted.
+
+They keep a jar of sunrise for difficult days, and they save their best jokes for when the fear gets loud.
+
+They practice smiling like a spell that might work, and they’ve decided surviving is a kind of art.
+
+They practice smiling like a spell that might work, and they’re learning to forgive the version of themselves that didn’t know better.
+
+They practice smiling like a spell that might work, and they keep choosing kindness just to see what happens next.
+
+They practice smiling like a spell that might work, and they’re slowly becoming someone they would have trusted.
+
+They practice smiling like a spell that might work, and they save their best jokes for when the fear gets loud.
+
+They recently acquired a cape haunted by a diva who adores stage lights and consider it character development.
+
+They recently acquired boots that demand weekends and dental and consider it character development.
+
+They recently acquired a coin purse that gives terrible investment advice and consider it character development.
+
+They recently acquired a shield that writes passive-aggressive chalk notes and consider it character development.
+
+They recently acquired a hat that insists on being addressed as Captain and consider it character development.
+
+They recently acquired a backpack that is secretly a picky mimic and consider it character development.
+
+They recently acquired a wand that fires confetti when startled and consider it character development.
+
+They recently acquired gauntlets that clap when they do something clever and consider it character development.
+
+They recently acquired a lute that refuses to play anything but sea shanties and consider it character development.
+
+They recently acquired a horse that negotiates for better oats and plot relevance and consider it character development.
+
+They swear every mirror is half a second late around them, and they’re done pretending that’s normal.
+
+They swear their shadow sometimes walks the other way, and they’re done pretending that’s normal.
+
+They swear ink crawls toward their hands like it remembers them, and they’re done pretending that’s normal.
+
+They swear bells ring in places they haven’t reached yet, and they’re done pretending that’s normal.
+
+They swear ravens deliver receipts for things they never bought, and they’re done pretending that’s normal.
+
+They swear the sea knows their true name and refuses to say it, and they’re done pretending that’s normal.
+
+They swear old graves make room when they pass by, and they’re done pretending that’s normal.
+
+They swear the wind repeats their jokes to distant listeners, and they’re done pretending that’s normal.
+
+They swear snow does not melt where their tears fall, and they’re done pretending that’s normal.
+
+They swear lanterns burn brighter when they tell the truth, and they’re done pretending that’s normal.
+
+They keep a list titled “people I hope I become,” and they’re finally on it.
+
+They laugh a little too loudly at danger so the fear can hear them winning.
+
+They bake bread for enemies because forgiveness needs carbs.
+
+They trade recipes with witches and gossip with their brooms.
+
+They carry three rings: one for promises, one for lies, and one just for fidgeting.
+
+They compliment monsters first to establish respectful boundaries.
+
+They rehearse apologies like spells and cast them when needed.
+
+They save shiny pebbles for when coins feel too loud.
+
+They name thunderstorms and send them postcards.
+
+They keep a spare bedroll for stray destiny.
+
+They press flowers between pages of mistakes they survived.
+
+They practice being gentle even when no one’s watching.
+
+They stitched their banner from retired red flags.
+
+They collect lullabies in languages they do not speak yet.
+
+They send thank-you notes to the people they used to be.
+
+They travel with a kettle and remarkably persuasive tea.
+
+They believe soup can end most wars and start better ones.
+
+They mail curses back to sender with a smiley face sticker.
+
+They say please to doors and thank you to bridges.
+
+They wear secondhand armor and first-rate optimism.
+
+They keep a pocket full of borrowed courage and return it with interest.
+
+They laugh like they survived something sharp and now carry the softness carefully.
+
+They found a rumor with their name on it and decided to live up to the better parts.

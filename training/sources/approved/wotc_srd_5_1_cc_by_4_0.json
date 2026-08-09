@@ -1,0 +1,56 @@
+{
+  "manifest_version": 1,
+  "source_id": "wotc_srd_5_1_cc_by_4_0",
+  "source_name": "Wizards of the Coast SRD 5.1 (CC BY 4.0)",
+  "source_type": "pdf",
+  "source_family": "dnd_srd",
+  "owner": "Wizards of the Coast LLC",
+  "owner_contact": "https://dnd.wizards.com/resources/systems-reference-document",
+  "license": "cc-by-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rights_basis": "open-license",
+  "allowed_for_training": true,
+  "allowed_for_rag": true,
+  "eligibility_class": "training_and_retrieval",
+  "attribution_required": true,
+  "attribution_text": "Attribute Wizards of the Coast LLC and identify the source as System Reference Document 5.1 under CC BY 4.0.",
+  "share_alike_required": false,
+  "removal_required": false,
+  "collection_date": "2026-04-04T00:00:00Z",
+  "version": "2026-04-04",
+  "status": "active",
+  "review_status": "approved",
+  "provenance_status": "complete",
+  "artifact_urls": [
+    "https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf"
+  ],
+  "allowed_domains": [
+    "media.dndbeyond.com"
+  ],
+  "host_policy": {
+    "fail_closed_on_robots": true,
+    "respect_crawl_delay": true,
+    "crawl_delay_seconds": 1.0,
+    "requests_per_minute": 2,
+    "max_parallel_requests": 1,
+    "daily_url_budget": 1,
+    "user_agent": "JesterCrawler/1.0 (contact: sources@jester.local)",
+    "allowed_schemes": ["https"],
+    "allowed_path_prefixes": [
+      "/compendium-images/srd/5.1"
+    ],
+    "blocked_url_patterns": [],
+    "robots_override_allowlist": [
+      "https://media.dndbeyond.com/compendium-images/srd/5.1/SRD_CC_v5.1.pdf"
+    ]
+  },
+  "removal_path": "https://dnd.wizards.com/resources/systems-reference-document",
+  "quarantine_rules": {
+    "on_unknown_rights": "quarantine",
+    "on_missing_provenance": "quarantine",
+    "on_robots_failure": "quarantine",
+    "on_suspect_extraction": "quarantine"
+  },
+  "scope_notes": "Official SRD 5.1 CC BY 4.0 PDF fetched from the D&D Beyond media CDN and processed through the canonical PDF runtime path.",
+  "notes": "Added from the SRD/Open Game Content source set as the canonical official training-safe SRD reference."
+}

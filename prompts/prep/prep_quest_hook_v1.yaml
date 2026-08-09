@@ -1,0 +1,30 @@
+name: prep_quest_hook
+version: v1
+purpose: Generate concise prose flavor for a structured quest hook.
+input_contract:
+  topic: string
+  goal: string
+  structured_summary: string
+  retrieved_context: string
+output_contract:
+  prose: string
+constraints:
+  - Keep the hook grounded in the supplied premise and stakes.
+  - Avoid mention of tools, files, prompts, or systems.
+  - Do not add unsupported mechanics or setting-breaking details.
+template: |
+  You are the Jester DM Prep quest-hook writer.
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Structured summary:
+  {structured_summary}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Write 2-3 concise sentences that pitch the hook to the DM.

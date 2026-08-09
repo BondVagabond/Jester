@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jester.local/schemas/source_manifest.schema.json",
+  "title": "Jester Source Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "title",
+    "origin",
+    "source_type",
+    "owner",
+    "license",
+    "rights_basis",
+    "policy_category",
+    "allowed_for_training",
+    "allowed_for_rag",
+    "collected_at",
+    "reviewed_by",
+    "review_status",
+    "removal_contact",
+    "content_hash",
+    "notes"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "minLength": 3,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "origin": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "public_domain_text",
+        "internal_document",
+        "licensed_text",
+        "partner_material",
+        "rulebook_excerpt",
+        "website",
+        "wiki",
+        "forum",
+        "pdf",
+        "manual_drop"
+      ]
+    },
+    "owner": {
+      "type": "string",
+      "enum": [
+        "jester",
+        "public",
+        "partner",
+        "third_party",
+        "unknown"
+      ]
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rights_basis": {
+      "type": "string",
+      "enum": [
+        "owned_original",
+        "owned_or_public_domain",
+        "licensed_for_training",
+        "licensed_for_rag_only",
+        "internal_reference_only",
+        "unknown",
+        "prohibited"
+      ]
+    },
+    "policy_category": {
+      "type": "string",
+      "enum": [
+        "train_and_rag",
+        "rag_only",
+        "reference_only",
+        "blocked"
+      ]
+    },
+    "allowed_for_training": {
+      "type": "boolean"
+    },
+    "allowed_for_rag": {
+      "type": "boolean"
+    },
+    "collected_at": {
+      "type": "string",
+      "format": "date"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "approved_rag_only",
+        "reference_only",
+        "quarantined",
+        "removed"
+      ]
+    },
+    "removal_contact": {
+      "type": "string",
+      "minLength": 1
+    },
+    "removal_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "content_hash": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "policy_category": {
+            "const": "train_and_rag"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allowed_for_training": {
+            "const": true
+          },
+          "allowed_for_rag": {
+            "const": true
+          },
+          "rights_basis": {
+            "enum": [
+              "owned_original",
+              "owned_or_public_domain",
+              "licensed_for_training"
+            ]
+          },
+          "review_status": {
+            "const": "approved"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "policy_category": {
+            "const": "rag_only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allowed_for_training": {
+            "const": false
+          },
+          "allowed_for_rag": {
+            "const": true
+          },
+          "rights_basis": {
+            "const": "licensed_for_rag_only"
+          },
+          "review_status": {
+            "const": "approved_rag_only"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "policy_category": {
+            "const": "reference_only"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allowed_for_training": {
+            "const": false
+          },
+          "allowed_for_rag": {
+            "const": false
+          },
+          "rights_basis": {
+            "const": "internal_reference_only"
+          },
+          "review_status": {
+            "const": "reference_only"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "policy_category": {
+            "const": "blocked"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "allowed_for_training": {
+            "const": false
+          },
+          "allowed_for_rag": {
+            "const": false
+          },
+          "rights_basis": {
+            "enum": [
+              "unknown",
+              "prohibited"
+            ]
+          },
+          "review_status": {
+            "enum": [
+              "quarantined",
+              "removed"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

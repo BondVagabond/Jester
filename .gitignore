@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.benchmarks/
+.venv/
+venv/
+*.egg-info/
+node_modules/
+dist/
+build/
+*.log
+*.sqlite3
+
+# Data roots and generated artifacts - see README
+/out/
+/faiss/
+/debug/
+/logs/
+/RAG_index/
+/Runtime/
+
+# Agent scratch (SDD ledger, briefs, review packages)
+.superpowers/

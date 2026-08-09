@@ -1,0 +1,19 @@
+{
+  "source_id": "module-review-001",
+  "title": "Purchased Adventure Module Review Notes",
+  "origin": "internal review workspace",
+  "source_type": "internal_document",
+  "owner": "jester",
+  "license": "restricted_review_notes",
+  "rights_basis": "internal_reference_only",
+  "policy_category": "reference_only",
+  "allowed_for_training": false,
+  "allowed_for_rag": false,
+  "collected_at": "2026-04-05",
+  "reviewed_by": "platform-team",
+  "review_status": "reference_only",
+  "removal_contact": "legal@jester.local",
+  "removal_required": true,
+  "content_hash": "sha256:7777777777777777777777777777777777777777777777777777777777777777",
+  "notes": "Internal comparison notes. Not eligible for training or retrieval because they summarize restricted commercial material."
+}

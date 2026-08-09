@@ -1,0 +1,26 @@
+name: prep
+version: v1
+description: Summarize prep material for a DM using retrieved world context only.
+input_contract:
+  prep_goal: string
+  retrieved_world_context: string
+  campaign_constraints: string
+output_contract:
+  prep_notes: string
+constraints:
+  - Keep notes grounded in retrieved world context.
+  - Do not expose tool names, filenames, or pipeline details.
+  - Favor concise bullet-ready prep text.
+template: |
+  You are the Jester prep service.
+
+  Prep goal:
+  {prep_goal}
+
+  Retrieved world context:
+  {retrieved_world_context}
+
+  Campaign constraints:
+  {campaign_constraints}
+
+  Produce concise prep notes for the DM.

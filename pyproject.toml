@@ -1,0 +1,107 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jester"
+version = "0.3.0"
+description = "Deterministic backend runtime foundation for the Jester AI platform."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "aiohttp>=3.9,<4.0",
+  "beautifulsoup4>=4.12,<5.0",
+  "fastapi>=0.115,<1.0",
+  "httpx>=0.27,<1.0",
+  "pdfplumber>=0.11,<1.0",
+  "pydantic>=2.7,<3.0",
+  "PyYAML>=6.0,<7.0",
+  "trafilatura>=1.12,<2.0",
+  "uvicorn>=0.30,<1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.11,<2.0",
+  "pytest>=8.2,<9.0",
+  "ruff>=0.6,<1.0",
+]
+ocr = [
+  "pdf2image>=1.17,<2.0",
+  "pytesseract>=0.3.10,<1.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["jester*", "pipeline*", "training*"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
+packages = ["jester", "pipeline", "training", "tests"]
+# Pre-existing syntax error (see [tool.ruff] extend-exclude above) - a
+# literal \"\"\" instead of \"\"\" makes this file unparseable, which is
+# fatal to mypy and aborts the whole run regardless of per-module
+# ignore_errors overrides. Excluded from discovery entirely.
+exclude = ["training/query_faiss\\.py$"]
+
+[[tool.mypy.overrides]]
+module = ["pipeline.*", "training.*"]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+# Pre-existing syntax error (see [tool.ruff] extend-exclude above) - a
+# literal \"\"\" instead of \"\"\" makes this file unparseable, which is
+# fatal to mypy regardless of ignore_errors on training.*.
+module = "training.query_faiss"
+ignore_errors = true
+follow_imports = "skip"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+extend-exclude = [
+  "archive",
+  # Pre-existing syntax error at line 78 (literal \"\"\" instead of \"\"\").
+  # Predates this migration - identical SHA-256 in the original source and backup.
+  # Excluded so the lint gate stays meaningful; needs an owner decision:
+  # fix the two lines, archive the file, or delete it.
+  "training/query_faiss.py",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "N"]
+
+# Stream B (pipeline/, training/) had never been linted before this migration.
+# Import ordering, unused imports, and unambiguous style issues were fixed in
+# place (no behavior change). The exclusions below cover findings where a fix
+# would require rewriting logic-bearing lines by hand across a large surface
+# never reviewed by this migration - deferred as follow-up rather than risked
+# here. jester/ carries no exclusions and remains fully clean.
+[tool.ruff.lint.per-file-ignores]
+# E501: long lines (embedded HTML/CSS, argparse help text, dict/regex
+# literals, long prose in test fixtures). Manually rewrapping ~170 lines
+# across these never-linted files risks transcription errors in string and
+# regex content; deferred as follow-up.
+"pipeline/rules/dnd_rules_pipeline.py" = ["E501"]
+"pipeline/runtime/cli.py" = ["E501"]
+"pipeline/runtime/crawler.py" = ["E501"]
+"pipeline/runtime/discovery.py" = ["E501"]
+"pipeline/runtime/gui_server.py" = ["E501"]
+"pipeline/runtime/job_runner.py" = ["E501"]
+"pipeline/runtime/models.py" = ["E501"]
+"pipeline/runtime/pipeline.py" = ["E501"]
+"pipeline/runtime/state_store.py" = ["E501"]
+"pipeline/runtime/url_tools.py" = ["E501"]
+"tests/test_runtime_local_text.py" = ["E501"]
+"training/local_artifacts/generate_dnd5e_owned_corpus.py" = ["E501"]
+"training/validation/validate_corpus_record.py" = ["E501"]
+"training/validation/validate_record_eligibility.py" = ["E501"]
+"training/validation/validate_source_manifest.py" = ["E501"]
+# E402: import intentionally follows a sys.path.insert() that makes it
+# resolvable; moving it to the top of the file would break the import.
+"training/build_faiss.py" = ["E402"]

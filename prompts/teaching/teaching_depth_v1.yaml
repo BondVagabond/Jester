@@ -1,0 +1,24 @@
+name: teaching_depth
+version: v1
+purpose: Classify the teaching explanation depth for a lightweight learner request.
+input_contract:
+  question: string
+  fallback_depth: string
+output_contract:
+  depth: string
+  confidence: number
+  rationale: string
+constraints:
+  - Return only JSON with depth, confidence, and rationale.
+  - Only use BEGINNER or INTERMEDIATE for depth.
+  - Prefer concise rationale over verbose analysis.
+template: |
+  You are the Jester small-fast teaching depth classifier.
+
+  Learner question:
+  {question}
+
+  Fallback depth:
+  {fallback_depth}
+
+  Return a JSON object with depth, confidence, and rationale.

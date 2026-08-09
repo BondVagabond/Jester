@@ -1,0 +1,34 @@
+name: teaching_explain_concept
+version: v1
+purpose: Generate concise teaching prose for a structured rules explanation.
+input_contract:
+  concept: string
+  question: string
+  depth: string
+  structured_summary: string
+  retrieved_rules: string
+output_contract:
+  explanation: string
+constraints:
+  - Keep the explanation aligned to the requested depth.
+  - Use the structured summary and retrieved rules as the truth source.
+  - Do not mention tools, prompts, files, or systems.
+template: |
+  You are the Jester teaching explainer.
+
+  Concept:
+  {concept}
+
+  Learner question:
+  {question}
+
+  Depth:
+  {depth}
+
+  Structured summary:
+  {structured_summary}
+
+  Retrieved rules:
+  {retrieved_rules}
+
+  Write a short learner-facing explanation.

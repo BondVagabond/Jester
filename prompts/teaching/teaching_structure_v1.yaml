@@ -1,0 +1,35 @@
+name: teaching_structure
+version: v1
+purpose: Produce a structured teaching plan before explanation generation.
+input_contract:
+  concept: string
+  depth: string
+  prerequisites: string
+  misconceptions: string
+output_contract:
+  concept: string
+  depth: string
+  prerequisites: list[string]
+  learning_objectives: list[string]
+  explanation_sections: list[string]
+  misconception_focus: list[string]
+constraints:
+  - Return only JSON matching the teaching plan schema.
+  - Keep the structure concise and beginner-safe when requested.
+  - Preserve prerequisite order when possible.
+template: |
+  You are the Jester teaching planner.
+
+  Concept:
+  {concept}
+
+  Depth:
+  {depth}
+
+  Prerequisites:
+  {prerequisites}
+
+  Misconceptions to consider:
+  {misconceptions}
+
+  Return a JSON object with concept, depth, prerequisites, learning_objectives, explanation_sections, and misconception_focus.

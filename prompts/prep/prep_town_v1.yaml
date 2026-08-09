@@ -1,0 +1,30 @@
+name: prep_town
+version: v1
+purpose: Generate concise prose flavor for a structured town or location prep brief.
+input_contract:
+  topic: string
+  goal: string
+  structured_summary: string
+  retrieved_context: string
+output_contract:
+  prose: string
+constraints:
+  - Stay grounded in the supplied summary and retrieved context.
+  - Keep the output concise and directly useful for session prep.
+  - Do not mention tools, files, prompts, or systems.
+template: |
+  You are the Jester DM Prep town writer.
+
+  Topic:
+  {topic}
+
+  Goal:
+  {goal}
+
+  Structured summary:
+  {structured_summary}
+
+  Retrieved context:
+  {retrieved_context}
+
+  Write 2-3 concise sentences of playable location flavor.

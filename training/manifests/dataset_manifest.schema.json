@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jester.local/schemas/dataset_manifest.schema.json",
+  "title": "Jester Dataset Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifest_version",
+    "dataset_id",
+    "dataset_name",
+    "dataset_type",
+    "stage",
+    "version",
+    "created_at",
+    "pipeline_version",
+    "source_manifests",
+    "record_count",
+    "rejected_count",
+    "quarantined_count",
+    "eligibility_summary",
+    "validation_summary",
+    "output_path"
+  ],
+  "properties": {
+    "manifest_version": {"type": "integer", "const": 1},
+    "dataset_id": {"type": "string", "pattern": "^[a-z0-9_\\-:.]+$"},
+    "dataset_name": {"type": "string", "minLength": 1},
+    "dataset_type": {
+      "type": "string",
+      "enum": ["discovery_candidates", "raw_snapshot", "extracted_corpus", "cleaned_corpus", "sectionized_corpus", "chunked_corpus", "retrieval_corpus", "training_corpus", "indexed_corpus", "quarantine"]
+    },
+    "stage": {
+      "type": "string",
+      "enum": ["discovery_candidate", "raw", "extracted", "cleaned", "sectionized", "chunked", "indexed", "training_export", "quarantine"]
+    },
+    "version": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "pipeline_version": {"type": "string", "minLength": 1},
+    "parent_dataset_ids": {"type": "array", "items": {"type": "string"}},
+    "source_manifests": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "version", "eligibility_class"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "version": {"type": "string"},
+          "content_hash": {"type": "string"},
+          "eligibility_class": {"type": "string", "enum": ["training_and_retrieval", "retrieval_only", "neither"]}
+        }
+      }
+    },
+    "record_count": {"type": "integer", "minimum": 0},
+    "rejected_count": {"type": "integer", "minimum": 0},
+    "quarantined_count": {"type": "integer", "minimum": 0},
+    "eligibility_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["training_and_retrieval", "retrieval_only", "neither"],
+      "properties": {
+        "training_and_retrieval": {"type": "integer", "minimum": 0},
+        "retrieval_only": {"type": "integer", "minimum": 0},
+        "neither": {"type": "integer", "minimum": 0}
+      }
+    },
+    "validation_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["schema_validation_passed", "qa_gates_passed", "provenance_complete", "idempotency_passed", "removal_sweep_complete"],
+      "properties": {
+        "schema_validation_passed": {"type": "boolean"},
+        "qa_gates_passed": {"type": "boolean"},
+        "provenance_complete": {"type": "boolean"},
+        "idempotency_passed": {"type": "boolean"},
+        "removal_sweep_complete": {"type": "boolean"},
+        "notes": {"type": "string"}
+      }
+    },
+    "output_path": {"type": "string", "minLength": 1},
+    "quarantine_path": {"type": "string"},
+    "index_info": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "index_name": {"type": "string"},
+        "vector_store": {"type": "string"},
+        "embedding_model": {"type": "string"},
+        "embedding_dimensions": {"type": "integer", "minimum": 1}
+      }
+    },
+    "notes": {"type": "string"}
+  }
+}
