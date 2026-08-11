@@ -17,7 +17,13 @@ def _normalize_text_list(value: object) -> list[str]:
     if value is None:
         return []
     if not isinstance(value, list):
-        raise TypeError('Expected a list of strings.')
+        # ValueError, not TypeError: pydantic converts only ValueError and
+        # AssertionError raised inside a validator into a ValidationError.
+        # A TypeError propagates untouched, so callers that guard model parsing
+        # with `except ValidationError` - every artifact parse in
+        # jester/ai/reasoning.py and jester/ai/classification.py - would crash
+        # the request instead of degrading to their fallback artifact.
+        raise ValueError('Expected a list of strings.')
     return [str(item).strip() for item in value if str(item).strip()]
 
 
@@ -67,7 +73,8 @@ class ModelResponse(BaseModel):
         if value is None:
             return None
         if not isinstance(value, dict):
-            raise TypeError('token_usage must be a mapping of token counters.')
+            # ValueError for the same reason as _normalize_text_list above.
+            raise ValueError('token_usage must be a mapping of token counters.')
         parsed: dict[str, int] = {}
         for key, item in value.items():
             normalized_key = _require_text(key)
