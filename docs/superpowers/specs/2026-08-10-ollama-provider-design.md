@@ -31,7 +31,8 @@ Secondary goal: leave behind a real, tested provider if the answer is yes.
 | 2 | Integration | Native `/api/chat` client, additive only. Not the OpenAI `/v1` compat path |
 | 3 | Scope | Real provider, spike-first sequencing |
 | 4 | Judgement | Objective pass-rates and latency, plus prose samples for human reading |
-| 5 | Model | `qwen3.5:9b` primary, `qwen3.5:4b` fallback, `mistral:latest` as baseline |
+| 5 | Model | `qwen3.5:4b` primary (see §Hardware), `qwen3.5:9b` only with a quiet GPU, `mistral:latest` as baseline |
+| 8 | Thinking models | Disabled by default via `think: false`; configurable per deployment |
 | 6 | Role/model mapping | One model serves all three roles |
 | 7 | Mixed-provider guard | Left untouched — that is audit finding D2-17, Wave R5 |
 
@@ -59,24 +60,54 @@ resident models do not fit, so Ollama evicts and reloads on every role switch �
 
 ## Hardware baseline (measured 2026-08-10)
 
-RTX 3060 Ti, 8 GB VRAM, 20 logical cores. During measurement the GPU was contended by an unrelated
-application, leaving 311 MiB free; Ollama logged `offloaded 0/33 layers to GPU` and ran on CPU.
+RTX 3060 Ti, **8 GB VRAM**, 20 logical cores. Two measurement passes, identical 814-token narration
+prompt requesting 220 tokens.
+
+**Pass 1 — GPU contended** (a game running; 311 MiB free). Ollama logged `offloaded 0/33 layers to GPU`.
 
 | Condition | Result |
 |---|---|
-| Cold start, short JSON prompt | 49.9 s total (`load_duration` 15.0 s) |
+| Cold start, short JSON prompt | 49.9 s (`load_duration` 15.0 s) |
 | Warm, short JSON prompt (21 in / 17 out) | 3.3 s |
-| Warm, realistic narration (814 in / 220 out) | **130 s** — prompt eval 7.8 tok/s, generation 8.5 tok/s |
-| `num_ctx` 32768 vs 8192 | model footprint 8.9 GB vs 5.6 GB |
+| Warm, realistic narration | **130 s** — prompt 7.8 tok/s, generation 8.5 tok/s |
+| `mistral` `num_ctx` 32768 vs 8192 | footprint 8.9 GB vs 5.6 GB |
 
-These are worst-case CPU-only figures and must not be treated as representative. They yield three
-binding design constraints:
+**Pass 2 — game closed, but Unreal Editor + Chrome still holding ~4.5 GB** (~3.5 GB free), `qwen3.5:9b`.
 
-1. **`num_ctx` is a first-class setting** — KV cache size determines whether the model fits in VRAM.
-2. **Timeouts need a far higher ceiling than OpenAI's** — `OpenAIProviderSettings.timeout_seconds` caps
-   at `le=120.0`, which the 130 s call would have failed.
-3. **The harness must record GPU placement with every measurement**, or a "too slow" verdict is
-   unfalsifiable.
+| Config | Footprint | Placement | Prompt | Generation |
+|---|---|---|---|---|
+| default `num_ctx` (131072) | 11 GB | 54% CPU / 46% GPU | — | — |
+| `num_ctx` 8192 | 6.4 GB | 12% CPU / 88% GPU | 517 tok/s | **0.4 tok/s** |
+| `num_ctx` 4096, `think: false` | 5.6 GB | **100% GPU** | **709 tok/s** | **3.0 tok/s** |
+
+### Two findings that change the design
+
+**1. `qwen3.5:9b` does not fit this machine under normal working conditions.** Prompt evaluation reached
+709 tok/s — 91x the CPU figure, so offload is genuinely working — while generation stayed at 3.0 tok/s.
+That split is diagnostic: prompt processing is compute-bound and batched, generation is
+memory-bandwidth-bound. Fast prompt with collapsed generation at a reported "100% GPU" is the signature
+of **Windows WDDM VRAM oversubscription** — the driver silently pages GPU memory to system RAM over
+PCIe. Ollama reports full placement; the hardware is not delivering it. A 5.6 GB model cannot fit in
+~3.5 GB of free VRAM. **`qwen3.5:4b` (3.4 GB) becomes the primary candidate.**
+
+**2. `qwen3.5` is a thinking model, and that silently breaks the existing token budgets.** Its response
+carries a separate `thinking` field. With `num_predict=220` the entire budget was consumed by reasoning,
+`done_reason` came back `length`, and `message.content` was **empty**. Jester's current call sites pass
+`max_tokens` of 512 (prompt generation), 384 (narration) and 256 (reasoning/classification) — every one
+of which a thinking model would exhaust before emitting a single user-visible token. Setting
+`think: false` restored correct, well-formed prose immediately.
+
+### Binding constraints
+
+1. **`num_ctx` is first-class.** It moved `qwen3.5:9b` from 11 GB to 5.6 GB and placement from 46% to
+   100%. Model choice is meaningless without it.
+2. **`think` must be controllable, and default to `false`.** Otherwise thinking models return empty
+   content against Jester's existing token budgets. Thinking may later be worth enabling for the
+   Arbiter role specifically — that is a follow-up, not this spike.
+3. **Timeouts need a far higher ceiling than OpenAI's** `le=120.0`, which several of these calls exceed.
+4. **The harness must record GPU placement *and* generation tok/s.** Placement alone is misleading:
+   this run reported 100% GPU while paging to system RAM. A generation rate far below prompt rate is
+   the tell, and the harness must surface both or its verdicts are unfalsifiable.
 
 ## 1. Settings
 
@@ -86,8 +117,17 @@ New `OllamaProviderSettings`, added beside `openai` in `ProviderSettings`:
 |---|---|---|
 | `base_url` | `http://127.0.0.1:11434` | `JESTER_OLLAMA_BASE_URL` |
 | `timeout_seconds` | `300.0` (ge 1.0, le 1800.0) | `JESTER_OLLAMA_TIMEOUT_SECONDS` |
-| `num_ctx` | `None` (server default) | `JESTER_OLLAMA_NUM_CTX` |
+| `num_ctx` | `4096` | `JESTER_OLLAMA_NUM_CTX` |
+| `think` | `False` | `JESTER_OLLAMA_THINK` |
 | `keep_alive` | `None` | `JESTER_OLLAMA_KEEP_ALIVE` |
+
+`num_ctx` defaults to an explicit `4096` rather than deferring to the server. Ollama's per-model default
+is whatever the model card declares — 131072 for `qwen3.5`, which produced an 11 GB footprint and 46%
+CPU fallback. Deferring to the server default means the deployment's memory behaviour is set by the
+model tag, which is precisely the failure this setting exists to prevent.
+
+`think` defaults to `False` for the reason in §Hardware: thinking models otherwise exhaust Jester's
+token budgets and return empty content.
 
 No `api_key` field — there is no credential to hold, and adding an unused one would invite the same
 fake-value pattern this design rejects. The existing openai-key assertion in
@@ -115,12 +155,20 @@ under `'ollama'`. `OpenAIProvider` and its client are not modified.
   ],
   "options": {"temperature": ..., "num_predict": ..., "num_ctx": ...},
   "format": "json",
+  "think": false,
   "keep_alive": "..."
 }
 ```
 
-`format` is set only when `_expects_json_response(request.prompt_name)` is true. `keep_alive` and
-`num_ctx` are omitted when unset.
+`format` is set only when `_expects_json_response(request.prompt_name)` is true. `keep_alive` is omitted
+when unset. `think` is always sent explicitly — omitting it defers to the model's own default, which is
+the behaviour that produced empty content during measurement.
+
+**Empty `content` with a populated `thinking` field must not be silently returned as an empty string.**
+If `content` is empty and `thinking` is present, the client raises `ProviderRequestError` naming the
+cause — a thinking model exhausted its token budget before answering. Returning `''` here would
+manufacture a plausible-looking empty result and hand it to the fallback path labelled as success,
+which is the exact honesty inversion (root cause RC-1) this codebase already suffers from.
 
 **Both helpers are reused, not copied.** `_system_message_for_role()` and `_expects_json_response()`
 already exist in `providers.py`. Duplicating them would turn audit finding D2-14 (prompt policy encoded
@@ -174,7 +222,13 @@ Each prompt runs N times (default 3) to expose nondeterminism.
 `eval_count` and duration; derived tokens/sec in both directions; the role's pass/fail check.
 
 **Recorded per run, at start and end:** `ollama ps` placement percentage, free VRAM, model tag,
-resolved `num_ctx`. Without these the results are not interpretable.
+resolved `num_ctx`, and `think`. Without these the results are not interpretable.
+
+**Oversubscription detector.** The harness computes the ratio of generation tok/s to prompt tok/s and
+flags any run where generation is under ~5% of prompt rate. The 2026-08-10 measurement showed 709 tok/s
+prompt against 3.0 tok/s generation at a reported "100% GPU" — placement alone said the run was healthy
+and it was not. Without this check the harness would report a model as unusably slow when the real
+finding is that it does not fit in available VRAM.
 
 **Outputs:** `report.md` — per-role pass rates and latency percentiles; `samples.md` — prose grouped by
 prompt for human reading. A `--model` flag reruns the identical suite against another tag so
@@ -200,8 +254,10 @@ Proposed, to be confirmed against the first run rather than asserted now:
 4. `httpx.ConnectError` produces the reachability message
 5. `httpx.TimeoutException` raises `ProviderTimeoutError`
 6. `format: "json"` present for a JSON prompt, absent for a prose prompt
-7. `options` mapping — temperature, `num_predict`, `num_ctx`
+7. `options` mapping — temperature, `num_predict`, `num_ctx`; `think` sent explicitly
 8. Role mismatch raises `ModelError`
+9. Empty `content` with a populated `thinking` field raises `ProviderRequestError` naming the cause,
+   rather than returning an empty string
 
 **No live-Ollama test enters the suite.** It stays hermetic and fast; the existing suite completes in
 ~2.1 s and that property is worth protecting. Live inference is the harness's job.
