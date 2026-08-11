@@ -27,6 +27,8 @@ from jester.ai.contracts import (
 )
 from jester.ai.providers import (
     AIProvider,
+    OllamaChatClient,
+    OllamaProvider,
     OpenAIChatCompletionsClient,
     OpenAIProvider,
     ProviderConfigurationError,
@@ -56,6 +58,8 @@ __all__ = [
     'ModelSelection',
     'ModelSelectionPolicy',
     'ModelTraceRecord',
+    'OllamaChatClient',
+    'OllamaProvider',
     'OpenAIChatCompletionsClient',
     'OpenAIProvider',
     'PlanArtifact',

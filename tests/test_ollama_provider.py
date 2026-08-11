@@ -5,6 +5,7 @@ from collections.abc import Callable
 
 import httpx
 import pytest
+from pydantic import ValidationError
 
 from jester.ai import ModelRequest, ModelRole, ModelSelectionPolicy, build_model_registry
 from jester.ai.base import ModelError
@@ -26,6 +27,11 @@ def test_ollama_settings_strip_trailing_slash_from_base_url() -> None:
     settings = OllamaProviderSettings(base_url='http://localhost:11434/')
 
     assert settings.base_url == 'http://localhost:11434'
+
+
+def test_ollama_settings_rejects_blank_base_url() -> None:
+    with pytest.raises(ValidationError, match='base_url must not be blank'):
+        OllamaProviderSettings(base_url='   ')
 
 
 def test_ollama_settings_read_from_environment() -> None:
@@ -165,6 +171,71 @@ def test_ollama_client_reports_missing_model_as_configuration_error() -> None:
         _client(handler).generate(
             ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
         )
+
+
+def test_ollama_client_404_includes_server_body_for_a_wrong_path() -> None:
+    """A 404 on an unknown path (e.g. base URL misconfigured to include /v1) is not a missing model."""
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, text='404 page not found')
+
+    with pytest.raises(ProviderConfigurationError) as exc_info:
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+    message = str(exc_info.value)
+    assert 'ollama pull qwen3.5:4b' in message
+    assert '404 page not found' in message
+
+
+def test_ollama_client_maps_500_with_json_error_body() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(500, json={'error': 'internal server error during generation'})
+
+    with pytest.raises(ProviderRequestError, match='internal server error during generation'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_maps_non_404_error_with_non_json_body() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(400, text='request too large for the loaded model')
+
+    with pytest.raises(ProviderRequestError, match='request too large for the loaded model'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_maps_error_with_empty_body_to_http_status_default() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(503, text='')
+
+    with pytest.raises(ProviderRequestError, match='Ollama returned HTTP 503'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_omits_total_tokens_when_only_one_count_present() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={'message': {'content': 'ok'}, 'prompt_eval_count': 42})
+
+    response = _client(handler).generate(
+        ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+    )
+
+    assert response.token_usage == {'prompt_tokens': 42}
+
+
+def test_jester_ai_exports_ollama_provider_and_client() -> None:
+    from jester.ai import OllamaChatClient as ExportedOllamaChatClient
+    from jester.ai import OllamaProvider
+
+    assert ExportedOllamaChatClient is OllamaChatClient
+    assert OllamaProvider.name == 'ollama'
 
 
 def test_ollama_client_maps_timeout() -> None:

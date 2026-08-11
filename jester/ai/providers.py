@@ -221,7 +221,9 @@ class OllamaChatClient:
         if response.status_code == 404:
             raise ProviderConfigurationError(
                 f'Ollama has no model named {self._model_name!r}. Pull it with: '
-                f'ollama pull {self._model_name}'
+                f'ollama pull {self._model_name}. If the model is already pulled, this may instead '
+                f'mean the configured base URL points at the wrong path. Server said: '
+                f'{_ollama_error_message(response)}'
             )
         if response.status_code >= 400:
             raise ProviderRequestError(_ollama_error_message(response))
@@ -269,7 +271,8 @@ def _extract_ollama_usage(payload: Mapping[str, object]) -> dict[str, int] | Non
         usage['completion_tokens'] = completion_tokens
     if not usage:
         return None
-    usage['total_tokens'] = usage.get('prompt_tokens', 0) + usage.get('completion_tokens', 0)
+    if 'prompt_tokens' in usage and 'completion_tokens' in usage:
+        usage['total_tokens'] = usage['prompt_tokens'] + usage['completion_tokens']
     return usage
 
 

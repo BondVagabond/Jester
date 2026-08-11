@@ -773,6 +773,8 @@ git commit -m "feat: register OllamaProvider in the model registry"
 
 **Why the harness calls Ollama directly rather than through `OllamaChatClient`:** it needs `prompt_eval_duration` and `eval_duration`, which `ModelResponse` deliberately does not expose. The oversubscription detector is built from exactly those two fields. The client is covered by Tasks 1-4; the harness's job is measuring the model.
 
+> **Superseded 2026-08-11 by commit `e0b1224`:** the detector (renamed `is_generation_degraded`) now reads only `gen_tok_s` against an absolute floor - `prompt_eval_duration`/`eval_duration` are still captured and reported (for `prompt_tok_s` and diagnostics) but the detector itself no longer uses both fields. See `docs/superpowers/specs/2026-08-10-ollama-provider-design.md` for the current design.
+
 - [ ] **Step 1: Create the package marker**
 
 ```bash
@@ -894,6 +896,12 @@ def call_ollama(
     )
 
 
+# Superseded 2026-08-11 by commit `e0b1224` - this ratio-based detector false-positived
+# on healthy runs because prompt_tok_s is dominated by prompt length, not VRAM state.
+# It was replaced with an absolute floor on gen_tok_s alone (`is_generation_degraded`,
+# formerly `is_oversubscribed`); `OVERSUBSCRIPTION_RATIO` no longer exists. This block is
+# kept as an execution record of what was actually built at the time. See
+# `docs/superpowers/specs/2026-08-10-ollama-provider-design.md` for the current detector.
 def is_oversubscribed(call: MeasuredCall) -> bool:
     """Generation far slower than prompt eval means VRAM is paging to system RAM.
 
