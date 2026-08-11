@@ -1,5 +1,14 @@
 from __future__ import annotations
 
+import json
+from collections.abc import Callable
+
+import httpx
+import pytest
+
+from jester.ai import ModelRequest, ModelRole
+from jester.ai.base import ModelError
+from jester.ai.providers import OllamaChatClient
 from jester.config.settings import OllamaProviderSettings, load_settings
 
 
@@ -35,3 +44,104 @@ def test_ollama_settings_read_from_environment() -> None:
     assert settings.providers.ollama.num_ctx == 8192
     assert settings.providers.ollama.think is True
     assert settings.providers.ollama.keep_alive == '30m'
+
+
+Handler = Callable[[httpx.Request], httpx.Response]
+
+
+def _client(handler: Handler, *, settings: OllamaProviderSettings | None = None) -> OllamaChatClient:
+    resolved = settings or OllamaProviderSettings()
+    return OllamaChatClient(
+        role=ModelRole.PRIMARY_GENERATION,
+        model_name='qwen3.5:4b',
+        settings=resolved,
+        http_client=httpx.Client(
+            base_url=resolved.base_url,
+            transport=httpx.MockTransport(handler),
+        ),
+    )
+
+
+def test_ollama_client_maps_response_fields() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        assert request.url.path == '/api/chat'
+        return httpx.Response(
+            200,
+            json={
+                'message': {'role': 'assistant', 'content': ' A concise narration. '},
+                'done': True,
+                'prompt_eval_count': 120,
+                'eval_count': 40,
+            },
+        )
+
+    response = _client(handler).generate(
+        ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate the scene.')
+    )
+
+    assert response.provider_name == 'ollama'
+    assert response.model_name == 'qwen3.5:4b'
+    assert response.content == 'A concise narration.'
+    assert response.token_usage == {
+        'prompt_tokens': 120,
+        'completion_tokens': 40,
+        'total_tokens': 160,
+    }
+
+
+def test_ollama_client_sends_options_think_and_no_format_for_prose() -> None:
+    captured: dict[str, object] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured.update(json.loads(request.read().decode('utf-8')))
+        return httpx.Response(200, json={'message': {'content': 'ok'}})
+
+    settings = OllamaProviderSettings(num_ctx=8192, think=False, keep_alive='30m')
+    _client(handler, settings=settings).generate(
+        ModelRequest(
+            role=ModelRole.PRIMARY_GENERATION,
+            prompt='Narrate the scene.',
+            temperature=0.4,
+            max_tokens=384,
+            prompt_name='live_dm_narration',
+        )
+    )
+
+    assert captured['model'] == 'qwen3.5:4b'
+    assert captured['stream'] is False
+    assert captured['think'] is False
+    assert captured['keep_alive'] == '30m'
+    assert captured['options'] == {'temperature': 0.4, 'num_ctx': 8192, 'num_predict': 384}
+    assert 'format' not in captured
+
+
+def test_ollama_client_sets_json_format_for_structured_prompts() -> None:
+    captured: dict[str, object] = {}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        captured.update(json.loads(request.read().decode('utf-8')))
+        return httpx.Response(200, json={'message': {'content': '{"objective": "x"}'}})
+
+    OllamaChatClient(
+        role=ModelRole.REASONING,
+        model_name='qwen3.5:4b',
+        settings=OllamaProviderSettings(),
+        http_client=httpx.Client(
+            base_url='http://127.0.0.1:11434',
+            transport=httpx.MockTransport(handler),
+        ),
+    ).generate(
+        ModelRequest(role=ModelRole.REASONING, prompt='Plan it.', prompt_name='prep_plan')
+    )
+
+    assert captured['format'] == 'json'
+
+
+def test_ollama_client_rejects_role_mismatch() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise AssertionError('should not issue a request')
+
+    with pytest.raises(ModelError):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.REASONING, prompt='Plan it.')
+        )

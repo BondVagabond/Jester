@@ -12,7 +12,7 @@ from jester.ai.contracts import ModelRequest, ModelResponse, ModelRole
 from jester.ai.registry import ModelRegistry
 
 if TYPE_CHECKING:
-    from jester.config.settings import AppSettings, OpenAIProviderSettings
+    from jester.config.settings import AppSettings, OllamaProviderSettings, OpenAIProviderSettings
 
 
 class ProviderConfigurationError(ModelError):
@@ -134,6 +134,96 @@ class OpenAIChatCompletionsClient:
             latency_ms=latency_ms,
             token_usage=usage,
         )
+
+
+class OllamaChatClient:
+    def __init__(
+        self,
+        *,
+        role: ModelRole,
+        model_name: str,
+        settings: OllamaProviderSettings,
+        http_client: httpx.Client,
+    ) -> None:
+        self._role = role
+        self._model_name = model_name
+        self._settings = settings
+        self._http_client = http_client
+
+    def generate(self, request: ModelRequest) -> ModelResponse:
+        if request.role != self._role:
+            raise ModelError(
+                f'Ollama client for role {self._role.value!r} received {request.role.value!r}.'
+            )
+
+        options: dict[str, object] = {
+            'temperature': request.temperature,
+            'num_ctx': self._settings.num_ctx,
+        }
+        if request.max_tokens is not None:
+            options['num_predict'] = request.max_tokens
+
+        payload: dict[str, object] = {
+            'model': self._model_name,
+            'stream': False,
+            'think': self._settings.think,
+            'messages': [
+                {'role': 'system', 'content': _system_message_for_role(request.role)},
+                {'role': 'user', 'content': request.prompt},
+            ],
+            'options': options,
+        }
+        if _expects_json_response(request.prompt_name):
+            payload['format'] = 'json'
+        if self._settings.keep_alive is not None:
+            payload['keep_alive'] = self._settings.keep_alive
+
+        started = time.perf_counter()
+        response = self._http_client.post('/api/chat', json=payload)
+        latency_ms = int((time.perf_counter() - started) * 1000)
+
+        payload_json = response.json()
+        content = _extract_ollama_content(payload_json, model_name=self._model_name)
+        usage = _extract_ollama_usage(payload_json)
+        return ModelResponse(
+            role=request.role,
+            content=content,
+            provider_name='ollama',
+            model_name=self._model_name,
+            latency_ms=latency_ms,
+            token_usage=usage,
+        )
+
+
+def _extract_ollama_content(payload: Mapping[str, object], *, model_name: str) -> str:
+    message = payload.get('message')
+    if not isinstance(message, Mapping):
+        raise ProviderRequestError('Ollama returned no message payload.')
+    content = message.get('content')
+    if isinstance(content, str) and content.strip():
+        return content.strip()
+    thinking = message.get('thinking')
+    if isinstance(thinking, str) and thinking.strip():
+        raise ProviderRequestError(
+            f'Model {model_name!r} returned reasoning tokens but no answer. It is a thinking model '
+            'whose token budget was exhausted before it replied. Set JESTER_OLLAMA_THINK=false or '
+            'raise max_tokens.'
+        )
+    raise ProviderRequestError('Ollama returned an empty content payload.')
+
+
+def _extract_ollama_usage(payload: Mapping[str, object]) -> dict[str, int] | None:
+    prompt_tokens = payload.get('prompt_eval_count')
+    completion_tokens = payload.get('eval_count')
+    usage: dict[str, int] = {}
+    if isinstance(prompt_tokens, int):
+        usage['prompt_tokens'] = prompt_tokens
+    if isinstance(completion_tokens, int):
+        usage['completion_tokens'] = completion_tokens
+    if not usage:
+        return None
+    usage['total_tokens'] = usage.get('prompt_tokens', 0) + usage.get('completion_tokens', 0)
+    return usage
 
 
 def build_model_registry(
