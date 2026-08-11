@@ -12,7 +12,7 @@ from jester.ai.contracts import ModelRequest, ModelResponse, ModelRole
 from jester.ai.registry import ModelRegistry
 
 if TYPE_CHECKING:
-    from jester.config.settings import AppSettings, OpenAIProviderSettings
+    from jester.config.settings import AppSettings, OllamaProviderSettings, OpenAIProviderSettings
 
 
 class ProviderConfigurationError(ModelError):
@@ -56,6 +56,27 @@ class OpenAIProvider:
 
     def build_client(self, *, role: ModelRole, model_name: str) -> ModelClient:
         return OpenAIChatCompletionsClient(
+            role=role,
+            model_name=model_name,
+            settings=self._settings,
+            http_client=self._client_factory(self._settings),
+        )
+
+
+class OllamaProvider:
+    name = 'ollama'
+
+    def __init__(
+        self,
+        settings: OllamaProviderSettings,
+        *,
+        client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None = None,
+    ) -> None:
+        self._settings = settings
+        self._client_factory = client_factory or _default_ollama_http_client
+
+    def build_client(self, *, role: ModelRole, model_name: str) -> ModelClient:
+        return OllamaChatClient(
             role=role,
             model_name=model_name,
             settings=self._settings,
@@ -136,10 +157,143 @@ class OpenAIChatCompletionsClient:
         )
 
 
+class OllamaChatClient:
+    def __init__(
+        self,
+        *,
+        role: ModelRole,
+        model_name: str,
+        settings: OllamaProviderSettings,
+        http_client: httpx.Client,
+    ) -> None:
+        self._role = role
+        self._model_name = model_name
+        self._settings = settings
+        self._http_client = http_client
+
+    def generate(self, request: ModelRequest) -> ModelResponse:
+        if request.role != self._role:
+            raise ModelError(
+                f'Ollama client for role {self._role.value!r} received {request.role.value!r}.'
+            )
+
+        options: dict[str, object] = {
+            'temperature': request.temperature,
+            'num_ctx': self._settings.num_ctx,
+        }
+        if request.max_tokens is not None:
+            options['num_predict'] = request.max_tokens
+
+        payload: dict[str, object] = {
+            'model': self._model_name,
+            'stream': False,
+            'think': self._settings.think,
+            'messages': [
+                {'role': 'system', 'content': _system_message_for_role(request.role)},
+                {'role': 'user', 'content': request.prompt},
+            ],
+            'options': options,
+        }
+        if _expects_json_response(request.prompt_name):
+            payload['format'] = 'json'
+        if self._settings.keep_alive is not None:
+            payload['keep_alive'] = self._settings.keep_alive
+
+        started = time.perf_counter()
+        try:
+            response = self._http_client.post('/api/chat', json=payload)
+        except httpx.TimeoutException as exc:
+            raise ProviderTimeoutError(
+                'Ollama did not respond before the timeout. Local generation can be slow on a cold '
+                'model load or when the model does not fit in VRAM; raise '
+                'JESTER_OLLAMA_TIMEOUT_SECONDS or lower JESTER_OLLAMA_NUM_CTX.'
+            ) from exc
+        except httpx.ConnectError as exc:
+            raise ProviderRequestError(
+                f'Ollama is not reachable at {self._settings.base_url!r} - is the Ollama service '
+                'running?'
+            ) from exc
+        except httpx.HTTPError as exc:
+            raise ProviderRequestError(f'Ollama request failed before a response: {exc}') from exc
+
+        latency_ms = int((time.perf_counter() - started) * 1000)
+
+        if response.status_code == 404:
+            raise ProviderConfigurationError(
+                f'Ollama has no model named {self._model_name!r}. Pull it with: '
+                f'ollama pull {self._model_name}. If the model is already pulled, this may instead '
+                f'mean the configured base URL points at the wrong path. Server said: '
+                f'{_ollama_error_message(response)}'
+            )
+        if response.status_code >= 400:
+            raise ProviderRequestError(_ollama_error_message(response))
+
+        try:
+            payload_json = response.json()
+        except json.JSONDecodeError as exc:
+            raise ProviderRequestError('Ollama returned invalid JSON.') from exc
+        content = _extract_ollama_content(payload_json, model_name=self._model_name)
+        usage = _extract_ollama_usage(payload_json)
+        return ModelResponse(
+            role=request.role,
+            content=content,
+            provider_name='ollama',
+            model_name=self._model_name,
+            latency_ms=latency_ms,
+            token_usage=usage,
+        )
+
+
+def _extract_ollama_content(payload: Mapping[str, object], *, model_name: str) -> str:
+    message = payload.get('message')
+    if not isinstance(message, Mapping):
+        raise ProviderRequestError('Ollama returned no message payload.')
+    content = message.get('content')
+    if isinstance(content, str) and content.strip():
+        return content.strip()
+    thinking = message.get('thinking')
+    if isinstance(thinking, str) and thinking.strip():
+        raise ProviderRequestError(
+            f'Model {model_name!r} returned reasoning tokens but no answer. It is a thinking model '
+            'whose token budget was exhausted before it replied. Set JESTER_OLLAMA_THINK=false or '
+            'raise max_tokens.'
+        )
+    raise ProviderRequestError('Ollama returned an empty content payload.')
+
+
+def _extract_ollama_usage(payload: Mapping[str, object]) -> dict[str, int] | None:
+    prompt_tokens = payload.get('prompt_eval_count')
+    completion_tokens = payload.get('eval_count')
+    usage: dict[str, int] = {}
+    if isinstance(prompt_tokens, int):
+        usage['prompt_tokens'] = prompt_tokens
+    if isinstance(completion_tokens, int):
+        usage['completion_tokens'] = completion_tokens
+    if not usage:
+        return None
+    if 'prompt_tokens' in usage and 'completion_tokens' in usage:
+        usage['total_tokens'] = usage['prompt_tokens'] + usage['completion_tokens']
+    return usage
+
+
+def _ollama_error_message(response: httpx.Response) -> str:
+    try:
+        payload = response.json()
+    except json.JSONDecodeError:
+        body = response.text.strip()
+        return body or f'Ollama returned HTTP {response.status_code}.'
+    if isinstance(payload, Mapping):
+        error = payload.get('error')
+        if isinstance(error, str) and error.strip():
+            return error.strip()
+    return f'Ollama returned HTTP {response.status_code}.'
+
+
 def build_model_registry(
     settings: AppSettings,
     *,
     openai_client_factory: Callable[[OpenAIProviderSettings], httpx.Client] | None = None,
+    ollama_client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None = None,
 ) -> ModelRegistry:
     bindings = settings.ai.bindings()
     registry = ModelRegistry.from_bindings(bindings)
@@ -158,7 +312,11 @@ def build_model_registry(
         raise ProviderConfigurationError('Fake model providers are not allowed in staging or prod.')
 
     if real_roles:
-        providers = _resolve_real_providers(settings, openai_client_factory=openai_client_factory)
+        providers = _resolve_real_providers(
+            settings,
+            openai_client_factory=openai_client_factory,
+            ollama_client_factory=ollama_client_factory,
+        )
         for role, binding in enabled_bindings.items():
             provider_name = binding.provider_name.lower()
             if provider_name == 'fake':
@@ -186,15 +344,19 @@ def _resolve_real_providers(
     settings: AppSettings,
     *,
     openai_client_factory: Callable[[OpenAIProviderSettings], httpx.Client] | None,
+    ollama_client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None,
 ) -> Mapping[str, AIProvider]:
     providers: dict[str, AIProvider] = {}
-    if any(
-        binding.enabled and binding.provider_name.lower() == 'openai'
-        for binding in settings.ai.bindings().values()
-    ):
+    bindings = settings.ai.bindings().values()
+    if any(binding.enabled and binding.provider_name.lower() == 'openai' for binding in bindings):
         providers['openai'] = OpenAIProvider(
             settings.providers.openai,
             client_factory=openai_client_factory,
+        )
+    if any(binding.enabled and binding.provider_name.lower() == 'ollama' for binding in bindings):
+        providers['ollama'] = OllamaProvider(
+            settings.providers.ollama,
+            client_factory=ollama_client_factory,
         )
     return providers
 
@@ -202,6 +364,14 @@ def _resolve_real_providers(
 def _default_http_client(settings: OpenAIProviderSettings) -> httpx.Client:
     return httpx.Client(
         base_url=str(settings.base_url),
+        timeout=settings.timeout_seconds,
+        follow_redirects=False,
+    )
+
+
+def _default_ollama_http_client(settings: OllamaProviderSettings) -> httpx.Client:
+    return httpx.Client(
+        base_url=settings.base_url,
         timeout=settings.timeout_seconds,
         follow_redirects=False,
     )

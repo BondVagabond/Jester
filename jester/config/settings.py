@@ -155,10 +155,37 @@ class OpenAIProviderSettings(BaseModel):
         return text or None
 
 
+class OllamaProviderSettings(BaseModel):
+    model_config = ConfigDict(extra='forbid', frozen=True)
+
+    base_url: str = 'http://127.0.0.1:11434'
+    timeout_seconds: float = Field(default=300.0, gt=0.0, le=1800.0)
+    num_ctx: int = Field(default=4096, ge=256, le=131072)
+    think: bool = False
+    keep_alive: str | None = None
+
+    @field_validator('base_url', mode='before')
+    @classmethod
+    def strip_base_url(cls, value: object) -> str:
+        text = str(value).strip().rstrip('/')
+        if not text:
+            raise ValueError('base_url must not be blank.')
+        return text
+
+    @field_validator('keep_alive', mode='before')
+    @classmethod
+    def strip_keep_alive(cls, value: object) -> str | None:
+        if value is None:
+            return None
+        text = str(value).strip()
+        return text or None
+
+
 class ProviderSettings(BaseModel):
     model_config = ConfigDict(extra='forbid', frozen=True)
 
     openai: OpenAIProviderSettings = Field(default_factory=OpenAIProviderSettings)
+    ollama: OllamaProviderSettings = Field(default_factory=OllamaProviderSettings)
 
 
 class CorpusSourceSettings(BaseModel):
@@ -403,7 +430,14 @@ def load_settings(env: Mapping[str, str] | None = None) -> AppSettings:
                     timeout_seconds=float(values.get('JESTER_OPENAI_TIMEOUT_SECONDS', '30.0')),
                     organization=_parse_optional_text(values.get('JESTER_OPENAI_ORGANIZATION')),
                     project=_parse_optional_text(values.get('JESTER_OPENAI_PROJECT')),
-                )
+                ),
+                ollama=OllamaProviderSettings(
+                    base_url=values.get('JESTER_OLLAMA_BASE_URL', 'http://127.0.0.1:11434'),
+                    timeout_seconds=float(values.get('JESTER_OLLAMA_TIMEOUT_SECONDS', '300.0')),
+                    num_ctx=int(values.get('JESTER_OLLAMA_NUM_CTX', '4096')),
+                    think=_parse_bool(values.get('JESTER_OLLAMA_THINK'), default=False),
+                    keep_alive=_parse_optional_text(values.get('JESTER_OLLAMA_KEEP_ALIVE')),
+                ),
             ),
             corpora=CorpusSettings(
                 require_non_empty=_parse_bool(values.get('JESTER_REQUIRE_NON_EMPTY_CORPORA'), default=True),

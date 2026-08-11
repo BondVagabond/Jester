@@ -16,6 +16,7 @@ build/
 # Data roots and generated artifacts - see README
 /out/
 /faiss/
+scripts/spike/out/
 /debug/
 /logs/
 /RAG_index/
