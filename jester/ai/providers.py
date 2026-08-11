@@ -63,6 +63,27 @@ class OpenAIProvider:
         )
 
 
+class OllamaProvider:
+    name = 'ollama'
+
+    def __init__(
+        self,
+        settings: OllamaProviderSettings,
+        *,
+        client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None = None,
+    ) -> None:
+        self._settings = settings
+        self._client_factory = client_factory or _default_ollama_http_client
+
+    def build_client(self, *, role: ModelRole, model_name: str) -> ModelClient:
+        return OllamaChatClient(
+            role=role,
+            model_name=model_name,
+            settings=self._settings,
+            http_client=self._client_factory(self._settings),
+        )
+
+
 class OpenAIChatCompletionsClient:
     def __init__(
         self,
@@ -269,6 +290,7 @@ def build_model_registry(
     settings: AppSettings,
     *,
     openai_client_factory: Callable[[OpenAIProviderSettings], httpx.Client] | None = None,
+    ollama_client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None = None,
 ) -> ModelRegistry:
     bindings = settings.ai.bindings()
     registry = ModelRegistry.from_bindings(bindings)
@@ -287,7 +309,11 @@ def build_model_registry(
         raise ProviderConfigurationError('Fake model providers are not allowed in staging or prod.')
 
     if real_roles:
-        providers = _resolve_real_providers(settings, openai_client_factory=openai_client_factory)
+        providers = _resolve_real_providers(
+            settings,
+            openai_client_factory=openai_client_factory,
+            ollama_client_factory=ollama_client_factory,
+        )
         for role, binding in enabled_bindings.items():
             provider_name = binding.provider_name.lower()
             if provider_name == 'fake':
@@ -315,15 +341,19 @@ def _resolve_real_providers(
     settings: AppSettings,
     *,
     openai_client_factory: Callable[[OpenAIProviderSettings], httpx.Client] | None,
+    ollama_client_factory: Callable[[OllamaProviderSettings], httpx.Client] | None,
 ) -> Mapping[str, AIProvider]:
     providers: dict[str, AIProvider] = {}
-    if any(
-        binding.enabled and binding.provider_name.lower() == 'openai'
-        for binding in settings.ai.bindings().values()
-    ):
+    bindings = settings.ai.bindings().values()
+    if any(binding.enabled and binding.provider_name.lower() == 'openai' for binding in bindings):
         providers['openai'] = OpenAIProvider(
             settings.providers.openai,
             client_factory=openai_client_factory,
+        )
+    if any(binding.enabled and binding.provider_name.lower() == 'ollama' for binding in bindings):
+        providers['ollama'] = OllamaProvider(
+            settings.providers.ollama,
+            client_factory=ollama_client_factory,
         )
     return providers
 
@@ -331,6 +361,14 @@ def _resolve_real_providers(
 def _default_http_client(settings: OpenAIProviderSettings) -> httpx.Client:
     return httpx.Client(
         base_url=str(settings.base_url),
+        timeout=settings.timeout_seconds,
+        follow_redirects=False,
+    )
+
+
+def _default_ollama_http_client(settings: OllamaProviderSettings) -> httpx.Client:
+    return httpx.Client(
+        base_url=settings.base_url,
         timeout=settings.timeout_seconds,
         follow_redirects=False,
     )

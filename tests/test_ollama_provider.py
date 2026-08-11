@@ -6,7 +6,7 @@ from collections.abc import Callable
 import httpx
 import pytest
 
-from jester.ai import ModelRequest, ModelRole
+from jester.ai import ModelRequest, ModelRole, ModelSelectionPolicy, build_model_registry
 from jester.ai.base import ModelError
 from jester.ai.providers import OllamaChatClient, ProviderConfigurationError, ProviderRequestError, ProviderTimeoutError
 from jester.config.settings import OllamaProviderSettings, load_settings
@@ -201,3 +201,33 @@ def test_ollama_client_raises_when_only_reasoning_tokens_returned() -> None:
         _client(handler).generate(
             ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
         )
+
+
+def test_build_model_registry_registers_ollama_clients() -> None:
+    settings = load_settings(
+        {
+            'JESTER_ENVIRONMENT': 'dev',
+            'JESTER_PRIMARY_PROVIDER': 'ollama',
+            'JESTER_PRIMARY_MODEL': 'qwen3.5:4b',
+            'JESTER_REASONING_PROVIDER': 'ollama',
+            'JESTER_REASONING_MODEL': 'qwen3.5:4b',
+            'JESTER_SMALL_FAST_PROVIDER': 'ollama',
+            'JESTER_SMALL_FAST_MODEL': 'qwen3.5:4b',
+        }
+    )
+
+    def factory(_: OllamaProviderSettings) -> httpx.Client:
+        return httpx.Client(
+            base_url='http://127.0.0.1:11434',
+            transport=httpx.MockTransport(
+                lambda request: httpx.Response(200, json={'message': {'content': 'ok'}})
+            ),
+        )
+
+    registry = build_model_registry(settings, ollama_client_factory=factory)
+    policy = ModelSelectionPolicy(registry)
+
+    selected = policy.require(ModelRole.PRIMARY_GENERATION)
+    assert isinstance(selected.client, OllamaChatClient)
+    assert selected.selection.provider_name == 'ollama'
+    assert selected.selection.model_name == 'qwen3.5:4b'
