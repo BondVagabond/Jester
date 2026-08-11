@@ -8,7 +8,7 @@ import pytest
 
 from jester.ai import ModelRequest, ModelRole
 from jester.ai.base import ModelError
-from jester.ai.providers import OllamaChatClient
+from jester.ai.providers import OllamaChatClient, ProviderConfigurationError, ProviderRequestError, ProviderTimeoutError
 from jester.config.settings import OllamaProviderSettings, load_settings
 
 
@@ -144,4 +144,60 @@ def test_ollama_client_rejects_role_mismatch() -> None:
     with pytest.raises(ModelError):
         _client(handler).generate(
             ModelRequest(role=ModelRole.REASONING, prompt='Plan it.')
+        )
+
+
+def test_ollama_client_reports_unreachable_service() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise httpx.ConnectError('connection refused', request=request)
+
+    with pytest.raises(ProviderRequestError, match='is the Ollama service running'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_reports_missing_model_as_configuration_error() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(404, json={'error': 'model "qwen3.5:4b" not found, try pulling it first'})
+
+    with pytest.raises(ProviderConfigurationError, match='ollama pull qwen3.5:4b'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_maps_timeout() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        raise httpx.ReadTimeout('timed out', request=request)
+
+    with pytest.raises(ProviderTimeoutError):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_rejects_empty_content() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(200, json={'message': {'role': 'assistant', 'content': '   '}})
+
+    with pytest.raises(ProviderRequestError, match='empty content'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
+        )
+
+
+def test_ollama_client_raises_when_only_reasoning_tokens_returned() -> None:
+    def handler(request: httpx.Request) -> httpx.Response:
+        return httpx.Response(
+            200,
+            json={
+                'message': {'role': 'assistant', 'content': '', 'thinking': 'Thinking Process: ...'},
+                'done_reason': 'length',
+            },
+        )
+
+    with pytest.raises(ProviderRequestError, match='reasoning tokens but no answer'):
+        _client(handler).generate(
+            ModelRequest(role=ModelRole.PRIMARY_GENERATION, prompt='Narrate.')
         )

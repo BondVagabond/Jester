@@ -179,10 +179,36 @@ class OllamaChatClient:
             payload['keep_alive'] = self._settings.keep_alive
 
         started = time.perf_counter()
-        response = self._http_client.post('/api/chat', json=payload)
+        try:
+            response = self._http_client.post('/api/chat', json=payload)
+        except httpx.TimeoutException as exc:
+            raise ProviderTimeoutError(
+                'Ollama did not respond before the timeout. Local generation can be slow on a cold '
+                'model load or when the model does not fit in VRAM; raise '
+                'JESTER_OLLAMA_TIMEOUT_SECONDS or lower JESTER_OLLAMA_NUM_CTX.'
+            ) from exc
+        except httpx.ConnectError as exc:
+            raise ProviderRequestError(
+                f'Ollama is not reachable at {self._settings.base_url!r} - is the Ollama service '
+                'running?'
+            ) from exc
+        except httpx.HTTPError as exc:
+            raise ProviderRequestError(f'Ollama request failed before a response: {exc}') from exc
+
         latency_ms = int((time.perf_counter() - started) * 1000)
 
-        payload_json = response.json()
+        if response.status_code == 404:
+            raise ProviderConfigurationError(
+                f'Ollama has no model named {self._model_name!r}. Pull it with: '
+                f'ollama pull {self._model_name}'
+            )
+        if response.status_code >= 400:
+            raise ProviderRequestError(_ollama_error_message(response))
+
+        try:
+            payload_json = response.json()
+        except json.JSONDecodeError as exc:
+            raise ProviderRequestError('Ollama returned invalid JSON.') from exc
         content = _extract_ollama_content(payload_json, model_name=self._model_name)
         usage = _extract_ollama_usage(payload_json)
         return ModelResponse(
@@ -224,6 +250,19 @@ def _extract_ollama_usage(payload: Mapping[str, object]) -> dict[str, int] | Non
         return None
     usage['total_tokens'] = usage.get('prompt_tokens', 0) + usage.get('completion_tokens', 0)
     return usage
+
+
+def _ollama_error_message(response: httpx.Response) -> str:
+    try:
+        payload = response.json()
+    except json.JSONDecodeError:
+        body = response.text.strip()
+        return body or f'Ollama returned HTTP {response.status_code}.'
+    if isinstance(payload, Mapping):
+        error = payload.get('error')
+        if isinstance(error, str) and error.strip():
+            return error.strip()
+    return f'Ollama returned HTTP {response.status_code}.'
 
 
 def build_model_registry(
