@@ -11,6 +11,7 @@ import statistics
 import subprocess
 import time
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import httpx
 
@@ -137,3 +138,95 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument('--timeout', type=float, default=600.0)
     parser.add_argument('--out-dir', default='scripts/spike/out')
     return parser
+
+
+def main() -> int:
+    from scripts.spike.prompt_suite import SUITE, check_call, render_prompt
+
+    args = build_parser().parse_args()
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    env_before = capture_environment()
+    client = httpx.Client(base_url=args.base_url, timeout=args.timeout)
+    results: list[RoleResult] = []
+    samples: list[str] = []
+    oversubscribed = False
+
+    for case in SUITE:
+        prompt, output_contract = render_prompt(case.prompt_name, case.version)
+        result = RoleResult(role=case.role, prompt_name=case.prompt_name)
+        for _ in range(args.repetitions):
+            call = call_ollama(
+                client,
+                model=args.model,
+                prompt=prompt,
+                num_ctx=args.num_ctx,
+                think=args.think,
+                num_predict=case.num_predict,
+                temperature=case.temperature,
+                json_format=case.expects_json,
+            )
+            result.calls.append(call)
+            result.passes.append(check_call(case, call.content, output_contract))
+            oversubscribed = oversubscribed or is_oversubscribed(call)
+        results.append(result)
+        if not case.expects_json and result.calls:
+            samples.append(f'## {case.prompt_name}\n\n{result.calls[0].content}\n')
+        print(f'{case.role:9} {case.prompt_name:28} {sum(result.passes)}/{len(result.passes)}')
+
+    env_after = capture_environment()
+    report = _render_report(args, env_before, env_after, results, oversubscribed)
+    (out_dir / 'report.md').write_text(report, encoding='utf-8')
+    (out_dir / 'samples.md').write_text('\n'.join(samples), encoding='utf-8')
+    print(f'\nWrote {out_dir / "report.md"} and {out_dir / "samples.md"}')
+    return 0
+
+
+def _render_report(
+    args: argparse.Namespace,
+    env_before: dict[str, str],
+    env_after: dict[str, str],
+    results: list[RoleResult],
+    oversubscribed: bool,
+) -> str:
+    lines = [
+        f'# Ollama spike report - {args.model}',
+        '',
+        f'num_ctx {args.num_ctx} | think {args.think} | repetitions {args.repetitions}',
+        '',
+    ]
+    if oversubscribed:
+        lines += [
+            '> **VRAM OVERSUBSCRIPTION DETECTED.** Generation ran at under 5% of prompt-eval rate.',
+            '> The model does not fit in available VRAM and the driver is paging to system RAM.',
+            '> Latency figures below are not representative. Free VRAM or use a smaller model.',
+            '',
+        ]
+    lines += ['| role | prompt | pass | gen tok/s | latency s |', '|---|---|---|---|---|']
+    for result in results:
+        rate = summarize([call.gen_tok_s for call in result.calls])
+        latency = summarize([call.latency_s for call in result.calls])
+        lines.append(
+            f'| {result.role} | {result.prompt_name} | '
+            f'{sum(result.passes)}/{len(result.passes)} | {rate} | {latency} |'
+        )
+    lines += [
+        '',
+        '## Environment before',
+        '```',
+        env_before['ollama_ps'],
+        env_before['gpu'],
+        '```',
+        '',
+        '## Environment after',
+        '```',
+        env_after['ollama_ps'],
+        env_after['gpu'],
+        '```',
+    ]
+    return '\n'.join(lines)
+
+
+if __name__ == '__main__':
+    raise SystemExit(main())
