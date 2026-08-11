@@ -17,6 +17,14 @@ from jester.ai.selection import ModelSelectionPolicy
 from jester.processing.sanitizer import sanitize_content
 from jester.prompts import load_prompt
 
+# Reasoning artifacts (PlanArtifact, CritiqueArtifact, TeachingPlanArtifact) are
+# structured JSON, and a truncated response is unrecoverable - it fails to parse
+# rather than degrading. Measured 2026-08-11 against qwen3.5:4b: prep_plan needs
+# 308 tokens and prep_critique 320, so the previous 256 truncated every call
+# (done_reason='length', 0/2 passing). At 512 both pass 2/2 with headroom.
+# Providers bill generated tokens, not the cap, so the headroom is close to free.
+REASONING_MAX_TOKENS = 512
+
 
 class ReasoningService:
     def __init__(self, selector: ModelSelectionPolicy | None = None) -> None:
@@ -84,7 +92,7 @@ class ReasoningService:
                     role=ModelRole.REASONING,
                     prompt=rendered_prompt,
                     temperature=0.0,
-                    max_tokens=256,
+                    max_tokens=REASONING_MAX_TOKENS,
                     metadata={
                         'artifact_type': artifact_type,
                         'topic': topic,
@@ -184,7 +192,7 @@ class ReasoningService:
                     role=ModelRole.REASONING,
                     prompt=rendered_prompt,
                     temperature=0.0,
-                    max_tokens=256,
+                    max_tokens=REASONING_MAX_TOKENS,
                     metadata={
                         'artifact_type': artifact_type,
                         'topic': topic,
@@ -297,7 +305,7 @@ class ReasoningService:
                     role=ModelRole.REASONING,
                     prompt=rendered_prompt,
                     temperature=0.0,
-                    max_tokens=256,
+                    max_tokens=REASONING_MAX_TOKENS,
                     metadata={
                         'concept': concept,
                         'depth': depth,

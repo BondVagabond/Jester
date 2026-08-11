@@ -91,16 +91,18 @@ class PromptCase:
 # sends (see jester/ai/reasoning.py, jester/ai/classification.py, jester/ai/adapters.py
 # and jester/app/orchestration/prompting.py):
 #   - routing_live_dm_intent, teaching_depth: SmallFastClassifier._classify_json -> 256
-#   - prep_plan, prep_critique, teaching_structure: ReasoningService.* -> 256
+#   - prep_plan, prep_critique, teaching_structure: ReasoningService.* ->
+#     REASONING_MAX_TOKENS (512). Was 256, which truncated every Arbiter call;
+#     see the constant's comment in jester/ai/reasoning.py for the measurement.
 #   - live_dm_narration: RoleNarrationModelClient (build_narration path) -> 384
 #   - live_dm_info_response, prep_npc, teaching_explain_concept: RolePromptModelClient
 #     (generate_prompt_block / WorkspacePromptAssembler path) -> 512
 SUITE: list[PromptCase] = [
     PromptCase(ModelRole.SMALL_FAST, 'routing_live_dm_intent', 'v1', True, 256, 0.0),
     PromptCase(ModelRole.SMALL_FAST, 'teaching_depth', 'v1', True, 256, 0.0),
-    PromptCase(ModelRole.REASONING, 'prep_plan', 'v1', True, 256, 0.0),
-    PromptCase(ModelRole.REASONING, 'prep_critique', 'v1', True, 256, 0.0),
-    PromptCase(ModelRole.REASONING, 'teaching_structure', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.REASONING, 'prep_plan', 'v1', True, 512, 0.0),
+    PromptCase(ModelRole.REASONING, 'prep_critique', 'v1', True, 512, 0.0),
+    PromptCase(ModelRole.REASONING, 'teaching_structure', 'v1', True, 512, 0.0),
     PromptCase(ModelRole.PRIMARY_GENERATION, 'live_dm_narration', 'v1', False, 384, 0.2),
     PromptCase(ModelRole.PRIMARY_GENERATION, 'live_dm_info_response', 'v1', False, 512, 0.2),
     PromptCase(ModelRole.PRIMARY_GENERATION, 'prep_npc', 'v1', False, 512, 0.2),
