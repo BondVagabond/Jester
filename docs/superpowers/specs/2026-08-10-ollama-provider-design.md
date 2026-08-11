@@ -106,8 +106,13 @@ of which a thinking model would exhaust before emitting a single user-visible to
    Arbiter role specifically — that is a follow-up, not this spike.
 3. **Timeouts need a far higher ceiling than OpenAI's** `le=120.0`, which several of these calls exceed.
 4. **The harness must record GPU placement *and* generation tok/s.** Placement alone is misleading:
-   this run reported 100% GPU while paging to system RAM. A generation rate far below prompt rate is
-   the tell, and the harness must surface both or its verdicts are unfalsifiable.
+   this run reported 100% GPU while paging to system RAM. An absolute generation-rate floor is the
+   tell — 3.0 tok/s (paging) sits an order of magnitude below the 37-90 tok/s healthy band, while
+   generation tok/s barely moves with prompt length. A ratio against prompt tok/s does not work here:
+   prompt tok/s is dominated by prompt length (388-12,495 tok/s measured on prompts of 58-194 tokens
+   from a single healthy run), so the paging case's own ratio (709/3.0 ≈ 0.0042) sits inside the range
+   a ratio-based detector produced on that healthy run (0.006-0.035). The harness must surface both
+   figures or its verdicts are unfalsifiable.
 
 ## 1. Settings
 
@@ -224,11 +229,18 @@ Each prompt runs N times (default 3) to expose nondeterminism.
 **Recorded per run, at start and end:** `ollama ps` placement percentage, free VRAM, model tag,
 resolved `num_ctx`, and `think`. Without these the results are not interpretable.
 
-**Oversubscription detector.** The harness computes the ratio of generation tok/s to prompt tok/s and
-flags any run where generation is under ~5% of prompt rate. The 2026-08-10 measurement showed 709 tok/s
-prompt against 3.0 tok/s generation at a reported "100% GPU" — placement alone said the run was healthy
-and it was not. Without this check the harness would report a model as unusably slow when the real
-finding is that it does not fit in available VRAM.
+**Oversubscription detector.** The harness flags any call where generation falls below an absolute
+floor of 10.0 tok/s. The 2026-08-10 measurement showed 709 tok/s prompt against 3.0 tok/s generation
+at a reported "100% GPU" — placement alone said the run was healthy and it was not; that 3.0 tok/s
+sits an order of magnitude below the 37-90 tok/s healthy band and just above the ~8.5 tok/s measured
+for CPU-only fallback, which is why an absolute floor between those regimes separates them. An earlier
+version of this detector compared generation against prompt-eval rate instead. That does not work:
+prompt tok/s is dominated by prompt length, not VRAM state — a follow-up run measured it from 388 to
+12,495 tok/s across nine prompts of 58-194 tokens each, all with healthy generation (59-74 tok/s) — so
+the paging case's own ratio (709/3.0 ≈ 0.0042) fell inside the range (0.006-0.035) that the ratio
+approach produced on that entirely healthy run. Without an absolute-floor check the harness would
+report a model as unusably slow when the real finding is that it does not fit in available VRAM, and
+a ratio-based check cannot reliably tell the two apart.
 
 **Outputs:** `report.md` — per-role pass rates and latency percentiles; `samples.md` — prose grouped by
 prompt for human reading. A `--model` flag reruns the identical suite against another tag so

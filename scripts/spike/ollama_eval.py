@@ -15,7 +15,7 @@ from pathlib import Path
 
 import httpx
 
-OVERSUBSCRIPTION_RATIO = 0.05
+GEN_TOK_S_FLOOR = 10.0
 
 
 @dataclass(frozen=True)
@@ -109,14 +109,19 @@ def call_ollama(
 
 
 def is_oversubscribed(call: MeasuredCall) -> bool:
-    """Generation far slower than prompt eval means VRAM is paging to system RAM.
+    """Generation throughput far below what the GPU can sustain means VRAM is paging.
 
-    Measured 2026-08-10: 709 tok/s prompt against 3.0 tok/s generation while
-    `ollama ps` reported 100% GPU. Placement alone called that run healthy.
+    Measured 2026-08-10 on an RTX 3060 Ti: healthy decode runs 37-90 tok/s, and
+    CPU-only fallback runs ~8.5 tok/s, while a model paging to system RAM measured
+    3.0 tok/s. A floor between those regimes separates them.
+
+    An earlier version compared generation against prompt-eval rate. That could not
+    work: prompt_tok_s is dominated by prompt length (measured 388-12,495 tok/s on
+    the same healthy run), so the paging case's ratio fell inside the healthy band.
     """
-    if call.prompt_tok_s <= 0 or call.gen_tok_s <= 0:
+    if call.gen_tok_s <= 0:
         return False
-    return (call.gen_tok_s / call.prompt_tok_s) < OVERSUBSCRIPTION_RATIO
+    return call.gen_tok_s < GEN_TOK_S_FLOOR
 
 
 def summarize(values: list[float]) -> str:
@@ -198,9 +203,11 @@ def _render_report(
     ]
     if oversubscribed:
         lines += [
-            '> **VRAM OVERSUBSCRIPTION DETECTED.** Generation ran at under 5% of prompt-eval rate.',
-            '> The model does not fit in available VRAM and the driver is paging to system RAM.',
-            '> Latency figures below are not representative. Free VRAM or use a smaller model.',
+            f'> **SLOW GENERATION DETECTED.** Generation fell below {GEN_TOK_S_FLOOR:.1f} tok/s on at '
+            'least one call.',
+            '> The model is either paging to system RAM (VRAM oversubscription) or running on CPU.',
+            '> Check the placement percentage in the environment block below to tell which.',
+            '> Latency figures below are not representative. Free VRAM, lower num_ctx, or use a smaller model.',
             '',
         ]
     lines += ['| role | prompt | pass | gen tok/s | latency s |', '|---|---|---|---|---|']
