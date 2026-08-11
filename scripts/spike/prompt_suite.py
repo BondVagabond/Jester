@@ -3,8 +3,18 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
+from pydantic import BaseModel, ValidationError
+
+from jester.ai import (
+    CritiqueArtifact,
+    IntentClassificationArtifact,
+    ModelRole,
+    PlanArtifact,
+    TeachingDepthArtifact,
+    TeachingPlanArtifact,
+)
 from jester.prompts.registry import load_prompt
 from jester.validation import validate_output
 
@@ -49,44 +59,119 @@ FIXTURES: dict[str, str] = {
     'lesson_focus': 'attack rolls and armour class',
 }
 
+# Human-readable labels for the report table. Bijective with ModelRole - the
+# harness only ever exercises these three roles.
+ROLE_LABELS: dict[ModelRole, str] = {
+    ModelRole.SMALL_FAST: 'router',
+    ModelRole.REASONING: 'arbiter',
+    ModelRole.PRIMARY_GENERATION: 'narrator',
+}
+
+
+def role_label(role: ModelRole) -> str:
+    return ROLE_LABELS[role]
+
 
 @dataclass(frozen=True)
 class PromptCase:
-    role: str
+    role: ModelRole
     prompt_name: str
     version: str
     expects_json: bool
     num_predict: int
     temperature: float
+    # Per-case fixture overrides, consulted by render_prompt ahead of FIXTURES.
+    # Needed because FIXTURES is keyed globally by variable name, but a couple
+    # of prompts share a variable name (structured_summary) while needing
+    # case-specific content - see teaching_explain_concept below.
+    overrides: dict[str, str] = field(default_factory=dict)
 
 
+# num_predict mirrors the max_tokens each prompt's production call site actually
+# sends (see jester/ai/reasoning.py, jester/ai/classification.py, jester/ai/adapters.py
+# and jester/app/orchestration/prompting.py):
+#   - routing_live_dm_intent, teaching_depth: SmallFastClassifier._classify_json -> 256
+#   - prep_plan, prep_critique, teaching_structure: ReasoningService.* -> 256
+#   - live_dm_narration: RoleNarrationModelClient (build_narration path) -> 384
+#   - live_dm_info_response, prep_npc, teaching_explain_concept: RolePromptModelClient
+#     (generate_prompt_block / WorkspacePromptAssembler path) -> 512
 SUITE: list[PromptCase] = [
-    PromptCase('router', 'routing_live_dm_intent', 'v1', True, 256, 0.0),
-    PromptCase('router', 'teaching_depth', 'v1', True, 256, 0.0),
-    PromptCase('arbiter', 'prep_plan', 'v1', True, 512, 0.0),
-    PromptCase('arbiter', 'prep_critique', 'v1', True, 512, 0.0),
-    PromptCase('arbiter', 'teaching_structure', 'v1', True, 512, 0.0),
-    PromptCase('narrator', 'live_dm_narration', 'v1', False, 384, 0.2),
-    PromptCase('narrator', 'live_dm_info_response', 'v1', False, 384, 0.2),
-    PromptCase('narrator', 'prep_npc', 'v1', False, 512, 0.2),
-    PromptCase('narrator', 'teaching_explain_concept', 'v1', False, 512, 0.2),
+    PromptCase(ModelRole.SMALL_FAST, 'routing_live_dm_intent', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.SMALL_FAST, 'teaching_depth', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.REASONING, 'prep_plan', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.REASONING, 'prep_critique', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.REASONING, 'teaching_structure', 'v1', True, 256, 0.0),
+    PromptCase(ModelRole.PRIMARY_GENERATION, 'live_dm_narration', 'v1', False, 384, 0.2),
+    PromptCase(ModelRole.PRIMARY_GENERATION, 'live_dm_info_response', 'v1', False, 512, 0.2),
+    PromptCase(ModelRole.PRIMARY_GENERATION, 'prep_npc', 'v1', False, 512, 0.2),
+    PromptCase(
+        ModelRole.PRIMARY_GENERATION,
+        'teaching_explain_concept',
+        'v1',
+        False,
+        512,
+        0.2,
+        overrides={
+            'structured_summary': (
+                'Objective: explain how attack rolls resolve and how cover modifies AC. '
+                'Sections: roll sequence (d20 plus ability modifier and proficiency vs AC), '
+                'cover modifiers, worked example.'
+            ),
+        },
+    ),
 ]
 
 
-def render_prompt(name: str, version: str) -> tuple[str, dict[str, str]]:
-    """Render a real prompt with fixture values. Returns (rendered, output_contract)."""
-    spec = load_prompt(name, version)
-    values = {key: FIXTURES.get(key, f'[no fixture for {key}]') for key in spec.input_contract}
+def render_prompt(case: PromptCase) -> tuple[str, dict[str, str]]:
+    """Render a real prompt with fixture values. Returns (rendered, output_contract).
+
+    Case-specific overrides win over the shared FIXTURES table, so two prompts that
+    happen to share an input_contract variable name (e.g. structured_summary) do not
+    have to share fixture content.
+    """
+    spec = load_prompt(case.prompt_name, case.version)
+    values = {
+        key: case.overrides.get(key, FIXTURES.get(key, f'[no fixture for {key}]'))
+        for key in spec.input_contract
+    }
     return spec.template.format(**values), dict(spec.output_contract)
+
+
+# Real production validators for the JSON cases in SUITE, so a pass here means what
+# production would accept. Every current JSON case has a corresponding artifact
+# model; a case without one would fall back to the weaker key-presence check below.
+_JSON_VALIDATORS: dict[str, type[BaseModel]] = {
+    'routing_live_dm_intent': IntentClassificationArtifact,
+    'teaching_depth': TeachingDepthArtifact,
+    'prep_plan': PlanArtifact,
+    'prep_critique': CritiqueArtifact,
+    'teaching_structure': TeachingPlanArtifact,
+}
 
 
 def check_call(case: PromptCase, content: str, output_contract: dict[str, str]) -> bool:
     if case.expects_json:
+        validator = _JSON_VALIDATORS.get(case.prompt_name)
+        if validator is None:
+            # No production artifact model exists for this prompt - fall back to a
+            # key-presence check against the prompt's declared output_contract.
+            try:
+                parsed = json.loads(content)
+            except json.JSONDecodeError:
+                return False
+            if not isinstance(parsed, dict):
+                return False
+            return all(key in parsed for key in output_contract)
         try:
-            parsed = json.loads(content)
-        except json.JSONDecodeError:
+            validator.model_validate_json(content)
+        except (ValidationError, TypeError):
+            # Some list-typed fields (e.g. PlanArtifact.steps) validate via a plain
+            # `_normalize_text_list` helper that raises TypeError instead of ValueError
+            # for a wrong-shaped value (e.g. a string where a list is expected).
+            # Pydantic v2 only auto-wraps ValueError/AssertionError from validators
+            # into ValidationError, so a malformed field of this kind reaches here as
+            # a raw TypeError. Treated as a failed check, same as any other malformed
+            # response - not silently propagated as a harness crash.
             return False
-        if not isinstance(parsed, dict):
-            return False
-        return all(key in parsed for key in output_contract)
+        return True
     return bool(validate_output(content).is_valid)
