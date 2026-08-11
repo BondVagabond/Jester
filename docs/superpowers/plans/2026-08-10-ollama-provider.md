@@ -205,7 +205,10 @@ from jester.ai import ModelRequest, ModelRole
 from jester.ai.providers import OllamaChatClient
 
 
-def _client(handler: object, *, settings: OllamaProviderSettings | None = None) -> OllamaChatClient:
+Handler = Callable[[httpx.Request], httpx.Response]
+
+
+def _client(handler: Handler, *, settings: OllamaProviderSettings | None = None) -> OllamaChatClient:
     resolved = settings or OllamaProviderSettings()
     return OllamaChatClient(
         role=ModelRole.PRIMARY_GENERATION,
@@ -213,7 +216,7 @@ def _client(handler: object, *, settings: OllamaProviderSettings | None = None) 
         settings=resolved,
         http_client=httpx.Client(
             base_url=resolved.base_url,
-            transport=httpx.MockTransport(handler),  # type: ignore[arg-type]
+            transport=httpx.MockTransport(handler),
         ),
     )
 
@@ -284,7 +287,7 @@ def test_ollama_client_sets_json_format_for_structured_prompts() -> None:
         settings=OllamaProviderSettings(),
         http_client=httpx.Client(
             base_url='http://127.0.0.1:11434',
-            transport=httpx.MockTransport(handler),  # type: ignore[arg-type]
+            transport=httpx.MockTransport(handler),
         ),
     ).generate(
         ModelRequest(role=ModelRole.REASONING, prompt='Plan it.', prompt_name='prep_plan')
@@ -303,7 +306,13 @@ def test_ollama_client_rejects_role_mismatch() -> None:
         )
 ```
 
-Add `import json` and `from jester.ai.base import ModelError` to the test module's imports.
+Add these to the test module's imports: `import json`, `from collections.abc import Callable`, and
+`from jester.ai.base import ModelError`.
+
+**No `# type: ignore` comments anywhere in this task.** `tests` is inside `[tool.mypy] packages`, so this
+module is checked under `--strict`, and strict enables `warn_unused_ignores` — a stale ignore becomes an
+error. Typing the handler alias as `Callable[[httpx.Request], httpx.Response]` satisfies
+`httpx.MockTransport` directly.
 
 - [ ] **Step 2: Run tests to verify they fail**
 
