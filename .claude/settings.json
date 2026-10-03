@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "bondvagabond": {
+      "source": {
+        "source": "github",
+        "repo": "BondVagabond/Skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "design-powers@bondvagabond": true
+  }
+}
